@@ -10,94 +10,69 @@
 
     <body>
         <header class="header">
-            <a href="Portfolio_2.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
                 David <span>Seong</span>
             </a>
 
             <i class = 'bx bx-menu' id ='menu-icon'></i>
             <nav class="navbar">
-                <a href="Portfolio_2.html">Home</a>
+                <a href="index.html">Home</a>
                 <a href="projects.html">Projects</a>
-                <a href="education.html">Education</a>
-                <!-- <a href="#services">Services</a> -->
+                <!-- <a href="education.html">Education</a> -->
                 <a href="contact.html"class="active"> Contact</a>
             </nav>
         </header>
-
-   
         
-        <section class="home" id="home">
+
+        <section class="contact" id="home">
             <div class="home-content">
-            <p>Please contact me via email: davidseong8914@gmail.com</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-                <!-- <b>davidseong-uw</b> -->
-                <br>
-                <a href="cominsoon!"><i class='bx bxl-github'></i></a>
-                <br>
-                <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-                <br>
-                <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
-                <br>
-            </div>
+            <h2 class="heading">Contact <span>Me</span></h2>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <div class="input-group">
+                    <input type="hidden" name="access_key" value="574ad4e4-96d9-487b-9585-cf995b9a619f">
+                    <div class="input-box">
+                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" name="phone" placeholder="Phone Number">
+                        <input type="text" name="subject" placeholder="Subject">
+                    </div>
+                </div>
+                <div class="input-group-2">
+                    <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                    <input type="submit" value="Send Message" class="btn">
+                </div>
+            </form>
 
         </div>
-            
-            
-        </section>
-        
-
-        <section class="contact" id="contact">
-            <form action="">
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
-                </div>
-
-                <div class="input-box">
-                    <input type="number" placeholder="Phone Number">
-                    <input type="text" placeholder="Subject">
-                </div>
-            </div>
-
-            <div class="input-group-2">
-                <textarea name="" id="" cols="30" rows="10" placeholder = "Your Message"></textarea>
-                <input type="submit" value="Send Message" class = "btn">
-            </div>
-        </form>
         </section>
 
         <footer class="footer">
             <div class="social">
-                <a href="#"><i class='bx bxl-linkedin'></i></a>
-                <a href="#"><i class='bx bxl-github'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-youtube'></i></a>
+                <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
             </div>
 
             <ul class="list">
                 <li>
-                    <a href="#">FAQ</a>
+                    <a href="index.html">About Me</a>
                 </li>
 
                 <li>
-                    <a href="#">Services</a>
+                    <a href="contact.html">Contact</a>
                 </li>
 
                 <li>
-                    <a href="#">About Me</a>
-                </li>
-
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-
-                <li>
-                    <a href="#">Projects</a>
+                    <a href="projects.html">Projects</a>
                 </li>
             </ul>
+
+
             <p class="copyright">
                 © David Seong | All Rights Reserved
             </p>

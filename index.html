@@ -1,256 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Robodave's Portfolio</title>
-        <link rel="stylesheet" href="style_2.css">
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Robodave's Portfolio</title>
+    <link rel="stylesheet" href="style_2.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
 
-    <body>
-        <header class="header">
-            <!-- <a href="#home" class="logo">David <span>Seong</span></a> -->
-            <a href="#home" class="logo">
-                <img src="robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-                David <span>Seong</span>
-            </a>
+<body>
+    <header class="header">
+        <!-- <a href="#home" class="logo">David <span>Seong</span></a> -->
+        <a href="#home" class="logo">
+            <img src="robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+            David <span>Seong</span>
+        </a>
 
-            <i class = 'bx bx-menu' id ='menu-icon'></i>
-            <nav class="navbar">
-                <a href="#home" class="active">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="education.html">Education</a>
-                <!-- <a href="#services">Services</a> -->
-                <a href="contact.html"> Contact</a>
-            </nav>
-        </header>
-        
-        <section class="home" id="home">
+        <i class='bx bx-menu' id='menu-icon'></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="projects.html">Projects</a>
+            <!-- <a href="education.html">Education</a> -->
+            <a href="contact.html"> Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
         <div class="home-content">
             <h1>Hi, It's <span>David</span></h1>
             <h3 class="text-animation">I'm a <span></span></h3>
-            <p>focusing on <b>Robotics</b> and <b>Machine Learning</b>. Previously part of <a href="https://uwbadgerlab.engr.wisc.edu/" class="lab">BADGER Lab</a> and <a href="https://wid.wisc.edu/people/lih-sheng-tom-turng/" class="lab">Turng Lab</a>, I researched lean angle-speed relationship in legged robots and implementing machine learning methods in Polymer research. With dedication to lifelong learning and commitment to give back to the community, I strive to be resourceful and make the world a better place.</p>
-            
+            <p>focusing on <b>Robotics</b> and <b>Machine Learning</b>. Currently, I am a robotics at <a href=http://www.uisn.co.kr/home/ class ="lab">SHInc</a>, developing a custom power plant inspection payload that will be used with <a href="https://bostondynamics.com/products/spot/">SPOT</a>.</a>Previously part of <a href="https://uwbadgerlab.engr.wisc.edu/" class="lab">BADGER Lab</a> and <a href="https://wid.wisc.edu/people/lih-sheng-tom-turng/" class="lab">Turng Lab</a>, I researched lean angle-speed relationship in legged robots and implementing machine learning methods in Polymer research. With dedication to lifelong learning and commitment to give back to the community, I strive to be resourceful and make the world a better place.</p>
+
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-                <a href="git.html"><i class='bx bxl-github'></i></a>
+                <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
                 <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
                 <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
             </div>
 
             <div class="btn-group">
-                <a href="#" class="btn">Hire</a>
+                <a href="#" class="btn">Fun fact about me!</a>
                 <a href="#contact" class="btn">Contact</a>
             </div>
         </div>
-            <div class="home-img">
-                <img src="image.jpg" alt="">
-            </div>
-            
-        </section>
-        
-        <section class="projects" id="projects">
-            <div class="projects-box">
-                <h2 class="heading">Selected Projects</h2>
-                <div class="wrapper">
+        <div class="home-img">
+            <img src="image.jpg" alt="">
+        </div>
+    </section>
 
-
-                    <div class="project-item">
-                        <img src="robot_1.png" alt="">
-                        <h2>WYBot</h2>
-                        <!-- <div class="rating">
-                                <i class='bx bxs-star' id="star"></i> 
-                                <i class='bx bxs-star' id="star"></i>
-                                <i class='bx bxs-star' id="star"></i>
-                                <i class='bx bxs-star' id="star"></i>
-                                <i class='bx bxs-star' id="star"></i>
-                        </div> -->
-                        <p>
-                            My first quadruped robot created to study 8 DoF gait algorithms. Later added obstacle avoidance to enhance functionality.
-                        </p>
+    <section class="projects" id="projects">
+        <div class="projects-box">
+            <h2 class="heading">Robotics Projects</h2>
+            <div class="wrapper">
+                <div class="project-item">
+                    <div class="robot-image">
+                        <img src="images/Robomaster.PNG" alt="">
                     </div>
+                    <div class="robot-text">
+                        <h2>RoboMaster University Championship<br>(RMUC)</h2>
+                    </div>
+                </div>
 
-                    <div class="project-item">
-                        <img src="robot_2.png" alt="">
+                <div class="project-item">
+                    <div class="robot-image">
+                        <img src="images/robot_2.png" alt="">
+                    </div>
+                    <div class="robot-text">
                         <h2>Torsobot</h2>
-                        <!-- <div class="rating">
-                            <i class='bx bxs-star' id="star"></i> 
-                            <i class='bx bxs-star' id="star"></i>
-                            <i class='bx bxs-star' id="star"></i>
-                            <i class='bx bxs-star' id="star"></i>
-                            <i class='bx bxs-star' id="star"></i>
-                        </div> -->
-                        <p>
-                            A 12-pivot rimless wheel robot engineered to simulate the human walk cycle. Its lightweight, streamlined design enhances movement precision and stability, making it ideal for studying locomotive biomechanics across different terrains.
-                            <!-- In the development of the Torsobot, a rimless, two-wheeled self-balancing robot, I led a redesign of its outer frame to enhance durability and encase the electrical components. A significant improvement was the implementation of a dual drive system with gears, designed to address slip issues and enhance movement control, crucial for maintaining stability. This redesign significantly advanced the robot's functionality, enabling it to more accurately mimic the human walk cycle and operate effectively under dynamic conditions. -->
-                        </p>
                     </div>
+                </div>
 
-                    <div class="project-item">
-                        <img src="robot_3.jpg" alt="">
+                <div class="project-item">
+                    <div class="robot-image">
+                        <img src="images/robot_3.png" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>Powder Spreader</h2>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="robot-image">
+                        <img src="images/robot_1.png" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>WYBot</h2>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class = "heading"> AI Projects</h2>
+            <div class = "wrapper">
+                <div class="project-item">
+                    <div class="robot-image full-box">
+                        <img src="images/DRAG.JPG" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>Detecting and Reading of Analog Gauges<br>(DRAG)</h2>
+                    </div>
+                </div>
+                <div class="project-item full-box">
+                    <div class="robot-image">
+                        <img src="images/moldex.png" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>Learning with Moldex</h2>
+                    </div>
+                </div>
+
+                <div class="project-item full-box">
+                    <div class="robot-image">
+                        <img src="images/PBF_ML.png" alt="">
+                    </div>
+                    <div class="robot-text">
                         <h2>Learning for Powder Bed Fusion</h2>
-                        <!-- <div class="rating">
-                            <i class='bx bxs-star' id="star"></i> 
-                            <i class='bx bxs-star' id="star"></i>
-                            <i class='bx bxs-star' id="star"></i>
-                            <i class='bx bxs-star' id="star"></i>
-                            <i class='bx bxs-star' id="star"></i>
-                        </div> -->
-                        <p>
-                            Novel Powder Spreadability System for Powder Bed Fusion. Created as my senior design project, this device uses Pronterface - a 3D printing software to automatically adjust powder bed height, dump powder, spread powder and measure powder weight to determine powder bed density. Future work includes adding a camera, ML techniques to determine surface roughness from top view of the powder spread.
-                        </p>
                     </div>
-
                 </div>
             </div>
-        </section>
+            <h2 class="heading">Free Build Projects</h2>
+            <div class="wrapper">
 
-        <section class="education" id= "education">
-        <h2 class= "heading">Education</h2>
-        <div class="timeline-items">
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                    <div class="timeline-date">2018</div>
-                    <div class="timeline-content">
-                        <h3>University of Wisconsin - Madison</h3>
-                        <p>Start of B.S. in Mechanical Engineering.</p>
+                <div class="project-item large">
+                    <div class="robot-image">
+                        <img src="images/ASZS2.jpeg" alt="">
                     </div>
-                
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                    <div class="timeline0date">2020</div>
-                    <div class="timeline-content">
-                        <h3>Republic of Korea Army</h3>
-                        <p>Enlisted in the army as a Chemical Biological Radiological Nuclear Equipment Specialist.</p>
+                    <div class="robot-text">
+                        <h2>Recycled Newspaper Mache Canoe</h2>
                     </div>
-                
-            </div>
+                </div>
 
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                    <div class="timeline-date">2023</div>
-                    <div class="timeline-content">
-                        <h3>Co-op at Prent Corporation</h3>
-                        <p>Engineered thermoform packaging solutions for 10+ products.</p>
+                <div class="project-item large">
+                    <div class="robot-image">
+                        <img src="images/AZSZ1.jpeg" alt="">
                     </div>
-             
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
-                        <h3>Graduation from University of Wisconsin - Madison</h3>
-                        <p>Graduated with B.S. in Mechanical Engineering and Minor in Computer Science</p>
+                    <div class="robot-text">
+                        <h2>Recycled Arizona "Can"oe</h2>
                     </div>
-             
-            </div>
-        </div>        
-        </section>
+                </div>
 
-        <!-- save for when I develop more service based skills -->
-        <!-- <section class="services" id="services">
-            <h2 class="heading">Services</h2>
-            <div class="services-container">
-                <div class="service-box">
-                <div class="service-info">
-                    <h4>3D Modeling</h4>
-                    <p>
-                        Strong 3D modeling and analysis skills. Obtained a Professional SolidWorks License.
-                    </p>
-                </div>
+                <!-- Additional project2-item boxes here if needed-->
             </div>
-            <div class="service-box">
-                <div class="service-info">
-                    <h4>Frontend Development</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam modi dolore incidunt maiores a inventore odit saepe quaerat, asperiores perferendis neque earum eos eum molestiae iste voluptatibus fuga quisquam porro?
-                    </p>
-                </div>
-            </div>
-            <div class="service-box">
-                <div class="service-info">
-                    <h4>Backend Development</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam modi dolore incidunt maiores a inventore odit saepe quaerat, asperiores perferendis neque earum eos eum molestiae iste voluptatibus fuga quisquam porro?
-                    </p>
-                </div>
-            </div>
-            <div class="service-box">
-                <div class="service-info">
-                    <h4>Testing</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam modi dolore incidunt maiores a inventore odit saepe quaerat, asperiores perferendis neque earum eos eum molestiae iste voluptatibus fuga quisquam porro?
-                    </p>
-                </div>
-            </div>
-        </section> -->
+        </div>
+    </section>
 
-       
-
-        <section class="contact" id="contact">
-            <h2 class="heading">Contact <span>Me</span></h2>
-            <h1> Please contact me via email: davidseong8914@gmail.com</h1>
-            <!-- <form action="">
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
             <div class="input-group">
+                <input type="hidden" name="access_key" value="574ad4e4-96d9-487b-9585-cf995b9a619f">
                 <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
                 </div>
-
                 <div class="input-box">
-                    <input type="number" placeholder="Phone Number">
-                    <input type="text" placeholder="Subject">
+                    <input type="number" name="phone" placeholder="Phone Number">
+                    <input type="text" name="subject" placeholder="Subject">
                 </div>
             </div>
-
             <div class="input-group-2">
-                <textarea name="" id="" cols="30" rows="10" placeholder = "Your Message"></textarea>
-                <input type="submit" value="Send Message" class = "btn">
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message" class="btn">
             </div>
-        </form> -->
-        </section>
+        </form>
+    </section>
 
-        <footer class="footer">
-            <div class="social">
-                <a href="#"><i class='bx bxl-linkedin'></i></a>
-                <a href="#"><i class='bx bxl-github'></i></a>
-                <a href="#"><i class='bx bxl-instagram'></i></a>
-                <a href="#"><i class='bx bxl-youtube'></i></a>
-            </div>
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
+            <!-- <a href="#"><i class='bx bxl-instagram'></i></a> -->
+            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        </div>
 
-            <ul class="list">
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
+        <ul class="list">
+            <li>
+                <a href="#home">About Me</a>
+            </li>
 
-                <li>
-                    <a href="#">Services</a>
-                </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
 
-                <li>
-                    <a href="#">About Me</a>
-                </li>
+            <li>
+                <a href="projects.html">Projects</a>
+            </li>
+        </ul>
+        <p class="copyright">
+            © David Seong | All Rights Reserved
+        </p>
 
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+    </footer>
 
-                <li>
-                    <a href="#">Projects</a>
-                </li>
-            </ul>
-            <p class="copyright">
-                © David Seong | All Rights Reserved
-            </p>
-
-        </footer>
-        
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
