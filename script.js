@@ -24,6 +24,8 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 };
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const projectItems = document.querySelectorAll('.project-item');
 
