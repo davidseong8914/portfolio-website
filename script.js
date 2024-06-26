@@ -43,9 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "I once did a 90 hour Greyhound trip from California to Virginia",
         "I'm a ceramics master.",
         "Favorite Book: Norwegian Wood by Haruki Murakami",
-        "Weather is great today",
-        "More to come...",
-        "More to come...",
+        "I saw the Great Pyramid of Gizah",
+        "I am a father of 3 beautiful Goldfish: Kush, Dominic, Nguyen",
         "More to come...",
     ];
 
