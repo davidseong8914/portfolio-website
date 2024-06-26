@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const funFactContainer = document.getElementById("fun-fact-container");
 
     funFactBtn.addEventListener("click", function () {
+        event.preventDefault();  // Prevent the default action
         const randomIndex = Math.floor(Math.random() * funFacts.length);
         const randomFact = funFacts[randomIndex];
         funFactContainer.innerText = randomFact;
