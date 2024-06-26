@@ -29,7 +29,9 @@
         <div class="home-content">
             <h1>Hi, It's <span>David</span></h1>
             <h3 class="text-animation">I'm a <span></span></h3>
-            <p>focusing on <b>Robotics</b> and <b>Machine Learning</b>. Currently, I am a robotics at <a href=http://www.uisn.co.kr/home/ class ="lab">SHInc</a>, developing a custom power plant inspection payload that will be used with <a href="https://bostondynamics.com/products/spot/">SPOT</a>.</a>Previously part of <a href="https://uwbadgerlab.engr.wisc.edu/" class="lab">BADGER Lab</a> and <a href="https://wid.wisc.edu/people/lih-sheng-tom-turng/" class="lab">Turng Lab</a>, I researched lean angle-speed relationship in legged robots and implementing machine learning methods in Polymer research. With dedication to lifelong learning and commitment to give back to the community, I strive to be resourceful and make the world a better place.</p>
+            <p>focusing on <b>Robotics</b> and <b>Machine Learning</b>. Currently, I am a robotics engineer at <a href=http://www.uisn.co.kr/home/ class ="lab">SHInc</a>, developing a custom power plant inspection payload that will be used with <a href="https://bostondynamics.com/products/spot/">SPOT</a>. </a>Previously part of <a href="https://uwbadgerlab.engr.wisc.edu/" class="lab">BADGER Lab</a> and <a href="https://wid.wisc.edu/people/lih-sheng-tom-turng/" class="lab">Turng Lab</a>, I researched lean angle-speed relationship in legged robots and implementing machine learning methods in Polymer research. With dedication to lifelong learning and commitment to give back to the community, I strive to be resourceful and make the world a better place.</p>
+            <p><br><span>Bachelors:</span> University of Wisconsin - Madison | Mechanical Engineering; Computer Science</p>
+            <p><span>Masters:</span> Carnegie Mellon University | Mechanical Engineering - Robotics and Control</p>
 
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
@@ -39,9 +41,10 @@
             </div>
 
             <div class="btn-group">
-                <a href="#" class="btn">Fun fact about me!</a>
+                <a href="#" class="btn" id="fun-fact-btn">Fun fact about me!</a>
                 <a href="#contact" class="btn">Contact</a>
             </div>
+            <div id="fun-fact-container"></div> <!-- Add this line -->
         </div>
         <div class="home-img">
             <img src="image.jpg" alt="">
@@ -52,16 +55,16 @@
         <div class="projects-box">
             <h2 class="heading">Robotics Projects</h2>
             <div class="wrapper">
-                <div class="project-item">
+                <div class="project-item" id="robomaster">
                     <div class="robot-image">
-                        <img src="Images/Robomaster.PNG" alt="">
+                        <img src="Images/Robomaster.png" alt="">
                     </div>
                     <div class="robot-text">
-                        <h2>RoboMaster University Championship<br>(RMUC)</h2>
+                        <h2>Wisconsin Robotics<br>RoboMaster</h2>                    
                     </div>
                 </div>
 
-                <div class="project-item">
+                <div class="project-item" id="torsobot">
                     <div class="robot-image">
                         <img src="Images/robot_2.png" alt="">
                     </div>
@@ -70,7 +73,7 @@
                     </div>
                 </div>
 
-                <div class="project-item">
+                <div class="project-item" id="pbf">
                     <div class="robot-image">
                         <img src="Images/robot_3.png" alt="">
                     </div>
@@ -79,7 +82,7 @@
                     </div>
                 </div>
 
-                <div class="project-item">
+                <div class="project-item" id="wybot">
                     <div class="robot-image">
                         <img src="Images/robot_1.png" alt="">
                     </div>
@@ -91,15 +94,15 @@
 
             <h2 class = "heading"> AI Projects</h2>
             <div class = "wrapper">
-                <div class="project-item">
+                <div class="project-item" id="drag">
                     <div class="robot-image full-box">
-                        <img src="Images/DRAG.JPG" alt="">
+                        <img src="Images/SPOT.webp" alt="">
                     </div>
                     <div class="robot-text">
-                        <h2>Detecting and Reading of Analog Gauges<br>(DRAG)</h2>
+                        <h2>ComputerVision Solution for<br>Automated Power Plant Inspection</h2>
                     </div>
                 </div>
-                <div class="project-item full-box">
+                <div class="project-item full-box" id="moldex">
                     <div class="robot-image">
                         <img src="Images/moldex.png" alt="">
                     </div>
@@ -108,7 +111,7 @@
                     </div>
                 </div>
 
-                <div class="project-item full-box">
+                <div class="project-item full-box" id="pbf">
                     <div class="robot-image">
                         <img src="Images/PBF_ML.png" alt="">
                     </div>
@@ -116,11 +119,21 @@
                         <h2>Learning for Powder Bed Fusion</h2>
                     </div>
                 </div>
+
+                <div class="project-item full-box" id="unity">
+                    <div class="robot-image">
+                        <img src="Images/Unity.jpeg" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>Unity Based Infantry Army Training Simulation</h2>
+                    </div>
+                </div>
+
             </div>
             <h2 class="heading">Free Build Projects</h2>
             <div class="wrapper">
 
-                <div class="project-item large">
+                <div class="project-item large" id="azsz2">
                     <div class="robot-image">
                         <img src="Images/ASZS2.jpeg" alt="">
                     </div>
@@ -129,7 +142,7 @@
                     </div>
                 </div>
 
-                <div class="project-item large">
+                <div class="project-item large" id="azsz1">
                     <div class="robot-image">
                         <img src="Images/AZSZ1.jpeg" alt="">
                     </div>

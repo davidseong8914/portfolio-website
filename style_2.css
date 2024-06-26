@@ -642,14 +642,54 @@ b {
     margin: 1.5rem 0;
     resize: none;
 }
-/* .input-box::placeholder {
-    color: white;
-} */
 
 .contact form .btn{
     margin-top: 2rem;
 
 }
+
+/* project detail stuff */
+
+.project-details .container {
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.project-details .media {
+    flex: 3; /* Takes up more space */
+    margin-right: 3rem;
+}
+
+.project-details .media img, .project-details .media video {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.project-details .description {
+    flex: 1; /* Takes up less space */
+}
+
+.project-details .description h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-details .description p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.project-details .media iframe {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+/* project detail stuff */
 
 
 .footer{
@@ -734,6 +774,7 @@ b {
     section{
         padding: 10rem 3% 2rem;
     }
+    
     .timeline-items::before{
         left: 7px;
     }
@@ -767,7 +808,7 @@ b {
 }
 
 @media(max-width: 895px){
-    #menu0icon{
+    #menu-icon{
         display: block;
     }
     .navbar{
@@ -819,6 +860,14 @@ b {
     }
 }
 
+#fun-fact-container {
+    font-size: 2rem; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: var(--main-color); /* Use the main color for the text */
+    text-align: center; /* Center the text horizontally */
+    margin-top: 2rem; /* Add some space above the text */
+}
+
 @media(max-width: 768px) {
     .projects .wrapper {
         grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for small screens */
@@ -829,7 +878,7 @@ b {
         height: 40vw;
     }
 }
-}
+
 
 @media(max-width: 480px) {
     .project-item {

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Robodave's Portfolio</title>
+        <title>Robodave's Portfolio - Projects</title>
         <link rel="stylesheet" href="style_2.css">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     </head>
@@ -15,25 +15,118 @@
                 David <span>Seong</span>
             </a>
 
-            <i class = 'bx bx-menu' id ='menu-icon'></i>
+            <i class='bx bx-menu' id='menu-icon'></i>
             <nav class="navbar">
                 <a href="index.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <!-- <a href="education.html">Education</a> -->
-                <a href="contact.html"class="active"> Contact</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </header>
-        
 
-        <section id="home">
-            <div class="home-content">
-            <h2 class="heading">Recent <span>Projects</span></h2>
+        <section class="projects" id="projects">
+            <div class="projects-box">
+                <h2 class="heading"><br>Robotics Projects</h2>
+                <div class="wrapper">
+                    <div class="project-item" id="robomaster">
+                        <div class="robot-image">
+                            <img src="Images/Robomaster.png" alt="">
+                        </div>
+                        <div class="robot-text">
+                            <h2>Wisconsin Robotics<br>RoboMaster</h2>
+                        </div>
+                    </div>
+    
+                    <div class="project-item" id="torsobot">
+                        <div class="robot-image">
+                            <img src="Images/robot_2.png" alt="">
+                        </div>
+                        <div class="robot-text">
+                            <h2>Torsobot</h2>
+                        </div>
+                    </div>
+    
+                    <div class="project-item" id="pbf">
+                        <div class="robot-image">
+                            <img src="Images/robot_3.png" alt="">
+                        </div>
+                        <div class="robot-text">
+                            <h2>Powder Spreader</h2>
+                        </div>
+                    </div>
+    
+                    <div class="project-item" id="wybot">
+                        <div class="robot-image">
+                            <img src="Images/robot_1.png" alt="">
+                        </div>
+                        <div class="robot-text">
+                            <h2>WYBot</h2>
+                        </div>
+                    </div>
+                </div>
+    
+                <h2 class = "heading"> AI Projects</h2>
+                <div class = "wrapper">
+                    <div class="project-item" id="drag">
+                        <div class="robot-image full-box">
+                            <img src="Images/SPOT.webp" alt="">
+                        </div>
+                        <div class="robot-text">
+                            <h2>ComputerVision Solution for<br>Automated Power Plant Inspection</h2>
+                        </div>
+                    </div>
+                    <div class="project-item full-box" id="moldex">
+                        <div class="robot-image">
+                            <img src="Images/moldex.png" alt="">
+                        </div>
+                        <div class="robot-text">
+                            <h2>Learning with Moldex</h2>
+                        </div>
+                    </div>
+    
+                    <div class="project-item full-box" id="pbf">
+                        <div class="robot-image">
+                            <img src="Images/PBF_ML.png" alt="">
+                        </div>
+                        <div class="robot-text">
+                            <h2>Learning for Powder Bed Fusion</h2>
+                        </div>
+                    </div>
 
-            <p> Comin SOON! 06/18/2024</p>
-
-
+                    <div class="project-item full-box" id="unity">
+                        <div class="robot-image">
+                            <img src="Images/Unity.jpeg" alt="">
+                        </div>
+                        <div class="robot-text">
+                            <h2>Unity Based Infantry Army Training Simulation</h2>
+                        </div>
+                        </div>
+                </div>
+                <h2 class="heading">Free Build Projects</h2>
+                <div class="wrapper">
+    
+                    <div class="project-item large" id="azsz2">
+                        <div class="robot-image">
+                            <img src="Images/ASZS2.jpeg" alt="">
+                        </div>
+                        <div class="robot-text">
+                            <h2>Recycled Newspaper Mache Canoe</h2>
+                        </div>
+                    </div>
+    
+                    <div class="project-item large" id="azsz1">
+                        <div class="robot-image">
+                            <img src="Images/AZSZ1.jpeg" alt="">
+                        </div>
+                        <div class="robot-text">
+                            <h2>Recycled Arizona "Can"oe</h2>
+                        </div>
+                    </div>
+    
+                    <!-- Additional project2-item boxes here if needed-->
+                </div>
             </div>
         </section>
+
 
         <footer class="footer">
             <div class="social">
@@ -57,13 +150,11 @@
                 </li>
             </ul>
 
-
             <p class="copyright">
                 © David Seong | All Rights Reserved
             </p>
-
         </footer>
         
         <script src="script.js"></script>
-</body>
+    </body>
 </html>
