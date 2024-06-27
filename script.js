@@ -43,8 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
         "I once did a 90 hour Greyhound trip from California to Virginia",
         "I'm a ceramics master.",
         "Favorite Book: Norwegian Wood by Haruki Murakami",
-        "I saw the Great Pyramid of Gizah",
+        "I saw the Great Pyramid of Giza",
         "I am a father of 3 beautiful Goldfish: Kush, Dominic, Nguyen",
+        "Favorite Food: Hot Pot",
+        "I have 2 brothers",
+        "I love TRAVELING!",
+        "Recipe for Happiness = Friends, Purpose, Helping Others",
+        "Used to be in a Band! UNIKISTS!",
+        "I took German 101, Ich heiße David",
+        "I can gleek (spit like a snake)",
         "More to come...",
     ];
 
