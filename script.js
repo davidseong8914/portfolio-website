@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Used to be in a Band! UNIKISTS!",
         "I took German 101, Ich heiße David",
         "I can gleek (spit like a snake)",
+        "I can split an apple in half with my bare hands",
         "More to come...",
     ];
 
@@ -64,4 +65,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomFact = funFacts[randomIndex];
         funFactContainer.innerText = randomFact;
     });
+    
+    // Intersection Observer for robot images
+    const robotImages = document.querySelectorAll('.current-robot-image, .current-robot-image-op');
+
+
+    robotImages.forEach(image => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once the animation is applied
+                }
+            });
+        }, observerOptions);
+    
+        observer.observe(image);
+    });
 });
+
