@@ -90,6 +90,10 @@ section{
 }
 
 .home{
+    background: url('Images/MulRan.png') no-repeat;
+    background-position: left bottom; /* Move the background image to the left */
+    background-size: 70%;
+
     display: flex;
     align-items:center;
     justify-content: center;
@@ -138,6 +142,7 @@ span{
     box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    margin: 10rem;
 }
 
 .home-img img:hover{
@@ -717,7 +722,7 @@ b {
 .current_projects .current-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem; /* Adjust the gap between the items as needed */
+    column-gap: 0rem;
     justify-items: center; /* Center the items within their grid cells */
     align-items: start;
 }
@@ -761,6 +766,7 @@ b {
 }
 .current_projects .current-robot-text, .current-robot-text-op {
     color: white;
+    width: 80%;
 }
 
 .current_projects .current-robot-text-op {
