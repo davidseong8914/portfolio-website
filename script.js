@@ -88,5 +88,58 @@ document.addEventListener('DOMContentLoaded', () => {
     
         observer.observe(image);
     });
+
+    // Function to initialize carousel
+    function initializeCarousel(container) {
+        const track = container.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const dotsContainer = container.querySelector('.carousel-dots');
+        let currentIndex = 0;
+        let autoplayInterval;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            track.style.transform = `translateX(-${index * 100}%)`;
+            updateDots();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            goToSlide(currentIndex);
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        startAutoplay();
+        track.addEventListener('mouseenter', stopAutoplay);
+        track.addEventListener('mouseleave', startAutoplay);
+    }
+
+    // Initialize all carousels
+    const carousels = document.querySelectorAll('.carousel-container');
+    carousels.forEach(carousel => initializeCarousel(carousel));
 });
 

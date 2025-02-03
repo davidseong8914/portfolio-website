@@ -31,7 +31,7 @@
         <div class="home-content">
             <h1>Hi, It's <span>David</span></h1>
             <h3 class="text-animation">I'm a <span></span></h3>
-            <p>focusing on <b>Mechanical Design</b> and <b>Robotic Systems</b>. Currently working on autonomous forest/ vegetation traversal as part of  <a href="https://www.cmu.edu/me/robomechanicslab/projects.html" class ="lab">Robomechanics Lab</a>. With dedication to lifelong learning and commitment to give back to the community, I strive to be resourceful and make the world a better place.</p>
+            <p>Currently working on <b>autonomous forest, vegetation traversal</b> as part of  <a href="https://www.cmu.edu/me/robomechanicslab/projects.html" class ="lab">Robomechanics Lab</a>. With dedication to lifelong learning and commitment to give back to the community, I strive to be resourceful and make the world a better place.</p>
 
             <!-- Past research: Turng, BADGER-->
             <!-- Previously, I was part of <a href="https://uwbadgerlab.engr.wisc.edu/" class="lab">BADGER Lab</a> and <a href="https://wid.wisc.edu/people/lih-sheng-tom-turng/" class="lab">Turng Lab</a>, researching the lean angle-speed relationship in legged robots and the implementation of machine learning methods in Polymer research. -->
@@ -70,49 +70,63 @@
     <!-- Current Project Section-->
     <section class="current_projects" id="drive">
         <h2 class="heading">Current Projects</h2>
-        <div class="current-wrapper">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Patrick -->
+                <div class="carousel-slide">
+                    <div class="project-content">
+                        <a href="projects/patrick.html">
+                            <img src="projects/patrick/Patrick_reduced.png" alt="Patrick">
+                        </a>
+                        <div class="project-text">
+                            <a href="projects/patrick.html"><h1>Patrick</h1></a>
+                            <h2>1. Autonomous Driving in Forested Areas</h2>
+                            <p>Patrick is a wheeled robot composed of rover platform from 
+                                <a href="https://roverrobotics.com/?srsltid=AfmBOopKzAYRw6grRFSo07eQDsgIs218BetMt_2Cwcs9Gi_88WIQRC-k">Rover Robotics</a> 
+                                and arm from <a href="https://www.hebirobotics.com/">HEBI</a>. It will use LiDAR, Camera sensor fusion, GPS, and IMU to autonomously traverse forested areas with a p-xrf sensor.</p>
+                            <h2>2. Adaptive Density Drive</h2>
+                            <p>Efficient driving system that uses a density-based speed control for efficient mapping and navigation.</p>
+                            </div>
+                    </div>
+                </div>
+
+                <!-- uwd_18 -->
+                <div class="carousel-slide">
+                    <div class="project-content">
+                        <a href="projects/uwd.html">
+                            <img src="projects/uwd_18/uwd.jpg" alt="HOWL">
+                        </a>
+                        <div class="project-text">
+                            <a href="projects/uwd.html"><h1>Hydrone</h1></a>
+                            <h2>Underwater Drone</h2>
+                            <p>Hydrone is a robot built during CMU's <a href="https://www.build18.org/"> Build 18 </a> competition. Our team is continuing to work on the project for recreational, environmental, and safety applications.</p>
+                        </div>
+                    </div>
+                </div>
 
 
-            <!-- Patrick -->
-            <a href="projects/patrick.html" class ="current-robot-image">
-                <img src="projects/patrick/Patrick_reduced.png" alt="Patrick">
-            </a> 
-            <div class="current-robot-text patrick">
-                <h1>Patrick</h1>
-                <h2>Autonomous Vegetation Traversal</h2>
-                <p>Patrick is a wheeled robot composed of rover platform from <a href="https://roverrobotics.com/?srsltid=AfmBOopKzAYRw6grRFSo07eQDsgIs218BetMt_2Cwcs9Gi_88WIQRC-k">
-                    Rover Robotics</a>, arm from <a href="https://www.hebirobotics.com/">HEBI</a>, and a p-xrf sensor. 
-                    It will use LiDAR, Camera sensor fusion, GPS, and IMU to autonomously traverse forested areas <a href="projects/patrick.html"><b>(...)</b></a>.</p>
+                <!-- Laika -->
+                <div class="carousel-slide">
+                    <div class="project-content">
+                        <a href="projects/laika.html">
+                            <img src="projects/roboclub/compare.jpg" alt="Laika">
+                        </a>
+                        <div class="project-text">
+                            <a href="projects/laika.html"><h1>Laika</h1></a>
+                            <h2>Building a quadruped from scratch</h2>
+                            <p>Laika is a quadruped robot like SPOT that is being built from scratch as part of <a href="https://roboclub.org/">Roboclub</a>. I am part of both the hardware and the software team working on the chassis design and simulation using Gazebo.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Laika -->
-            <div class="current-robot-text-op">
-                <h1>Laika</h1>
-                <h2>Building a quadruped from scratch</h2>
-                <p>Laika is a quadruped robot like SPOT that is being built from scratch as part of <a href="https://roboclub.org/">Roboclub</a>. I am part of both the hardware and the software team working on the chassis design and simulation using Gazebo <a href="projects/laika.html"><b>(...)</b></a>.</p>
-
-            </div>
-            <a href="projects/laika.html" class="current-robot-image-op">
-                <img src="projects/roboclub/compare.jpg" alt="Laika">
-            </a>
-
-            <!-- 3D Prints -->
-            <a href="projects/howl.html" class="current-robot-image">
-                <img src="projects/3d_prints/HOWL.jpeg" alt="HOWL">
-            </a>
-            <div class="current-robot-text">
-                <h1>HOWL</h1>
-                <h2>Hamster Operated Walking Locomotion</h2>
-                <p>HOWL is a quadruped robot inspired by <b>Howl's Moving Castle</b>. HOWL will use a Jansen Linkage, a single actuator walking system, powered by hamster's wheel  <a href="projects/howl.html"><b>(...)</b></a>.</p>
-            </div>
-
+            <div class="carousel-dots"></div>
         </div>
     </section>
     <!-- End of current project section -->
 
     <section class="projects" id="projects">
         <div class="projects-box">
-            <div class = "background-match">
             <h2 class="heading">Robotics Projects</h2>
             <div class="wrapper">
                 <div class="project-item" id="robomaster">
@@ -159,7 +173,15 @@
                         <h2>WYBot</h2>
                     </div>
                 </div>
-            </div>
+
+                <div class="project-item full-box" id="howl">
+                    <div class="robot-image">
+                        <img src="projects/3d_prints/HOWL.jpeg" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>HOWL</h2>
+                    </div>
+                </div>
             </div>
 
             <h2 class = "heading">Software Projects</h2>

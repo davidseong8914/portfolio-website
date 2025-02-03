@@ -84,20 +84,20 @@ body{
 }
 
 section{
-    min-height: 100vh;
+    min-height: 20vh;
     padding: 2rem 12% 10rem;
-    margin-top: 10rem;
+    margin-top: 8rem;
 }
 
 .home{
     background: url('Images/MulRan.png') no-repeat;
-    background-position: left bottom; /* Move the background image to the left */
+    background-position: left bottom;
     background-size: 70%;
-
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     gap: 15rem;
+    padding-top: 3rem;
 }
 
 .home-content{
@@ -106,7 +106,7 @@ section{
     align-items: baseline;
     text-align: left;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 span{
@@ -474,6 +474,8 @@ b {
 
 .projects{
     background: var(--second-bg-color);
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .projects h2{
@@ -482,8 +484,8 @@ b {
 }
 
 .projects .heading{
-    margin-bottom: 5rem;
-    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-top: 0;
 }
 
 .projects-top-margin{
@@ -708,98 +710,128 @@ b {
     }
 }
 
+.current_projects .heading {
+    margin-bottom: 8rem; /* Changed from 8rem to match other sections */
+}
+
 .current_projects {
     background: var(--second-bg-color);
-    padding: 10rem 12%;
+    padding: 5rem 12% 3rem; /* Changed from padding: 5rem 12% 0 to add bottom padding */
+    margin-bottom: 0;
 }
 
-.current_projects .heading {
-    margin-bottom: 5rem;
-    color: white;
-    text-align: center;
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: visible;
+    min-height: 400px;
+    padding-bottom: 0;
 }
 
-.current_projects .current-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 0rem;
-    justify-items: center; /* Center the items within their grid cells */
-    align-items: start;
-}
-
-.current_projects .current-robot-image, .current-robot-image-op {
+.carousel-track {
     display: flex;
-    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+    overflow: visible;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    padding: 0 20px;
+    display: flex;
     align-items: center;
-    width: 450px; /* Set a fixed width */
-    height: auto;
+    min-height: 400px;
+    overflow: visible;
 }
 
-.current_projects .current-robot-image img, .current-robot-image-op img {
-    width: 100%; /* Set a fixed width */
-    height: auto;
-    opacity: 0; /* Start invisible */
+.project-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: 100%; /* Ensure full width */
+    justify-content: center; /* Center horizontally */
+}
+
+.project-content img {
+    width: 50%;
     border-radius: 10px;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    margin-bottom: 50px;
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: contain;
+    max-height: 400px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
-.current_projects .current-robot-image.visible img {
-    animation: moveDiagonally 1s ease-in-out forwards; /* Apply the diagonal animation */
-    opacity: 1; /* Make visible */
+.project-content img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px var(--main-color);
 }
 
-.current_projects .current-robot-image-op.visible img{
-    animation: moveDiagonally_op 1s ease-in-out forwards;
-    opacity: 1;
+.project-text {
+    width: 50%;
 }
 
-.current_projects .current-robot-image img:hover, .current-robot-image-op img:hover {
-    border: 3px solid var(--main-color);
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 0 50px var(--main-color);
+.project-text h1 {
+    font-size: 4rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
 }
 
-.current_projects .patrick{
-    margin-top: 5rem;
-}
-.current_projects .current-robot-text, .current-robot-text-op {
-    color: white;
-    width: 80%;
-}
-
-.current_projects .current-robot-text-op {
-    text-align: right;
-}
-
-.current_projects section {
-    margin: default;
-    padding: default;
-}
-
-.current_projects h2 {
-    color: white;
-    font-size: 8rem;
-}
-
-
-.current_projects .current-robot-text h1, .current-robot-text-op h1 {
-    font-size: 6rem;
-    color:#ffd700;
-}
-
-.current_projects .current-robot-text h2, .current-robot-text-op h2 {
+.project-text h2 {
     font-size: 2.5rem;
-    margin-bottom: 2px;
+    margin-bottom: 1rem;
 }
 
-.current_projects .current-robot-text p, .current-robot-text-op p{
-    font-size: 1.5rem;
+.project-text p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    white-space: normal;
+    margin-bottom: 1.5rem;
 }
 
-.current_projects .current-robot-text b, .current-robot-text-op b{
-    font-size: 1.5rem;
+.project-text p a {
+    display: inline; /* Keep links inline with text */
+    color: var(--main-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-text p a:hover {
+    color: white;
+}
+
+.project-text a {
+    text-decoration: none;
+}
+
+.project-text a h1 {
+    color: var(--main-color);
+    transition: color 0.3s ease;
+}
+
+.project-text a:hover h1 {
+    color: white;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 4rem; /* Increased from 2rem to 4rem */
+    margin-bottom: 0;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: var(--main-color);
 }
 
 .footer{
@@ -1183,5 +1215,33 @@ b {
         display: block;
         margin: 1rem 0;
     }
+}
+
+.project-content a {
+    width: 50%;
+    display: block;
+}
+
+.project-content a img {
+    width: 100%;
+}
+
+/* Add this for the second h2 to have less space above it */
+.project-text h2:not(:first-of-type) {
+    margin-top: 1rem; /* Add some space above subsequent h2s */
+}
+
+/* Add these styles if you want to differentiate between the carousels */
+.projects .carousel-container {
+    margin-bottom: 5rem; /* Add space between sections */
+}
+
+/* Optional: Add different styling for the robotics carousel */
+.projects .carousel-container .project-content img {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); /* Slightly less glow by default */
+}
+
+.projects .carousel-container .project-content img:hover {
+    box-shadow: 0 0 20px var(--main-color); /* Slightly less glow on hover */
 }
 
