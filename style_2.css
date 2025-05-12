@@ -584,7 +584,7 @@ b {
 }
 
 .eighty-box .robot-image img {
-    width: 110%; /* Make the item fill the grid cell */
+    width: 200%; /* Make the item fill the grid cell */
     height: auto; /* Ensure the item maintains the height of the grid cell */
 }
 
