@@ -583,6 +583,11 @@ b {
     height: 100%; /* Ensure the item maintains the height of the grid cell */
 }
 
+.eighty-box .robot-image img {
+    width: 110%; /* Make the item fill the grid cell */
+    height: auto; /* Ensure the item maintains the height of the grid cell */
+}
+
 .full-box .robot-image {
     margin: 0; /* Remove margin */
     padding: 0; /* Remove padding */
