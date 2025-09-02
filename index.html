@@ -41,21 +41,9 @@
         <div class="home-content">
             <h1>Hi, It's <span>David</span></h1>
             <h3 class="text-animation">I'm a <span></span></h3>
-            <p>Currently working on <b>autonomous forest, vegetation traversal</b> as part of  <a href="https://www.cmu.edu/me/robomechanicslab/projects.html" class ="lab">Robomechanics Lab</a>. With dedication to lifelong learning and commitment to give back to the community, I strive to be resourceful and make the world a better place.</p>
-
-            <!-- Past research: Turng, BADGER-->
-            <!-- Previously, I was part of <a href="https://uwbadgerlab.engr.wisc.edu/" class="lab">BADGER Lab</a> and <a href="https://wid.wisc.edu/people/lih-sheng-tom-turng/" class="lab">Turng Lab</a>, researching the lean angle-speed relationship in legged robots and the implementation of machine learning methods in Polymer research. -->
+            <p>Currently working on <b>autonomous driving in heavily vegetated environments</b> as part of  <a href="https://www.cmu.edu/me/robomechanicslab/projects.html" class ="lab">Robomechanics Lab</a>. My goal is to become a full-stack robotics engineer and a product engineer, developing 'fun' products for 'people'. With passion for lifelong learning and a commitment to give back to the community, I strive to be resourceful and make the world a better place.</p>
             
-            <!-- Past industry: Prent, SHInc-->
-            <!-- <br><br> Currently, I am a robotics engineer at <a href=http://www.uisn.co.kr/home/ class ="lab">SHInc</a>, developing a custom power plant inspection payload that will be used with <a href="https://bostondynamics.com/products/spot/">SPOT</a>. </a>Previously part of <a href="https://uwbadgerlab.engr.wisc.edu/" class="lab">BADGER Lab</a> and <a href="https://wid.wisc.edu/people/lih-sheng-tom-turng/" class="lab">Turng Lab</a>, I researched the lean angle-speed relationship in legged robots and the implementation of machine learning methods in Polymer research.  -->
-            
-            <!-- Past Extracurricular-->
-            <!-- Wisconsin Robotics, Roboclub-->
-
-            <!-- Relevant Coursework-->
-            <!-- SLAM, MCT, PCB Fabrication, ML-->
-            
-            <p><br><span>Master's:</span> Carnegie Mellon University | Mechanical Engineering - Robotics and Control</p>
+            <p><br><span>Master's:</span> Carnegie Mellon University | Mechanical Engineering - Perception and Mechatronics</p>
             <p><span>Bachelor's:</span> University of Wisconsin - Madison | Mechanical Engineering; Computer Science</p>
 
             <div class="social-icons">
@@ -83,10 +71,11 @@
         <div class="carousel-container">
             <div class="carousel-track">
                 <!-- Simon -->
+                 
                 <div class="carousel-slide">
                     <div class="project-content">
                         <a href="projects/simon.html">
-                            <video src="projects/Simon/Simon.mp4" autoplay muted loop>
+                            <video src="projects/Simon/Simon.mp4" autoplay muted loop class="simon-video">
                                 Your browser does not support the video tag.
                             </video>
                         </a>
@@ -94,29 +83,12 @@
                             <a href="projects/simon.html"><h1>Simon</h1></a>
                             <h2>Autonomous driving in the forest</h2>
                             <p>Autonomous navigation systems are suboptimal in vegetated environments due to their inability to distinguish between traversable and untraversable vegetation. Through fusion of 2D and 3D perception and proprioceptive sensors, wheeled robots will effectively and efficiently navigate through heavily vegetated environments.</p>
+                            <p>R.I.P. <a href="projects/patrick.html">Patrick</a>.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Patrick -->
-                <div class="carousel-slide">
-                    <div class="project-content">
-                        <a href="projects/patrick.html">
-                            <img src="projects/patrick/Patrick_reduced.png" alt="Patrick">
-                        </a>
-                        <div class="project-text">
-                            <a href="projects/patrick.html"><h1>Patrick</h1></a>
-                            <h2>1. Autonomous Driving in Forested Areas</h2>
-                            <p>Patrick is a wheeled robot composed of rover platform from 
-                                <a href="https://roverrobotics.com/?srsltid=AfmBOopKzAYRw6grRFSo07eQDsgIs218BetMt_2Cwcs9Gi_88WIQRC-k">Rover Robotics</a> 
-                                and arm from <a href="https://www.hebirobotics.com/">HEBI</a>. It will use LiDAR, Camera sensor fusion, GPS, and IMU to autonomously traverse forested areas with a p-xrf sensor.</p>
-                            <h2>2. Adaptive Density Drive</h2>
-                            <p>Efficient driving system that uses a density-based speed control for efficient mapping and navigation.</p>
-                            </div>
-                    </div>
-                </div>
-
-                <!-- Laika -->
+                <!-- Laika
                 <div class="carousel-slide">
                     <div class="project-content">
                         <a href="projects/laika.html">
@@ -128,21 +100,8 @@
                             <p>Laika is a quadruped robot like SPOT that is being built from scratch as part of <a href="https://roboclub.org/">Roboclub</a>. I am part of both the hardware and the software team working on the chassis design and simulation using Gazebo.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Hydrone -->
-                <div class="carousel-slide">
-                    <div class="project-content">
-                        <a href="projects/uwd.html">
-                            <img src="projects/uwd_18/uwd.jpg" alt="Hydrone">
-                        </a>
-                        <div class="project-text">
-                            <a href="projects/uwd.html"><h1>Hydrone</h1></a>
-                            <h2>Underwater Drone</h2>
-                            <p>Hydrone is a robot built during CMU's <a href="https://www.build18.org/"> Build 18 </a> competition. Our team is continuing to work on the project for recreational, environmental, and safety applications.</p>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
@@ -155,7 +114,7 @@
         <div class="projects-box">
             <h2 class="heading">Robotics Projects</h2>
             <div class="wrapper">
-                <div class="project-item" id="proprioceptive">
+                <div class="project-item" id="planning">
                     <div class="robot-image">
                         <video src="projects/planning/Planning thumbnail.mp4" autoplay muted loop>
                             Your browser does not support the video tag.
@@ -169,13 +128,13 @@
 
                 <div class="project-item" id="patrick">
                     <div class="robot-image">
-                        <video src="projects/patrick/Patrick thumbnail.mp4" autoplay muted loop>
+                        <video src="projects/patrick/IMG_1660.MOV" autoplay muted loop>
                             Your browser does not support the video tag.
                         </video>
                     </div>
                     <div class="robot-text">
                         <h2>Patrick</h2>
-                        <p>Autonomous driving robot for forested areas using LiDAR, camera sensor fusion, and adaptive density drive.</p>
+                        <p>Autonomous environmental monitoring robot for forested areas using LiDAR, camera sensor fusion, and adaptive density drive.</p>
                     </div>
                 </div>
 
@@ -191,7 +150,7 @@
                     </div>
                 </div>
 
-                <div class="project-item" id="uwd_18">
+                <div class="project-item" id="uwd">
                     <div class="robot-image">
                         <video src="projects/uwd_18/build18 thumbnail.mov" autoplay muted loop>
                             Your browser does not support the video tag.
@@ -287,7 +246,7 @@
             </div>
 
             <h2 class = "heading">Software Projects</h2>
-            <div class = "wrapper">
+            <div class = "wrapper software-wrapper">
                 <div class="project-item full-box" id="drag">
                     <div class="robot-image">
                         <img src="Images/SPOT.png" alt="">

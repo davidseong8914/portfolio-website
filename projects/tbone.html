@@ -22,48 +22,15 @@
     </header>
 
     <section class="project-details" id="project-details">
-        <!-- Video & PDF Preview Container -->
+        <!-- Documentary Video -->
         <div class="container">
             <div class="media">
-                <!-- Documentary Video Preview -->
                 <iframe
-                    width="100%"
-                    height="350"
                     src="https://www.youtube.com/embed/_cZWqivbB60"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
-
-                <!-- PDF Preview -->
-                <div style="margin-top: 20px; border: 1px solid #ddd; width: 100%;">
-                    <object
-                        data="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf"
-                        type="application/pdf"
-                        width="100%"
-                        height="300">
-                        <div style="padding: 20px; text-align: center;">
-                            <p>It appears your browser doesn't support embedded PDFs.</p>
-                            <a href="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf" target="_blank">
-                                <i class='bx bxs-file-pdf' style="color: #e74c3c; font-size: 2rem;"></i>
-                                <p>Click here to view the PDF</p>
-                            </a>
-                        </div>
-                    </object>
-                </div>
-                
-                <!-- Final Presentation Video Preview -->
-                <div style="margin-top: 20px;">
-                    <iframe
-                        width="100%"
-                        height="250"
-                        src="https://www.youtube.com/embed/x85f9HfAhCY"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                    <p style="text-align: center; margin-top: 5px;">Final Presentation Video</p>
-                </div>
             </div>
             <div class="description">
                 <h2><span>T-Bone: Tail-Based Oscillatory Navigator Explorer</span></h2>
@@ -72,21 +39,55 @@
                     and interchangeable fins. Its design lets us rapidly swap horizontal and vertical profiles to optimize thrust,
                     stability, and maneuverability in water.
                 </p>
-
                 <p>
                     <b>Watch our full documentary:</b>
                     <a href="https://www.youtube.com/watch?v=_cZWqivbB60" target="_blank">
                         YouTube Video <i class='bx bx-play-circle'></i>
                     </a>
                 </p>
+            </div>
+        </div>
 
+        <!-- PDF Technical Report -->
+        <div class="container">
+            <div class="media">
+                <div class="pdf-container">
+                    <object
+                        data="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf"
+                        type="application/pdf">
+                        <div class="pdf-fallback">
+                            <i class='bx bxs-file-pdf'></i>
+                            <p>PDF Preview Not Available</p>
+                            <a href="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf" target="_blank" class="pdf-link">
+                                Click here to view the PDF
+                            </a>
+                        </div>
+                    </object>
+                </div>
+            </div>
+            <div class="description">
+                <h2>Technical Report</h2>
                 <p>
                     <b>Download Technical Report:</b>
                     <a href="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf" target="_blank">
                         PDF <i class='bx bx-download'></i>
                     </a>
                 </p>
+            </div>
+        </div>
 
+        <!-- Final Presentation Video -->
+        <div class="container">
+            <div class="media">
+                <iframe
+                    src="https://www.youtube.com/embed/x85f9HfAhCY"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="description">
+                <h2>Final Presentation</h2>
                 <p>
                     <b>Watch our final presentation:</b>
                     <a href="https://www.youtube.com/watch?v=x85f9HfAhCY" target="_blank">

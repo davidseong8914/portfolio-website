@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Robodave's Portfolio - Project Details</title>
+    <link rel="stylesheet" href="../style_2.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">
+            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+            David <span>Seong</span>
+        </a>
+        <i class='bx bx-menu' id='menu-icon'></i>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../projects.html" class="active">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="project-details" id="project-details">
+        <!-- Simon Video and Description -->
+        <div class="container">
+            <div class="media">
+                <video src="simon/Simon.mp4" autoplay muted loop class="simon-video">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="description">
+                <h2><span>Simon: Autonomous Vegetation Traversal</span></h2>
+                <p>Simon is a Unitree Go2-W that will be used for autonomous navigation for heavily vegetated environments. Unlike traditional perception-based methods that treat all vegetation as untraversable obstacles, Simon uses a novel approach that combines 2D and 3D perception with proprioceptive sensors to distinguish between traversable and untraversable vegetation.</p>
+                <p>This fusion of perception and proprioception enables Simon to navigate through dense vegetation more efficiently, rather than taking suboptimal paths around obstacles. By understanding the true traversability of different vegetation types, Simon can find optimal paths that maximize efficiency while maintaining safety.</p>
+            </div>
+        </div>
+
+        <!-- Carrying on Patrick's Mission -->
+        <div class="container">
+            <div class="media">
+                <div class="side-by-side-images">
+                    <img src="patrick/IMG_3391.JPG" alt="Patrick Robot">
+                    <img src="simon/wildscened_shrub_bag.jpg" alt="Wild Scene Shrub Bag">
+                </div>
+            </div>
+            <div class="description">
+                <h2>Carrying on Patrick's Mission</h2>
+                <p>Building upon the foundation laid by Patrick, Simon, a legged wheeled robot, will carry on Patrick's mission of autonomous environmental exploration.</p>
+                <p>Simon's added agility and capability from the legs will allow it to navigate through dense vegetation more effectively.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
+            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="../index.html">About Me</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+        </ul>
+        <p class="copyright">© David Seong | All Rights Reserved</p>
+    </footer>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

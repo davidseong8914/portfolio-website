@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Robodave's Portfolio - Project Details</title>
+    <link rel="stylesheet" href="../style_2.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">
+            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+            David <span>Seong</span>
+        </a>
+        <i class='bx bx-menu' id='menu-icon'></i>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../projects.html" class="active">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="project-details" id="project-details">
+        <!-- Abstract -->
+        <div class="container">
+            <div class="media">
+                <div class="pdf-container">
+                    <object
+                        data="planning/16350_Final_Project___Traversing_through_unknown_vegetated_environment_using_proprioceptive_sensors.pdf"
+                        type="application/pdf"
+                        width="100%"
+                        height="100%">
+                        <div class="pdf-fallback">
+                            <i class='bx bxs-file-pdf'></i>
+                            <p>PDF Preview Not Available</p>
+                            <a href="planning/16350_Final_Project___Traversing_through_unknown_vegetated_environment_using_proprioceptive_sensors.pdf" target="_blank" class="pdf-link">
+                                Click here to view the PDF
+                            </a>
+                        </div>
+                    </object>
+                </div>
+            </div>
+            <div class="description">
+                <h2><span>Abstract</span></h2>
+                <p>Novel planning approach for robot navigation in vegetated environments. Instead of treating all obstacles as untraversable, our method estimates traversal costs and updates them upon collision using proprioceptive sensors.</p>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="container">
+            <div class="media">
+                <div class="pdf-container">
+                    <object
+                        data="planning/Planning Final Presentation.pdf"
+                        type="application/pdf"
+                        width="100%"
+                        height="100%">
+                        <div class="pdf-fallback">
+                            <i class='bx bxs-file-pdf'></i>
+                            <p>PDF Preview Not Available</p>
+                            <a href="planning/Planning Final Presentation.pdf" target="_blank" class="pdf-link">
+                                Click here to view the PDF
+                            </a>
+                        </div>
+                    </object>
+                </div>
+            </div>
+            <div class="description">                <p>Traditional perception-based navigation methods are too conservative in vegetated environments. Our approach assumes all obstacles are traversable with estimated costs, then updates these costs using proprioceptive sensors upon collision.</p>
+            </div>
+        </div>
+
+        <!-- Simulation Video -->
+        <div class="container">
+            <div class="media">
+                <video src="planning/Planning thumbnail.mp4" autoplay muted loop class="planning-video">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="description">
+                <h2>Simulation Results</h2>
+                <p>End-to-end simulation using ROS2 Humble and Gazebo demonstrates our algorithm's effectiveness in navigating through vegetated environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
+            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="../index.html">About Me</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+        </ul>
+        <p class="copyright">© David Seong | All Rights Reserved</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

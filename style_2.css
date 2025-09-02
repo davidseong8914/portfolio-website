@@ -514,6 +514,7 @@ b {
     margin-bottom: 3rem; /* Increased space between items to prevent overlapping */
     break-inside: avoid; /* Prevent items from breaking across columns */
     page-break-inside: avoid; /* For older browsers */
+    text-align: center; /* Center the text content */
 }
 
 .project-item .robot-image {
@@ -523,10 +524,12 @@ b {
     background: rgba(0, 0, 0, 0.7);
     border: 3px solid rgba(238, 238, 238, 0.2);
     border-radius: 2rem;
-    margin: 0;
+    margin: 0 auto; /* Center the image container */
     padding: 0; /* Removed padding to eliminate gap */
     cursor: pointer;
-    display: block; /* Changed from flex to block to eliminate centering gap */
+    display: flex; /* Changed back to flex for centering */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
     color: white;
     transition: 0.2s ease-in-out;
     overflow: hidden;
@@ -669,6 +672,9 @@ b {
 .project-details .media {
     flex: 3; /* Takes up more space */
     margin-right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-details .media img, .project-details .media video {
@@ -678,9 +684,146 @@ b {
 }
 
 .project-details .patrick img {
-    width: 100%;
+    width: 60%; /* Reduced from 100% to make image smaller */
     border-radius: 1rem;
     box-shadow: 0 0 10px var(--main-color);
+}
+
+/* Make the second image smaller too */
+.project-details .container:nth-child(2) .media img {
+    width: 60%; /* Reduced size for IMG_5593.jpg */
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+/* Side by side images styling */
+.side-by-side-images {
+    display: flex;
+    gap: 2rem; /* Space between images */
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    max-width: 500px; /* Prevent images from exceeding text area */
+    margin: 0 auto; /* Center the image container */
+}
+
+.side-by-side-images img {
+    width: auto; /* Adjusted width to be proportional to height */
+    height: auto; /* Fixed height as you set */
+    object-fit: cover; /* Cover the area completely */
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--main-color);
+    transition: transform 0.3s ease;
+    flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+.side-by-side-images img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Single video styling for consistent layout */
+.single-video {
+    width: 400px; /* Fixed width */
+    height: 400px; /* Make it square */
+    object-fit: cover; /* Cover the area completely */
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--main-color);
+    transition: transform 0.3s ease;
+}
+
+.single-video:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Specific styling for the planning video to make it square */
+.planning-video {
+    width: 400px !important; /* Fixed width with !important to override */
+    height: 400px !important; /* Fixed height to make it square with !important */
+    max-width: 400px !important; /* Ensure max-width doesn't override */
+    max-height: 400px !important; /* Ensure max-height doesn't override */
+    object-fit: cover; /* Cover the area completely */
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--main-color);
+    transition: transform 0.3s ease;
+    display: block; /* Ensure block display */
+}
+
+.planning-video:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* T-Bone project page styling - Horizontal layout */
+.project-details .media iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--main-color);
+    transition: transform 0.3s ease;
+}
+
+.project-details .media iframe:hover {
+    transform: scale(1.02);
+}
+
+.pdf-container {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    border: 2px solid var(--main-color);
+    border-radius: 1rem;
+    margin: 0 auto;
+    background: var(--second-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-container object {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+    object-fit: contain; /* Ensure PDF fits within container */
+}
+
+/* Alternative PDF styling for better compatibility */
+.pdf-container embed {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+}
+
+.pdf-fallback {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.pdf-fallback i {
+    font-size: 4rem;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+.pdf-fallback p {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.pdf-link {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--main-color);
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+}
+
+.pdf-link:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: scale(1.05);
 }
 
 .project-details .description {
@@ -783,12 +926,12 @@ b {
 }
 
 .project-content video {
-    width: 80%; /* Increased from 75% to make Simon video even larger */
-    max-width: 80%; /* Ensure video doesn't exceed container width */
+    width: 100%; /* Increased from 75% to make Simon video even larger */
+    max-width: 100%; /* Ensure video doesn't exceed container width */
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    object-fit: cover; /* Changed from contain to cover to fill the container completely */
-    max-height: 700px; /* Increased from 600px for larger video */
+    object-fit: cover; /* Use contain like images for better aspect ratio */
+    max-height: auto; /* Match carousel image height for consistent spacing */
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     display: block; /* Ensure block display to eliminate any inline spacing */
     margin: 0; /* Remove any default margins */
@@ -1271,6 +1414,31 @@ b {
 /* Add these styles if you want to differentiate between the carousels */
 .projects .carousel-container {
     margin-bottom: 5rem; /* Add space between sections */
+}
+
+/* Software Projects - Use grid layout instead of columns for better alignment */
+.projects .software-wrapper {
+    column-count: 1; /* Override the 3-column layout */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects .software-wrapper .project-item {
+    display: block; /* Override inline-block for grid */
+    width: 100%;
+    margin-bottom: 0; /* Remove margin for grid */
+    break-inside: auto; /* Allow grid to handle layout */
+    text-align: center; /* Center the text content */
+}
+
+.projects .software-wrapper .project-item .robot-image {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    margin: 0 auto; /* Center the image container */
 }
 
 /* Optional: Add different styling for the robotics carousel */
