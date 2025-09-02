@@ -8,6 +8,16 @@
 
     <link rel="stylesheet" href="style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQYT5B9N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PHQYT5B9N7');
+    </script>
 </head>
 
 <body>
@@ -72,6 +82,22 @@
         <h2 class="heading">Current Projects</h2>
         <div class="carousel-container">
             <div class="carousel-track">
+                <!-- Simon -->
+                <div class="carousel-slide">
+                    <div class="project-content">
+                        <a href="projects/simon.html">
+                            <video src="projects/Simon/Simon.mp4" autoplay muted loop>
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div class="project-text">
+                            <a href="projects/simon.html"><h1>Simon</h1></a>
+                            <h2>Autonomous driving in the forest</h2>
+                            <p>Autonomous navigation systems are suboptimal in vegetated environments due to their inability to distinguish between traversable and untraversable vegetation. Through fusion of 2D and 3D perception and proprioceptive sensors, wheeled robots will effectively and efficiently navigate through heavily vegetated environments.</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Patrick -->
                 <div class="carousel-slide">
                     <div class="project-content">
@@ -90,21 +116,6 @@
                     </div>
                 </div>
 
-                <!-- uwd_18 -->
-                <div class="carousel-slide">
-                    <div class="project-content">
-                        <a href="projects/uwd.html">
-                            <img src="projects/uwd_18/uwd.jpg" alt="HOWL">
-                        </a>
-                        <div class="project-text">
-                            <a href="projects/uwd.html"><h1>Hydrone</h1></a>
-                            <h2>Underwater Drone</h2>
-                            <p>Hydrone is a robot built during CMU's <a href="https://www.build18.org/"> Build 18 </a> competition. Our team is continuing to work on the project for recreational, environmental, and safety applications.</p>
-                        </div>
-                    </div>
-                </div>
-
-
                 <!-- Laika -->
                 <div class="carousel-slide">
                     <div class="project-content">
@@ -118,6 +129,21 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Hydrone -->
+                <div class="carousel-slide">
+                    <div class="project-content">
+                        <a href="projects/uwd.html">
+                            <img src="projects/uwd_18/uwd.jpg" alt="Hydrone">
+                        </a>
+                        <div class="project-text">
+                            <a href="projects/uwd.html"><h1>Hydrone</h1></a>
+                            <h2>Underwater Drone</h2>
+                            <p>Hydrone is a robot built during CMU's <a href="https://www.build18.org/"> Build 18 </a> competition. Our team is continuing to work on the project for recreational, environmental, and safety applications.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="carousel-dots"></div>
@@ -129,57 +155,123 @@
         <div class="projects-box">
             <h2 class="heading">Robotics Projects</h2>
             <div class="wrapper">
-                <div class="project-item eighty-box" id="tbone">
+                <div class="project-item" id="proprioceptive">
                     <div class="robot-image">
-                        <img src="projects/t_bone/T_Bone.jpg" alt="T-Bone Robot">
+                        <video src="projects/planning/Planning thumbnail.mp4" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="robot-text">
-                        <h2>T-Bone: Fish Tail Inspired Robot</h2>                    
+                        <h2>Proprioceptive Traversal</h2>
+                        <p>Robotic navigation where instead of treating all obstacles as untraversable, their cost are estimated for an initial path. Upon collision, the cost of the obstacle is updated and the path is recomputed.</p>
+                    </div>
+                </div>
+
+                <div class="project-item" id="patrick">
+                    <div class="robot-image">
+                        <video src="projects/patrick/Patrick thumbnail.mp4" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>Patrick</h2>
+                        <p>Autonomous driving robot for forested areas using LiDAR, camera sensor fusion, and adaptive density drive.</p>
+                    </div>
+                </div>
+
+                <div class="project-item" id="mobot">
+                    <div class="robot-image">
+                        <video src="projects/mobots/mobot thumbnail.MOV" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>Mobot</h2>
+                        <p>Traditional CMU line tracing robot competition entry with autonomous navigation and precision control systems.</p>
+                    </div>
+                </div>
+
+                <div class="project-item" id="uwd_18">
+                    <div class="robot-image">
+                        <video src="projects/uwd_18/build18 thumbnail.mov" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>Hydrone</h2>
+                        <p>Underwater drone project built during CMU's <a href="https://www.build18.org/"> Build 18 </a> competition for recreational, environmental, and safety applications.</p>
+                    </div>
+                </div>
+
+                <div class="project-item eighty-box" id="tbone">
+                    <div class="robot-image">
+                        <video src="projects/t_bone/TBONE_thumbnail.mp4" alt="T-Bone Robot" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>T-Bone: Fish Tail Inspired Robot</h2>
+                        <p>Biomimetic underwater robot inspired by fish tail propulsion, designed for efficient aquatic locomotion and maneuverability.</p>
                     </div>
                 </div>
                 
                 <div class="project-item" id="robomaster">
                     <div class="robot-image">
-                        <img src="Images/Robomaster.png" alt="">
+                        <video src="projects/robomaster/Robomaster_thumbnail.mp4" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="robot-text">
-                        <h2>Wisconsin Robotics<br>RoboMaster</h2>                    
+                        <h2>Wisconsin Robotics<br>RoboMaster</h2>
+                        <p>Competitive robotics team competing in RoboMaster, focusing on autonomous navigation and precision targeting systems.</p>
                     </div>
                 </div>
 
                 <div class="project-item" id="torsobot">
                     <div class="robot-image">
-                        <img src="Images/robot_2.png" alt="">
+                        <video src="projects/torsobot/Torsobot_thumbnail.mov" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="robot-text">
                         <h2>Torsobot</h2>
+                        <p>Self-balancing rimless wheel robot investigating fundamental properties of human walk cycle with enhanced stability using PID control.</p>
                     </div>
                 </div>
 
                 <div class="project-item" id="pbf">
                     <div class="robot-image">
-                        <img src="Images/robot_3.png" alt="">
+                        <video src="projects/pbf/Powder Bed Thumbnail.mov" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="robot-text">
                         <h2>Powder Spreader</h2>
+                        <p>Powder bed fusion manufacturing system created for ML analysis on powder spread conditions and quality control.</p>
                     </div>
                 </div>
 
                 <div class ="project-item" id="cord">
                     <div class ="robot-image">
-                        <img src="Images/cord.png" alt="">
+                        <video src="projects/cord/cord thumbnail.mov" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class = "robot-text">
                         <h2>Cheap Opensource Robot Dog (CORD)</h2>
+                        <p>Open-source quadruped robot platform designed for educational purposes and affordable robotics research.</p>
                     </div>
                 </div>
 
                 <div class="project-item" id="wybot">
                     <div class="robot-image">
-                        <img src="Images/robot_1.png" alt="">
+                        <video src="projects/wybot/WYPD thumbnail.mp4" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div class="robot-text">
                         <h2>WYBot</h2>
+                        <p>Versatile robotic platform designed for multiple applications, featuring modular design and adaptive control systems.</p>
                     </div>
                 </div>
 
@@ -189,6 +281,7 @@
                     </div>
                     <div class="robot-text">
                         <h2>HOWL</h2>
+                        <p>Advanced robotic system designed for autonomous exploration and navigation in challenging environments.</p>
                     </div>
                 </div>
             </div>
