@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Robodave's Portfolio - Return of the Jediode</title>
+    <link rel="stylesheet" href="../style_2.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQYT5B9N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PHQYT5B9N7');
+    </script>
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">
+            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+            David <span>Seong</span>
+        </a>
+        <i class='bx bx-menu' id='menu-icon'></i>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../projects.html" class="active">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="project-details" id="project-details">
+
+        <div class="container">
+            <div class="media">
+                <img src="jediode/jediode_electric_bench.jpg" alt="Jediode Electronics Bench">
+            </div>
+            <div class="description">
+                <h2><span>Return of the Jediode</span></h2>
+                <p>Course project for Advanced Mechatronic Design class focusing on embedded circuitry. Commercial immersive experiences like Savi's workshop are expensive and location-dependent, limiting accessibility. This project brings similar experiences to a broader audience through an affordable, educational platform.</p>
+                <p><br>Built an immersive Star Wars experience like Savi's workshop with a budget under $150. Created a haptic lightsaber with a high quality lighting blade, vibration, sound effects, button controls, and a custom kyber crystal color detector, which were all written from scratch without any libraries. The from-scratch implementation approach maximized educational value, providing hands-on experience with fundamental embedded systems, sensor fusion, and signal processing principles.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="media">
+                <img src="jediode/gummy_detector_1.JPG" alt="Custom Kyber Crystal Color Detector">
+            </div>
+            <div class="description">
+                <h2>Custom Kyber Crystal Color Detector</h2>
+                <p>The heart of the immersive experience is a custom color detection system that identifies different kyber crystal (in our case Haribo Gummy Bears!) colors. This detector uses LEDs and a phototransistor to distinguish between different crystal colors. The specific combination of reflected light intensities determines the color of the gummy and the lightsaber will be lit with the corresponding color.</p>
+                <p><br>All color detection algorithms were developed from scratch without using any color detection libraries, including LED control, phototransistor signal conditioning, and color classification logic. This approach ensures deep understanding of the underlying physics and signal processing principles.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="media">
+                <img src="jediode/imu_1.JPG" alt="IMU Motion Sensor">
+            </div>
+            <div class="description">
+                <h2>Motion Sensing & Haptic Feedback</h2>
+                <p>An IMU (Inertial Measurement Unit) sensor detects lightsaber movements and orientation, enabling responsive sound effects and haptic feedback that react to the user's motions. The vibration motors provide tactile feedback synchronized with sound effects, creating an immersive haptic experience.</p>
+                <p><br>All sensor fusion and motion processing algorithms were implemented from scratch without using any motion processing libraries. This includes orientation estimation, gesture pattern recognition, and real-time feedback control loops that coordinate sensor processing, audio generation, and motor control systems.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="media">
+                <img src="jediode/prototype_1.JPG" alt="Early Prototype">
+            </div>
+            <div class="description">
+                <h2>Prototype Development</h2>
+                <p>The project went through multiple iterations, starting with early prototypes that tested individual subsystems before integration. This iterative development process allowed for refinement of the hilt design, optimization of the color sensor layout, and fine-tuning of the haptic and audio feedback systems to create the final immersive Savi's workshop experience.</p>
+                <p><br>The project was highly effective in achieving its objectives. The system successfully creates an immersive Star Wars experience that rivals commercial offerings while staying within budget. The custom color detection system works reliably, the motion sensing provides responsive feedback, and the haptic integration creates an engaging multi-sensory experience. Every component was carefully selected and integrated to stay within the $150 budget constraint while delivering an immersive experience, requiring creative solutions like using gummy bears as kyber crystals.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
+            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="../index.html">About Me</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+        </ul>
+        <p class="copyright">© David Seong | All Rights Reserved</p>
+    </footer>
+    
+    <script src="../script.js"></script>
+</body>
+</html>
+
