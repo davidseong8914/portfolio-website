@@ -6,6 +6,45 @@
     <title>Robodave's Portfolio - Return of the Jediode</title>
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        .video-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .video-container img {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background: rgba(23, 35, 34, 0.9);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            pointer-events: none;
+        }
+        .video-container:hover .play-button {
+            background: rgba(255, 0, 0, 0.9);
+        }
+        .play-button::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid white;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 4px;
+        }
+    </style>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQYT5B9N7"></script>
@@ -33,47 +72,102 @@
 
     <section class="project-details" id="project-details">
 
-        <div class="container">
-            <div class="media">
-                <img src="jediode/jediode_electric_bench.jpg" alt="Jediode Electronics Bench">
+        <!-- Video Section -->
+        <div class="container" style="margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                <div>
+                    <h3 style="text-align: center; margin-bottom: 1rem; font-size: 2rem; font-weight: bold; color: #fff; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Product Video</h3>
+                    <a href="https://www.youtube.com/watch?v=UW9I1-rcZVI&feature=youtu.be" target="_blank" class="video-container">
+                        <img src="https://img.youtube.com/vi/UW9I1-rcZVI/maxresdefault.jpg" alt="Product Video">
+                        <div class="play-button"></div>
+                    </a>
+                </div>
+                <div>
+                    <h3 style="text-align: center; margin-bottom: 1rem; font-size: 2rem; font-weight: bold; color: #fff; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Explanation Video</h3>
+                    <a href="https://www.youtube.com/watch?v=3KDqaMYb6dk&feature=youtu.be" target="_blank" class="video-container">
+                        <img src="https://img.youtube.com/vi/3KDqaMYb6dk/maxresdefault.jpg" alt="Explanation Video">
+                        <div class="play-button"></div>
+                    </a>
+                </div>
             </div>
-            <div class="description">
+        </div>
+
+        <!-- GitHub Link -->
+        <div class="container" style="margin-bottom: 3rem; display: flex; justify-content: center; align-items: center;">
+            <a href="https://github.com/davidseong8914/StarWarsProject" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: #333; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2rem; font-weight: bold; transition: background 0.3s;" onmouseover="this.style.background='#555'" onmouseout="this.style.background='#333'">
+                <i class='bx bxl-github' style="vertical-align: middle; margin-right: 0.5rem;"></i> View Full Documentation on GitHub
+            </a>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/jediode_electric_bench.jpg" alt="Jediode Electronics Bench" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
                 <h2><span>Return of the Jediode</span></h2>
-                <p>Course project for Advanced Mechatronic Design class focusing on embedded circuitry. Commercial immersive experiences like Savi's workshop are expensive and location-dependent, limiting accessibility. This project brings similar experiences to a broader audience through an affordable, educational platform.</p>
-                <p><br>Built an immersive Star Wars experience like Savi's workshop with a budget under $150. Created a haptic lightsaber with a high quality lighting blade, vibration, sound effects, button controls, and a custom kyber crystal color detector, which were all written from scratch without any libraries. The from-scratch implementation approach maximized educational value, providing hands-on experience with fundamental embedded systems, sensor fusion, and signal processing principles.</p>
+                <p><strong>Team:</strong> Atharva Ramdas, David Seong, Korell Adikpeto, Pubordee Aussavavirojekul, Vrishabh Kenkre</p>
+                <p><br><strong>Course:</strong> Advanced Mechatronic Design 16-878, Carnegie Mellon University</p>
+                <p><br>An all-inclusive, immersive Star Wars project that takes users from building the lightsaber, choosing a crystal, to duel practice against Darth Vader. Built with dual STM32F446ZE Nucleo boards, featuring RGB LED blade (288 LEDs), custom gummy bear color detector, motion-based gameplay with IMU, synchronized audio, haptic feedback, and mechanical flipboard displays—all implemented from scratch without any libraries.</p>
             </div>
         </div>
 
-        <div class="container">
-            <div class="media">
-                <img src="jediode/gummy_detector_1.JPG" alt="Custom Kyber Crystal Color Detector">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/gummy_detector_1.JPG" alt="Custom Kyber Crystal Color Detector" style="width: 100%;">
             </div>
-            <div class="description">
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
                 <h2>Custom Kyber Crystal Color Detector</h2>
-                <p>The heart of the immersive experience is a custom color detection system that identifies different kyber crystal (in our case Haribo Gummy Bears!) colors. This detector uses LEDs and a phototransistor to distinguish between different crystal colors. The specific combination of reflected light intensities determines the color of the gummy and the lightsaber will be lit with the corresponding color.</p>
-                <p><br>All color detection algorithms were developed from scratch without using any color detection libraries, including LED control, phototransistor signal conditioning, and color classification logic. This approach ensures deep understanding of the underlying physics and signal processing principles.</p>
+                <p>Custom color detection system using LEDs and a phototransistor to identify gummy bear colors (red, blue, green, yellow). The lightsaber blade color is set based on the detected crystal. All algorithms implemented from scratch without libraries.</p>
             </div>
         </div>
 
-        <div class="container">
-            <div class="media">
-                <img src="jediode/imu_1.JPG" alt="IMU Motion Sensor">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/imu_1.JPG" alt="IMU Motion Sensor" style="width: 100%;">
             </div>
-            <div class="description">
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
                 <h2>Motion Sensing & Haptic Feedback</h2>
-                <p>An IMU (Inertial Measurement Unit) sensor detects lightsaber movements and orientation, enabling responsive sound effects and haptic feedback that react to the user's motions. The vibration motors provide tactile feedback synchronized with sound effects, creating an immersive haptic experience.</p>
-                <p><br>All sensor fusion and motion processing algorithms were implemented from scratch without using any motion processing libraries. This includes orientation estimation, gesture pattern recognition, and real-time feedback control loops that coordinate sensor processing, audio generation, and motor control systems.</p>
+                <p>MPU6050 IMU detects lightsaber movements for swing detection during gameplay. Vibration motors provide haptic feedback synchronized with sound effects. All sensor fusion and motion processing implemented from scratch.</p>
             </div>
         </div>
 
-        <div class="container">
-            <div class="media">
-                <img src="jediode/prototype_1.JPG" alt="Early Prototype">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/dissected_lightsaber.png" alt="Dissected Lightsaber" style="width: 100%;">
             </div>
-            <div class="description">
-                <h2>Prototype Development</h2>
-                <p>The project went through multiple iterations, starting with early prototypes that tested individual subsystems before integration. This iterative development process allowed for refinement of the hilt design, optimization of the color sensor layout, and fine-tuning of the haptic and audio feedback systems to create the final immersive Savi's workshop experience.</p>
-                <p><br>The project was highly effective in achieving its objectives. The system successfully creates an immersive Star Wars experience that rivals commercial offerings while staying within budget. The custom color detection system works reliably, the motion sensing provides responsive feedback, and the haptic integration creates an engaging multi-sensory experience. Every component was carefully selected and integrated to stay within the $150 budget constraint while delivering an immersive experience, requiring creative solutions like using gummy bears as kyber crystals.</p>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2>RGB LED Blade & Hardware Integration</h2>
+                <p>Two parallel WS2812B Neopixel LED strips (288 LEDs total) with custom PWM + DMA control at 800 kHz. Modular 3D printed hilt houses all electronics. 48-inch polycarbonate blade diffuser for even light distribution.</p>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/state_machine.png" alt="State Machine Flow" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2>Gameplay & State Machine</h2>
+                <p>8-state machine controls the experience: IDLE → SABER_INITIALIZE (color detection) → SABER_TURN_ON → SABER_READY → IN_GAME_WAITING → IN_GAME_PARRYING → END_OF_GAME → SABER_TURN_OFF. Game features 6 rounds of 5 seconds each with directional parrying cues.</p>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/target_board.png" alt="Flipboard Display" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2>Dual Nucleo Architecture & Flipboard Display</h2>
+                <p>Two STM32F446ZE Nucleo boards communicate via GPIO interrupts. Primary Nucleo handles lightsaber (state machine, LEDs, audio, IMU, swing detection, color detection, vibration). Secondary Nucleo controls flipboard displays (directional cues and timer dial) with PID position control.</p>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/clock_board.png" alt="Timer Dial" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2>Technical Constraints</h2>
+                <p>Built entirely from scratch: no libraries, no batteries (tethered), STM32F446ZE only. Custom drivers for I²C, DMA, PWM, ADC, GPIO, timers. Register-level manipulation for all peripherals. Budget: ~$135 excluding filaments.</p>
             </div>
         </div>
 
