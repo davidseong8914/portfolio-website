@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>PESTROLEUM | Biomechanical Naturalism</title>
+<link rel="icon" type="image/png" href="pestroleum/pestroleum_logo.png"/>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQYT5B9N7"></script>
@@ -118,6 +119,17 @@
   .bar-fill:nth-child(8)  { transition-delay: 0.61s; }
   .bar-fill:nth-child(9)  { transition-delay: 0.69s; }
   .bar-fill:nth-child(10) { transition-delay: 0.77s; }
+
+  /* Calcifer spotlight reveal */
+  .calcifer-color {
+    -webkit-mask-image: radial-gradient(circle 160px at var(--cx, -999px) var(--cy, -999px), black 40%, transparent 100%);
+    mask-image: radial-gradient(circle 160px at var(--cx, -999px) var(--cy, -999px), black 40%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .calcifer-reveal:hover .calcifer-color {
+    opacity: 1;
+  }
 </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
@@ -206,15 +218,16 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div class="relative order-2 lg:order-1" id="rat-chart-wrapper">
           <div class="bg-surface-container-highest p-8">
-            <div class="font-headline text-[10px] uppercase tracking-widest opacity-50 mb-5">GLOBAL RAT POPULATION (BILLIONS) — 2015–2024</div>
+            <div class="font-headline text-[10px] uppercase tracking-widest opacity-50 mb-1">URBAN RAT POPULATION INDEX — 2015–2024</div>
+            <div class="font-headline text-[9px] opacity-30 mb-5"> </div>
 
             <div class="flex gap-0">
               <!-- Y-axis -->
               <div class="flex flex-col justify-between pr-2 text-right shrink-0" style="height:200px">
-                <span class="font-headline text-[9px] opacity-50">3.5B</span>
-                <span class="font-headline text-[9px] opacity-50">3.0B</span>
-                <span class="font-headline text-[9px] opacity-50">2.5B</span>
-                <span class="font-headline text-[9px] opacity-50">2.0B</span>
+                <span class="font-headline text-[9px] opacity-50">+390%</span>
+                <span class="font-headline text-[9px] opacity-50">+260%</span>
+                <span class="font-headline text-[9px] opacity-50">+130%</span>
+                <span class="font-headline text-[9px] opacity-50">baseline</span>
               </div>
 
               <div class="flex-1 flex flex-col gap-0">
@@ -230,16 +243,16 @@
                   </div>
                   <!-- Flat bars — direct siblings so nth-child works -->
                   <div id="rat-bars" class="absolute inset-0 flex items-end gap-1">
-                    <div class="bar-fill flex-1 bg-secondary/60" style="height:62.9%"></div>
-                    <div class="bar-fill flex-1 bg-secondary/65" style="height:66.3%"></div>
-                    <div class="bar-fill flex-1 bg-secondary/70" style="height:69.7%"></div>
-                    <div class="bar-fill flex-1 bg-secondary/75" style="height:72.9%"></div>
-                    <div class="bar-fill flex-1 bg-secondary/80" style="height:75.4%"></div>
-                    <div class="bar-fill flex-1 bg-secondary/80" style="height:77.7%"></div>
-                    <div class="bar-fill flex-1 bg-secondary/85" style="height:80.0%"></div>
-                    <div class="bar-fill flex-1 bg-secondary/90" style="height:82.9%"></div>
-                    <div class="bar-fill flex-1 bg-secondary/95" style="height:87.1%"></div>
-                    <div class="bar-fill flex-1 bg-secondary" style="height:91.4%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/40" style="height:18%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/45" style="height:21%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/50" style="height:25%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/55" style="height:31%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/60" style="height:40%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/70" style="height:52%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/75" style="height:63%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/85" style="height:75%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/90" style="height:86%"></div>
+                    <div class="bar-fill flex-1 bg-secondary" style="height:97%"></div>
                   </div>
                 </div>
                 <!-- X-axis labels -->
@@ -291,8 +304,9 @@
 
         <!-- Portrait (constrained width) -->
         <div class="relative shrink-0">
-          <div class="aspect-[3/4] overflow-hidden bg-surface-container-highest">
-            <img class="w-full h-full object-cover grayscale brightness-90" src="pestroleum/calcifer.png" alt="Calcifer — Chief Pilot"/>
+          <div class="aspect-[3/4] overflow-hidden bg-surface-container-highest relative calcifer-reveal" id="calcifer-portrait">
+            <img class="w-full h-full object-cover grayscale brightness-90 absolute inset-0" src="pestroleum/calcifer.png" alt="Calcifer — Chief Pilot"/>
+            <img class="w-full h-full object-cover brightness-90 absolute inset-0 calcifer-color" src="pestroleum/calcifer.png" alt=""/>
           </div>
           <div class="bg-secondary px-4 py-3 text-on-secondary mt-0">
             <span class="font-headline text-[9px] uppercase tracking-widest block">CHIEF PILOT</span>
@@ -417,8 +431,8 @@
 
         <!-- Pesto AI -->
         <div class="border-r border-outline-variant/30 flex flex-col gap-6">
-          <div class="bg-surface-container">
-            <img class="w-full object-contain" src="pestroleum/roadmap/Pesto%20AI.png" alt="Pesto AI"/>
+          <div class="bg-surface-container aspect-[4/3] overflow-hidden">
+            <img class="w-full h-full object-cover" src="pestroleum/roadmap/Pesto%20AI.png" alt="Pesto AI"/>
           </div>
           <div class="px-10 pb-10 flex flex-col gap-6 flex-1">
           <div class="flex items-start justify-between">
@@ -439,8 +453,8 @@
 
         <!-- Rodor X -->
         <div class="border-r border-outline-variant/30 flex flex-col gap-6 bg-surface-container-low">
-          <div class="bg-surface-container">
-            <img class="w-full object-contain" src="pestroleum/roadmap/Rodor%20X.png" alt="Rodor X"/>
+          <div class="bg-surface-container aspect-[4/3] overflow-hidden">
+            <img class="w-full h-full object-cover" src="pestroleum/roadmap/Rodor%20X.png" alt="Rodor X"/>
           </div>
           <div class="px-10 pb-10 flex flex-col gap-6 flex-1">
           <div class="flex items-start justify-between">
@@ -461,8 +475,8 @@
 
         <!-- HOWL Xplorer -->
         <div class="flex flex-col gap-6">
-          <div class="bg-surface-container">
-            <img class="w-full object-contain" src="pestroleum/roadmap/HOWL%20Xplorer.png" alt="HOWL Xplorer"/>
+          <div class="bg-surface-container aspect-[4/3] overflow-hidden">
+            <img class="w-full h-full object-cover" src="pestroleum/roadmap/HOWL%20Xplorer.png" alt="HOWL Xplorer"/>
           </div>
           <div class="px-10 pb-10 flex flex-col gap-6 flex-1">
           <div class="flex items-start justify-between">
@@ -481,6 +495,22 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision: Ratlantis -->
+  <section class="bg-on-surface text-surface overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+      <div class="flex flex-col justify-center px-16 py-24 gap-8">
+        <span class="font-headline text-primary-fixed-dim font-bold text-4xl">VISION</span>
+        <h2 class="font-headline text-5xl lg:text-6xl font-bold tracking-tighter leading-tight uppercase">RATLANTIS.</h2>
+        <p class="font-headline text-[11px] uppercase tracking-widest opacity-40">A world where rodents and people coexist.</p>
+        <p class="font-body text-surface/70 leading-relaxed text-lg max-w-md">Not a future where pests are eliminated — but one where they're integrated. Ratlantis is the long horizon of Pestroleum's work: a symbiotic urban ecosystem where rodent energy powers the infrastructure they inhabit, and the boundary between pest and resource dissolves entirely.</p>
+      </div>
+      <div class="relative overflow-hidden min-h-[400px] lg:min-h-0">
+        <img class="w-full h-full object-cover object-center opacity-80" src="pestroleum/roadmap/Ratlantis.png" alt="Ratlantis — the vision"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-on-surface via-transparent to-transparent"></div>
       </div>
     </div>
   </section>
@@ -533,6 +563,16 @@
   }, { threshold: 0.3 });
   const wrapper = document.getElementById('rat-chart-wrapper');
   if (wrapper) observer.observe(wrapper);
+
+  // Calcifer spotlight reveal
+  const portrait = document.getElementById('calcifer-portrait');
+  if (portrait) {
+    portrait.addEventListener('mousemove', e => {
+      const rect = portrait.getBoundingClientRect();
+      portrait.style.setProperty('--cx', (e.clientX - rect.left) + 'px');
+      portrait.style.setProperty('--cy', (e.clientY - rect.top) + 'px');
+    });
+  }
 </script>
 </body>
 </html>
