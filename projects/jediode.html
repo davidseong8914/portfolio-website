@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Robodave's Portfolio - Return of the Jediode</title>
+    <link rel="stylesheet" href="../style_2.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        .video-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        .video-container img {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background: rgba(23, 35, 34, 0.9);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            pointer-events: none;
+        }
+        .video-container:hover .play-button {
+            background: rgba(255, 0, 0, 0.9);
+        }
+        .play-button::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid white;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 4px;
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQYT5B9N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PHQYT5B9N7');
+    </script>
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">
+            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+            David <span>Seong</span>
+        </a>
+        <i class='bx bx-menu' id='menu-icon'></i>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../projects.html" class="active">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="project-details" id="project-details">
+
+        <!-- Video Section -->
+        <div class="container" style="margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                <div>
+                    <h3 style="text-align: center; margin-bottom: 1rem; font-size: 2rem; font-weight: bold; color: #fff; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Product Video</h3>
+                    <a href="https://www.youtube.com/watch?v=UW9I1-rcZVI&feature=youtu.be" target="_blank" class="video-container">
+                        <img src="https://img.youtube.com/vi/UW9I1-rcZVI/maxresdefault.jpg" alt="Product Video">
+                        <div class="play-button"></div>
+                    </a>
+                </div>
+                <div>
+                    <h3 style="text-align: center; margin-bottom: 1rem; font-size: 2rem; font-weight: bold; color: #fff; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Explanation Video</h3>
+                    <a href="https://www.youtube.com/watch?v=3KDqaMYb6dk&feature=youtu.be" target="_blank" class="video-container">
+                        <img src="https://img.youtube.com/vi/3KDqaMYb6dk/maxresdefault.jpg" alt="Explanation Video">
+                        <div class="play-button"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- GitHub Link -->
+        <div class="container" style="margin-bottom: 3rem; display: flex; justify-content: center; align-items: center;">
+            <a href="https://github.com/davidseong8914/StarWarsProject" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: #333; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2rem; font-weight: bold; transition: background 0.3s;" onmouseover="this.style.background='#555'" onmouseout="this.style.background='#333'">
+                <i class='bx bxl-github' style="vertical-align: middle; margin-right: 0.5rem;"></i> View Full Documentation on GitHub
+            </a>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/jediode_electric_bench.jpg" alt="Jediode Electronics Bench" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2><span>Return of the Jediode</span></h2>
+                <p><strong>Team:</strong> Atharva Ramdas, David Seong, Korell Adikpeto, Pubordee Aussavavirojekul, Vrishabh Kenkre</p>
+                <p><br><strong>Course:</strong> Advanced Mechatronic Design 16-878, Carnegie Mellon University</p>
+                <p><br>An all-inclusive, immersive Star Wars project that takes users from building the lightsaber, choosing a crystal, to duel practice against Darth Vader. Built with dual STM32F446ZE Nucleo boards, featuring RGB LED blade (288 LEDs), custom gummy bear color detector, motion-based gameplay with IMU, synchronized audio, haptic feedback, and mechanical flipboard displays—all implemented from scratch without any libraries.</p>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/gummy_detector_1.JPG" alt="Custom Kyber Crystal Color Detector" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2>Custom Kyber Crystal Color Detector</h2>
+                <p>Custom color detection system using LEDs and a phototransistor to identify gummy bear colors (red, blue, green, yellow). The lightsaber blade color is set based on the detected crystal. All algorithms implemented from scratch without libraries.</p>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/imu_1.JPG" alt="IMU Motion Sensor" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2>Motion Sensing & Haptic Feedback</h2>
+                <p>MPU6050 IMU detects lightsaber movements for swing detection during gameplay. Vibration motors provide haptic feedback synchronized with sound effects. All sensor fusion and motion processing implemented from scratch.</p>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/dissected_lightsaber.png" alt="Dissected Lightsaber" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2>RGB LED Blade & Hardware Integration</h2>
+                <p>Two parallel WS2812B Neopixel LED strips (288 LEDs total) with custom PWM + DMA control at 800 kHz. Modular 3D printed hilt houses all electronics. 48-inch polycarbonate blade diffuser for even light distribution.</p>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/state_machine.png" alt="State Machine Flow" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2>Gameplay & State Machine</h2>
+                <p>8-state machine controls the experience: IDLE → SABER_INITIALIZE (color detection) → SABER_TURN_ON → SABER_READY → IN_GAME_WAITING → IN_GAME_PARRYING → END_OF_GAME → SABER_TURN_OFF. Game features 6 rounds of 5 seconds each with directional parrying cues.</p>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/target_board.png" alt="Flipboard Display" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2>Dual Nucleo Architecture & Flipboard Display</h2>
+                <p>Two STM32F446ZE Nucleo boards communicate via GPIO interrupts. Primary Nucleo handles lightsaber (state machine, LEDs, audio, IMU, swing detection, color detection, vibration). Secondary Nucleo controls flipboard displays (directional cues and timer dial) with PID position control.</p>
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="media" style="max-width: 400px; flex: 0 0 auto;">
+                <img src="jediode/clock_board.png" alt="Timer Dial" style="width: 100%;">
+            </div>
+            <div class="description" style="max-width: 500px; flex: 1 1 400px;">
+                <h2>Technical Constraints</h2>
+                <p>Built entirely from scratch: no libraries, no batteries (tethered), STM32F446ZE only. Custom drivers for I²C, DMA, PWM, ADC, GPIO, timers. Register-level manipulation for all peripherals. Budget: ~$135 excluding filaments.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
+            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="../index.html">About Me</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+        </ul>
+        <p class="copyright">© David Seong | All Rights Reserved</p>
+    </footer>
+    
+    <script src="../script.js"></script>
+</body>
+</html>
+

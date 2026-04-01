@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PESTROLEUM | Biomechanical Naturalism</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQYT5B9N7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PHQYT5B9N7');
+</script>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background": "#fbf9f4",
+          "on-secondary-fixed-variant": "#604100",
+          "on-surface-variant": "#3f493e",
+          "error-container": "#ffdad6",
+          "surface-container": "#f0eee9",
+          "surface-container-low": "#f5f3ee",
+          "primary": "#3d6451",
+          "on-secondary-container": "#6a4800",
+          "tertiary-container": "#767575",
+          "primary-fixed": "#c1ecd4",
+          "on-tertiary-fixed-variant": "#474747",
+          "outline-variant": "#bfcabb",
+          "surface-variant": "#e4e2dd",
+          "outline": "#6f7a6d",
+          "primary-fixed-dim": "#a5d0b9",
+          "inverse-surface": "#30312e",
+          "secondary": "#7e5700",
+          "on-error": "#ffffff",
+          "surface-dim": "#dbdad5",
+          "inverse-on-surface": "#f2f1ec",
+          "on-secondary-fixed": "#281900",
+          "tertiary-fixed": "#e4e2e1",
+          "on-error-container": "#93000a",
+          "on-primary": "#ffffff",
+          "surface-container-high": "#eae8e3",
+          "on-primary-fixed": "#002114",
+          "on-tertiary": "#ffffff",
+          "secondary-fixed-dim": "#ffba38",
+          "surface-tint": "#3f6653",
+          "secondary-fixed": "#ffdeac",
+          "surface-container-lowest": "#ffffff",
+          "secondary-container": "#feb300",
+          "on-tertiary-container": "#fbfeff",
+          "inverse-primary": "#a5d0b9",
+          "surface-container-highest": "#e4e2dd",
+          "on-primary-fixed-variant": "#274e3d",
+          "tertiary-fixed-dim": "#c8c6c5",
+          "on-tertiary-fixed": "#1b1c1c",
+          "error": "#ba1a1a",
+          "on-background": "#1b1c19",
+          "on-primary-container": "#f8fff8",
+          "primary-container": "#557d69",
+          "surface": "#fbf9f4",
+          "surface-bright": "#fbf9f4",
+          "on-surface": "#1b1c19",
+          "on-secondary": "#ffffff",
+          "tertiary": "#5d5c5c"
+        },
+        fontFamily: {
+          "headline": ["Space Grotesk"],
+          "body": ["Newsreader"],
+          "label": ["Space Grotesk"]
+        },
+        borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  * {
+    cursor: url('pestroleum/rat-svgrepo-com.svg') 16 16, auto;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(111, 122, 109, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(111, 122, 109, 0.05) 1px, transparent 1px);
+  }
+  .video-embed iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Bar chart animation */
+  .bar-fill {
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .bar-fill.animated {
+    transform: scaleY(1);
+  }
+  .bar-fill:nth-child(1)  { transition-delay: 0.05s; }
+  .bar-fill:nth-child(2)  { transition-delay: 0.13s; }
+  .bar-fill:nth-child(3)  { transition-delay: 0.21s; }
+  .bar-fill:nth-child(4)  { transition-delay: 0.29s; }
+  .bar-fill:nth-child(5)  { transition-delay: 0.37s; }
+  .bar-fill:nth-child(6)  { transition-delay: 0.45s; }
+  .bar-fill:nth-child(7)  { transition-delay: 0.53s; }
+  .bar-fill:nth-child(8)  { transition-delay: 0.61s; }
+  .bar-fill:nth-child(9)  { transition-delay: 0.69s; }
+  .bar-fill:nth-child(10) { transition-delay: 0.77s; }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary selection:text-on-secondary">
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+  <div class="text-xl font-bold tracking-tighter text-primary font-headline">PESTROLEUM</div>
+  <nav class="hidden md:flex items-center gap-8">
+    <a class="text-primary border-b-2 border-primary pb-1 font-headline text-[12px] uppercase tracking-wider" href="#">ENERGY</a>
+    <a class="text-on-background/70 hover:text-secondary transition-colors duration-200 font-headline text-[12px] uppercase tracking-wider" href="#rodents">RODENTS</a>
+    <a class="text-on-background/70 hover:text-secondary transition-colors duration-200 font-headline text-[12px] uppercase tracking-wider" href="#howl">SOLUTION</a>
+    <a class="text-on-background/70 hover:text-secondary transition-colors duration-200 font-headline text-[12px] uppercase tracking-wider" href="#calcifer">MEET CALCIFER</a>
+  </nav>
+  <a href="../index.html" class="bg-primary text-on-primary px-6 py-2 font-headline font-bold text-[12px] uppercase tracking-widest hover:bg-primary-container transition-all">
+    ← PORTFOLIO
+  </a>
+</header>
+
+<main>
+
+  <!-- Section 1: Hero -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-20 bg-grid">
+    <div class="absolute inset-0 z-0 opacity-25 pointer-events-none flex items-start justify-center">
+      <img class="w-auto h-auto max-w-[170%] object-contain" src="pestroleum/pestroleum_landing.webp" alt="Pestroleum blueprint"/>
+    </div>
+
+    <!-- Viewer Discretion Banner -->
+    <div class="absolute top-20 left-0 right-0 z-20 mx-auto max-w-2xl px-8 mt-4">
+      <div class="border-2 border-error bg-error-container px-6 py-3 flex items-center gap-4">
+        <span class="material-symbols-outlined text-on-error-container">warning</span>
+        <p class="font-headline text-[11px] uppercase tracking-widest text-on-error-container">Viewer Discretion Advised — This project involves wild mice and may contain content some viewers find distressing.</p>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-8 relative z-10 text-center max-w-4xl">
+      <span class="font-headline text-secondary uppercase tracking-[0.3em] text-xs mb-6 block">PROJECT: HOWL™</span>
+      <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-on-surface mb-8 leading-[0.9]">
+        KINETIC ENERGY <br/> <span class="italic font-body font-light text-primary">from</span> RODENT RUNS.
+      </h1>
+      <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto mb-12">
+        Turning pests into renewable energy to power the future of robotics.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="#howl" class="bg-primary text-on-primary px-10 py-5 font-headline font-bold tracking-widest text-sm hover:translate-y-[-2px] transition-transform inline-block">
+          EXPLORE HOWL v1.0
+        </a>
+        <a href="#calcifer" class="border-2 border-primary text-primary px-10 py-5 font-headline font-bold tracking-widest text-sm hover:bg-surface-container-high transition-all inline-block">
+          MEET CALCIFER
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+      <span class="font-headline text-[10px] uppercase tracking-widest">SCROLL TO DISCOVER</span>
+      <span class="material-symbols-outlined">expand_more</span>
+    </div>
+  </section>
+
+  <!-- Section 2: The Energy Crisis -->
+  <section class="py-32 bg-surface-container-low border-y border-outline-variant/10">
+    <div class="container mx-auto px-8">
+      <div class="flex flex-col md:flex-row gap-16 items-start">
+        <div class="md:w-1/3">
+          <span class="font-headline text-primary font-bold text-4xl mb-4 block">01</span>
+          <h2 class="font-headline text-4xl font-bold tracking-tight mb-6">THE AI GRID <br/>CRISIS.</h2>
+          <p class="font-body text-lg text-on-surface-variant">AI model training and datacenter expansion are outpacing every energy grid projection. Renewables can't close the gap. We need a distributed, always-on biological energy source.</p>
+        </div>
+        <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+          <div class="p-10 bg-surface-container-highest border-b-4 border-secondary flex flex-col justify-between h-64">
+            <span class="font-headline text-xs uppercase tracking-widest opacity-60">DATACENTER POWER DEMAND GROWTH</span>
+            <div class="text-6xl font-headline font-bold text-on-surface tracking-tighter">+160%</div>
+            <p class="font-body text-sm italic">YoY increase in AI-driven datacenter electricity demand, 2023–2024</p>
+          </div>
+          <div class="p-10 bg-on-surface text-surface flex flex-col justify-between h-64">
+            <span class="font-headline text-xs uppercase tracking-widest opacity-60 text-surface/60">OF 2030 DATACENTER DEMAND CURRENT GRID CAN SUPPORT</span>
+            <div class="text-6xl font-headline font-bold tracking-tighter">73%</div>
+            <p class="font-body text-sm italic opacity-80">Datacenters need ~1,500 TWh/yr by 2030. Current grid covers ~1,100 TWh — leaving a 27% gap. (IEA, 2024)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: The Rodent Problem -->
+  <section class="py-32 bg-background overflow-hidden" id="rodents">
+    <div class="container mx-auto px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="relative order-2 lg:order-1" id="rat-chart-wrapper">
+          <div class="bg-surface-container-highest p-8">
+            <div class="font-headline text-[10px] uppercase tracking-widest opacity-50 mb-5">GLOBAL RAT POPULATION (BILLIONS) — 2015–2024</div>
+
+            <div class="flex gap-0">
+              <!-- Y-axis -->
+              <div class="flex flex-col justify-between pr-2 text-right shrink-0" style="height:200px">
+                <span class="font-headline text-[9px] opacity-50">3.5B</span>
+                <span class="font-headline text-[9px] opacity-50">3.0B</span>
+                <span class="font-headline text-[9px] opacity-50">2.5B</span>
+                <span class="font-headline text-[9px] opacity-50">2.0B</span>
+              </div>
+
+              <div class="flex-1 flex flex-col gap-0">
+                <!-- Bar area -->
+                <div class="relative" style="height:200px">
+                  <!-- Horizontal grid lines -->
+                  <div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+                    <div class="border-t border-outline-variant/30 w-full"></div>
+                    <div class="border-t border-outline-variant/30 w-full"></div>
+                    <div class="border-t border-outline-variant/30 w-full"></div>
+                    <div class="border-t border-outline-variant/30 w-full"></div>
+                    <div></div>
+                  </div>
+                  <!-- Flat bars — direct siblings so nth-child works -->
+                  <div id="rat-bars" class="absolute inset-0 flex items-end gap-1">
+                    <div class="bar-fill flex-1 bg-secondary/60" style="height:62.9%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/65" style="height:66.3%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/70" style="height:69.7%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/75" style="height:72.9%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/80" style="height:75.4%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/80" style="height:77.7%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/85" style="height:80.0%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/90" style="height:82.9%"></div>
+                    <div class="bar-fill flex-1 bg-secondary/95" style="height:87.1%"></div>
+                    <div class="bar-fill flex-1 bg-secondary" style="height:91.4%"></div>
+                  </div>
+                </div>
+                <!-- X-axis labels -->
+                <div class="flex gap-1 mt-2">
+                  <div class="flex-1 text-center font-headline text-[8px] opacity-50">2015</div>
+                  <div class="flex-1 text-center font-headline text-[8px] opacity-50">2016</div>
+                  <div class="flex-1 text-center font-headline text-[8px] opacity-50">2017</div>
+                  <div class="flex-1 text-center font-headline text-[8px] opacity-50">2018</div>
+                  <div class="flex-1 text-center font-headline text-[8px] opacity-50">2019</div>
+                  <div class="flex-1 text-center font-headline text-[8px] opacity-50">2020</div>
+                  <div class="flex-1 text-center font-headline text-[8px] opacity-50">2021</div>
+                  <div class="flex-1 text-center font-headline text-[8px] opacity-50">2022</div>
+                  <div class="flex-1 text-center font-headline text-[8px] opacity-50">2023</div>
+                  <div class="flex-1 text-center font-headline text-[8px] opacity-50">2024</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-between mt-4 pt-3 border-t border-outline-variant/30">
+              <span class="font-headline text-[9px] opacity-40">Source: Science Advances (2025)</span>
+              <span class="font-headline text-xs font-bold text-secondary">+45% since 2015</span>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2">
+          <span class="font-headline text-primary font-bold text-4xl mb-4 block">02</span>
+          <h2 class="font-headline text-5xl font-bold tracking-tighter mb-8">NATURE'S UNTAPPED <br/>EXECUTIVE FORCE.</h2>
+          <div class="space-y-6 font-body text-xl text-on-surface-variant">
+            <p>There are <strong class="text-on-surface">3 billion rats</strong> on Earth — and growing. A 2025 study found <strong class="text-on-surface">69% of major cities</strong> saw significant increases from 2007–2024. London has 20M rats vs. 9.5M humans. NYC: 3 million. US damage: <strong class="text-on-surface">$27B annually.</strong></p>
+            <p class="font-bold text-on-surface">This is not a pest problem. It is a biological infrastructure opportunity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Meet Calcifer -->
+  <section class="py-32 bg-[#f5f3ee]" id="calcifer">
+    <div class="container mx-auto px-8">
+
+      <!-- Section header -->
+      <div class="mb-12">
+        <span class="font-headline text-primary font-bold text-4xl mb-3 block">04</span>
+        <h2 class="font-headline text-5xl font-bold tracking-tighter leading-tight">BEYOND THE WHEEL: THE HOWL PILOT.</h2>
+      </div>
+
+      <!-- 3-col content: portrait | description+stats | video -->
+      <div class="grid grid-cols-1 lg:grid-cols-[300px_1fr_1fr] gap-10 items-start">
+
+        <!-- Portrait (constrained width) -->
+        <div class="relative shrink-0">
+          <div class="aspect-[3/4] overflow-hidden bg-surface-container-highest">
+            <img class="w-full h-full object-cover grayscale brightness-90" src="pestroleum/calcifer.png" alt="Calcifer — Chief Pilot"/>
+          </div>
+          <div class="bg-secondary px-4 py-3 text-on-secondary mt-0">
+            <span class="font-headline text-[9px] uppercase tracking-widest block">CHIEF PILOT</span>
+            <span class="font-headline text-xl font-bold tracking-tighter">CALCIFER.</span>
+          </div>
+        </div>
+
+        <!-- Description + stats -->
+        <div class="flex flex-col gap-8">
+          <div class="space-y-4 text-lg font-body text-on-surface-variant leading-relaxed">
+            <p>Calcifer is the first biological pilot of HOWL (Hamster Operated Walking Locomotion). His movement inside the spherical cockpit maps directly to the stride of our 10ft bipedal robot.</p>
+            <p class="italic">"Calcifer doesn't just power the machine — he gives it a soul."</p>
+          </div>
+          <div class="flex flex-col gap-5 border-t border-outline-variant/40 pt-6">
+            <div class="border-l-2 border-secondary pl-4">
+              <div class="font-headline font-bold text-xl">0.95 m/s</div>
+              <div class="font-headline text-[10px] uppercase tracking-widest opacity-60 mt-0.5">PEAK SPRINT SPEED</div>
+              <div class="font-headline text-[9px] opacity-35 mt-0.5">70 rotations / 47s trial on 8" wheel</div>
+            </div>
+            <div class="border-l-2 border-secondary pl-4">
+              <div class="font-headline font-bold text-xl">~2.2 mWh</div>
+              <div class="font-headline text-[10px] uppercase tracking-widest opacity-60 mt-0.5">DAILY ENERGY YIELD</div>
+              <div class="font-headline text-[9px] opacity-35 mt-0.5">8 km avg daily run, 22g Roborovski</div>
+            </div>
+            <div class="border-l-2 border-secondary pl-4">
+              <div class="font-headline font-bold text-xl">0.22 bulbs / day</div>
+              <div class="font-headline text-[10px] uppercase tracking-widest opacity-60 mt-0.5">STANDARD LED BULBS POWERED</div>
+              <div class="font-headline text-[9px] opacity-35 mt-0.5">2.2 mWh ÷ 10W LED = 13 min. Yes, 0.22 bulbs.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div class="video-embed aspect-video border border-outline-variant/40 overflow-hidden">
+          <iframe src="https://www.youtube.com/embed/D_KlDay0_-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Calcifer in Action"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Field Research Videos -->
+  <section class="py-32 bg-on-surface text-surface relative overflow-hidden" id="field-research">
+    <div class="absolute inset-0 opacity-10 pointer-events-none bg-grid"></div>
+    <div class="container mx-auto px-8 relative z-10">
+      <div class="text-center mb-16">
+        <span class="font-headline text-secondary uppercase tracking-[0.3em] text-xs mb-6 block">DOCUMENTATION</span>
+        <h2 class="font-headline text-5xl md:text-6xl font-bold tracking-tighter mb-4">FIELD RESEARCH.</h2>
+        <p class="font-body text-xl opacity-70 italic max-w-xl mx-auto">Primary footage from active HOWL™ prototype trials.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="flex flex-col">
+          <div class="video-embed aspect-video bg-surface-container-low/10 border border-surface/20 overflow-hidden">
+            <iframe src="https://www.youtube.com/embed/555tEtFBD00" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Night Camera Trap Testing"></iframe>
+          </div>
+          <div class="p-6 border border-surface/20 border-t-0 flex flex-col gap-2">
+            <span class="font-headline text-[10px] uppercase tracking-widest opacity-40">TRIAL 001 — CAPTURE PHASE</span>
+            <h3 class="font-headline font-bold text-base tracking-tight">Night Camera Trap Testing</h3>
+            <p class="font-body opacity-60 text-sm leading-relaxed">Infrared night footage of a mouse entering the prototype live-trap. First field validation of the capture mechanism.</p>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="video-embed aspect-video bg-surface-container-low/10 border border-surface/20 overflow-hidden">
+            <iframe src="https://www.youtube.com/embed/W2fesVvBCR8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Mouse-Powered Wheel Testing"></iframe>
+          </div>
+          <div class="p-6 border border-surface/20 border-t-0 flex flex-col gap-2">
+            <span class="font-headline text-[10px] uppercase tracking-widest opacity-40">TRIAL 002 — LOCOMOTION PHASE</span>
+            <h3 class="font-headline font-bold text-base tracking-tight">Mouse-Powered Wheel Testing</h3>
+            <p class="font-body opacity-60 text-sm leading-relaxed">Wild mouse drives the prototype HOWL™ wheel. First proof-of-concept for rotational energy generation from wild rodent locomotion. Mouse released post-session.</p>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="video-embed aspect-video bg-surface-container-low/10 border border-surface/20 overflow-hidden">
+            <iframe src="https://www.youtube.com/embed/TF3pAIJVCWM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Energy Harvesting Success"></iframe>
+          </div>
+          <div class="p-6 border border-surface/20 border-t-0 flex flex-col gap-2">
+            <span class="font-headline text-[10px] uppercase tracking-widest opacity-40">TRIAL 003 — HARVEST PHASE</span>
+            <h3 class="font-headline font-bold text-base tracking-tight">Energy Harvesting Success</h3>
+            <p class="font-body opacity-60 text-sm leading-relaxed">Hamster locomotion powers a small LED — closing the full energy conversion loop. Feasibility confirmed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: HOWL + Future Vision -->
+  <section class="py-40 bg-on-surface text-surface overflow-hidden relative" id="howl">
+    <div class="absolute inset-0 opacity-10 pointer-events-none bg-grid"></div>
+    <div class="container mx-auto px-8 relative z-10">
+      <div class="flex flex-col items-center text-center mb-24">
+        <h2 class="font-headline text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-12">HOWL v1.0</h2>
+        <div class="w-full max-w-5xl border border-surface/20 relative overflow-hidden">
+          <div class="video-embed aspect-video">
+            <iframe src="https://www.youtube.com/embed/9PHIIreLy8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="HOWL v1.0 — Bipedal Robot Prototype"></iframe>
+          </div>
+          <div class="absolute top-8 left-8 text-left pointer-events-none">
+            <div class="font-headline text-xs tracking-widest mb-1 bg-on-surface/60 px-2 py-1">PROTOTYPE ALPHA</div>
+            <div class="font-headline text-xs tracking-widest opacity-60 bg-on-surface/60 px-2 py-1 mt-1">DEPLOYMENT: Q4 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="max-w-2xl mx-auto text-center">
+        <h3 class="font-headline text-3xl font-bold mb-6 tracking-tight">NATURE AND MACHINE. IN SYNC.</h3>
+        <p class="font-body text-xl opacity-80 leading-relaxed mb-8">A fleet of HOWL units patrolling urban outskirts — biology and robotics working as one, harvesting energy, maintaining biodiversity corridors.</p>
+        <a href="https://www.linkedin.com/in/davidseong/" target="_blank" class="bg-secondary text-on-secondary px-12 py-5 font-headline font-bold text-sm tracking-widest hover:bg-secondary-container transition-all inline-block">JOIN THE PILOT WAITLIST</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Product Roadmap -->
+  <section class="py-32 bg-background">
+    <div class="container mx-auto px-8">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div>
+          <span class="font-headline text-primary font-bold text-4xl mb-4 block">05</span>
+          <h2 class="font-headline text-5xl font-bold tracking-tighter">PRODUCT ROADMAP.</h2>
+        </div>
+        <p class="font-body text-xl text-on-surface-variant max-w-md italic">Three products. One mission: make rodents the backbone of the next energy and robotics revolution.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-outline-variant/30">
+
+        <!-- Pesto AI -->
+        <div class="border-r border-outline-variant/30 flex flex-col gap-6">
+          <div class="bg-surface-container">
+            <img class="w-full object-contain" src="pestroleum/roadmap/Pesto%20AI.png" alt="Pesto AI"/>
+          </div>
+          <div class="px-10 pb-10 flex flex-col gap-6 flex-1">
+          <div class="flex items-start justify-between">
+            <span class="font-headline text-[10px] uppercase tracking-widest text-secondary border border-secondary px-2 py-1">PHASE 1</span>
+          </div>
+          <div>
+            <h3 class="font-headline font-bold text-2xl tracking-tight mb-1">PESTO AI</h3>
+            <p class="font-headline text-[10px] uppercase tracking-widest opacity-50 mb-4">Intelligent Pest Management</p>
+            <p class="font-body text-on-surface-variant leading-relaxed">AI-powered trap system that learns individual mouse movement patterns, optimizes capture timing, and predicts local population growth — humane by design, lethal to inefficiency.</p>
+          </div>
+          <ul class="font-headline text-[11px] uppercase tracking-widest opacity-60 space-y-2 mt-auto">
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Movement pattern analysis</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Smart detection &amp; capture</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Population prediction model</li>
+          </ul>
+          </div>
+        </div>
+
+        <!-- Rodor X -->
+        <div class="border-r border-outline-variant/30 flex flex-col gap-6 bg-surface-container-low">
+          <div class="bg-surface-container">
+            <img class="w-full object-contain" src="pestroleum/roadmap/Rodor%20X.png" alt="Rodor X"/>
+          </div>
+          <div class="px-10 pb-10 flex flex-col gap-6 flex-1">
+          <div class="flex items-start justify-between">
+            <span class="font-headline text-[10px] uppercase tracking-widest text-secondary border border-secondary px-2 py-1">PHASE 2</span>
+          </div>
+          <div>
+            <h3 class="font-headline font-bold text-2xl tracking-tight mb-1">RODOR X</h3>
+            <p class="font-headline text-[10px] uppercase tracking-widest opacity-50 mb-4">Rodent Power Generator</p>
+            <p class="font-body text-on-surface-variant leading-relaxed">Scalable electromagnetic harvesting units that convert rodent locomotion into grid-ready electricity. Deploy in urban corridors, transit tunnels, and infrastructure margins where pests already thrive.</p>
+          </div>
+          <ul class="font-headline text-[11px] uppercase tracking-widest opacity-60 space-y-2 mt-auto">
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Grid-connected energy output</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Zero-carbon footprint</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Urban-scale deployment</li>
+          </ul>
+          </div>
+        </div>
+
+        <!-- HOWL Xplorer -->
+        <div class="flex flex-col gap-6">
+          <div class="bg-surface-container">
+            <img class="w-full object-contain" src="pestroleum/roadmap/HOWL%20Xplorer.png" alt="HOWL Xplorer"/>
+          </div>
+          <div class="px-10 pb-10 flex flex-col gap-6 flex-1">
+          <div class="flex items-start justify-between">
+            <span class="font-headline text-[10px] uppercase tracking-widest text-on-surface-variant/40 border border-outline-variant px-2 py-1">PHASE 3</span>
+          </div>
+          <div>
+            <h3 class="font-headline font-bold text-2xl tracking-tight mb-1">HOWL XPLORER</h3>
+            <p class="font-headline text-[10px] uppercase tracking-widest opacity-50 mb-4">Biological Locomotion Platform</p>
+            <p class="font-body text-on-surface-variant leading-relaxed">True mobility for rodents — and the machines they power. HOWL Xplorer bridges biological instinct and robotic precision, enabling research, remote navigation, and the next frontier of pet mobility technology.</p>
+          </div>
+          <ul class="font-headline text-[11px] uppercase tracking-widest opacity-60 space-y-2 mt-auto">
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Robotics &amp; research platform</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Pet mobility applications</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check_circle</span> Bio-mechanical navigation</li>
+          </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Pilot CTA -->
+  <section class="py-32 bg-secondary text-on-secondary">
+    <div class="container mx-auto px-8 max-w-4xl text-center">
+      <h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-8 uppercase">READY TO <br/>JOIN THE HARVEST?</h2>
+      <p class="font-body text-2xl mb-12 italic opacity-90">Spots in the HOWL beta are strictly limited.</p>
+      <form class="flex flex-col md:flex-row gap-0">
+        <input class="flex-grow bg-surface-container-lowest text-on-surface p-6 font-headline text-sm tracking-widest border-none focus:ring-2 focus:ring-primary outline-none" placeholder="EMAIL ADDRESS" type="email"/>
+        <a href="https://www.linkedin.com/in/davidseong/" target="_blank" class="bg-on-surface text-surface px-12 py-6 font-headline font-bold text-sm tracking-widest hover:bg-primary transition-all inline-flex items-center justify-center">SIGN UP FOR FIELD NOTES</a>
+      </form>
+      <p class="mt-8 font-headline text-[10px] tracking-widest opacity-60">BY JOINING, YOU AGREE TO OUR BIOLOGICAL PRIVACY TREATY.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-on-surface text-surface py-12 px-8 w-full border-t border-outline-variant/15 flex flex-col md:flex-row justify-between items-start gap-8">
+  <div class="flex flex-col gap-4">
+    <div class="text-2xl font-black text-surface font-headline">PESTROLEUM</div>
+    <p class="font-headline text-[12px] uppercase tracking-widest max-w-xs opacity-60">© 2026 PESTROLEUM. ALL RIGHTS RESERVED.</p>
+    <a href="../index.html" class="font-headline text-[12px] uppercase tracking-widest opacity-40 hover:opacity-100 hover:text-secondary transition-all mt-2">← BACK TO PORTFOLIO</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <span class="font-headline text-xs font-bold tracking-[0.2em] opacity-40">CONNECT</span>
+    <a class="opacity-60 hover:opacity-100 hover:text-secondary transition-all flex items-center gap-2 font-headline text-[12px] uppercase tracking-widest" href="https://www.linkedin.com/in/davidseong/" target="_blank">
+      <span class="material-symbols-outlined">public</span> LinkedIn
+    </a>
+  </div>
+</footer>
+
+<!-- April Fools Banner -->
+<div class="w-full bg-secondary text-on-secondary py-5 px-8 text-center">
+  <p class="font-headline text-sm tracking-widest">April Fools! But do reach out if you think the project is interesting.</p>
+</div>
+
+<script>
+  // Trigger bar chart animation when scrolled into view
+  const bars = document.querySelectorAll('#rat-bars .bar-fill');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        bars.forEach(bar => bar.classList.add('animated'));
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  const wrapper = document.getElementById('rat-chart-wrapper');
+  if (wrapper) observer.observe(wrapper);
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robodave's Portfolio - Project Details</title>
+    <link rel="stylesheet" href="../style_2.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQYT5B9N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PHQYT5B9N7');
+    </script>
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">
+            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+            David <span>Seong</span>
+        </a>
+        <i class='bx bx-menu' id='menu-icon'></i>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../projects.html" class="active">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="project-details" id="project-details">
+
+        <div class="container">
+            <div class="media patrick">
+                <div class="side-by-side-images">
+                    <img src="patrick/IMG_3387 2.JPG" alt="Patrick Robot">
+                    <img src="patrick/IMG_0577.JPG" alt="Patrick in Action">
+                </div>
+            </div>
+            <div class="description">
+                <h2><span>Adaptive sampling for environmental monitoring</span></h2>
+                <p>Patrick is a wheeled robot composed of rover platform from <a href="https://roverrobotics.com/?srsltid=AfmBOopKzAYRw6grRFSo07eQDsgIs218BetMt_2Cwcs9Gi_88WIQRC-k">Rover Robotics</a>, arm from <a href="https://www.hebirobotics.com/">HEBI</a>, and a p-xrf sensor. It is currently being used to test adaptive path planning algorithms for a soil sampling project.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="media">
+                <video src="patrick/IMG_1660.MOV" autoplay muted loop class="single-video"></video>
+                <div class="pdf-container">
+                    <object
+                        data="patrick/SLAM_Final_Project.pdf"
+                        type="application/pdf"
+                        width="100%"
+                        height="100%">
+                        <div class="pdf-fallback">
+                            <i class='bx bxs-file-pdf'></i>
+                            <p>PDF Preview Not Available</p>
+                            <a href="patrick/SLAM_Final_Project.pdf" target="_blank" class="pdf-link">
+                                Click here to view the PDF
+                            </a>
+                        </div>
+                    </object>
+                </div>
+            </div>
+            <div class="description">
+                <h2>Adaptive Density Drive (ADD)</h2>
+                <p>ADD is an efficient driving system that adaptively adjusts its speed based on the density of the point cloud around it to efficiently navigate through dense environments.</p>
+                <p><a href="https://github.com/davidseong8914/SLAM_project">Github Repo</a></p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="media">
+                <div class="side-by-side-images">
+                    <img src="patrick/IMG_3391.JPG" alt="Project Image 1">
+                    <img src="patrick/IMG_3393.JPG" alt="Project Image 2">
+                </div>
+            </div>
+            <div class="description">
+                <h2>Autonomous Vegtation Navigation</h2>
+                <p>Most of our environmental monitoring efforts were performed in flat areas. However, in most exploration missions, robots will need to navigate through unstructured environments. </p>
+                <p>We are currently working on an autonomous vegetation navigation system that will allow Patrick to navigate through unstructured environments through fusion of 2D and 3D perception and proprioceptive sensors.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="media">
+                <div class="side-by-side-images">
+                    <img src="patrick/IMG_5593.jpg" alt="Project Image 1">
+                    <img src="patrick/IMG_5604.jpg" alt="Project Image 2">
+                </div>
+            </div>
+            <div class="description">
+                <h2>The Flood</h2>
+                <p>March 6th. 2025. There was a flood in our lab building due to a leaking pipe. Our whole lab was flooded with sewage water. Most of our equipment and robots, including Patrick, were destroyed.</p>
+                <p>Now we are working with <a href="simon.html">Simon</a> to continue Patrick's mission.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="media">
+                <iframe width="560" height="505" src="https://www.youtube.com/embed/LiHjLF-5Ndg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="description">
+                <h2>Silly Walks 2024</h2>
+                <p>Won Sillywalks 2024 with "The Handstand". RML tradition where new team members use one of lab robots and demonstrate their best "silly walk".</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
+            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="../index.html">About Me</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+        </ul>
+        <p class="copyright">© David Seong | All Rights Reserved</p>
+    </footer>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Robodave's Portfolio</title>
+    <link rel="icon" href="david_seong_logo.png" type="image/png">
+
+    <link rel="stylesheet" href="style_2.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQYT5B9N7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PHQYT5B9N7');
+    </script>
+    
+</head>
+
+<body>
+    <header class="header">
+        <!-- <a href="#home" class="logo">David <span>Seong</span></a> -->
+        <a href="#home" class="logo">
+            <img src="robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+            David <span>Seong</span>
+        </a>
+
+        <i class='bx bx-menu' id='menu-icon'></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="projects.html">Projects</a>
+            <!-- <a href="education.html">Education</a> -->
+            <a href="contact.html"> Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, It's <span>David</span></h1>
+            <h3 class="text-animation">I'm a <span></span></h3>
+            <p>Currently working on <b>autonomous driving in heavily vegetated environments</b> as part of  <a href="https://www.cmu.edu/me/robomechanicslab/projects.html" class ="lab">Robomechanics Lab</a>. My goal is to become a full-stack roboticist and a product engineer, developing 'fun' techy products for 'people'. With passion for lifelong learning and a commitment to give back to the community, I strive to be resourceful and make the world a better place.</p>
+            
+            <p><br><span>Master's:</span> Carnegie Mellon University | Mechanical Engineering - Perception and Mechatronics</p>
+            <p><span>Bachelor's:</span> University of Wisconsin - Madison | Mechanical Engineering; Computer Science</p>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+            </div>
+
+            <div class="btn-group">
+                <a href="#" class="btn" id="fun-fact-btn">Fun fact about me!</a>
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+            <div id="fun-fact-container"></div> <!-- Add this line -->
+        </div>
+        <div class="home-img">
+            <img src="image_1_reduced.webp" alt="">
+        </div>
+    </section>
+
+
+    <!-- Current Project Section-->
+    <section class="current_projects" id="drive">
+        <h2 class="heading">Current Projects</h2>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Simon -->
+                 
+                <div class="carousel-slide">
+                    <div class="project-content">
+                        <a href="projects/simon.html">
+                            <video src="projects/Simon/Simon.mp4" autoplay muted loop class="simon-video">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div class="project-text">
+                            <a href="projects/simon.html"><h1>Simon</h1></a>
+                            <h2>Autonomous driving in the forest</h2>
+                            <p>Autonomous navigation systems are suboptimal in vegetated environments due to their inability to distinguish between traversable and untraversable vegetation. Through fusion of 2D and 3D perception and proprioceptive sensors, wheeled robots will effectively and efficiently navigate through heavily vegetated environments.</p>
+                            <p>R.I.P. <a href="projects/patrick.html">Patrick</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+
+                    <div class="project-content">
+                        <a href="projects/jediode.html">
+                            <img src="projects/jediode/Jediode.jpg" alt="Jediode">
+                        </a>
+                        <div class="project-text">
+                            <h2>Return of the Jediode</h2>
+                            <p>An all-inclusive, immersive Star Wars project that takes users from building the lightsaber, choosing a crystal, to duel practice against Darth Vader. Focuses on embedded coding, mechatronic components, and sensor fusion implemented from scratch without any libraries.</p>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="carousel-slide">
+
+                    <div class="project-content">
+                        <a href="projects/e_ducati_on.html">
+                            <img src="projects/e_ducati_on/proto_2_2.JPG" alt="Education Robotics">
+                        </a>
+                        <div class="project-text">
+                            <h2>E-Ducati-On: An Educational Robotics Platform</h2>
+                            <p>E-Ducati-On is an educational robotics platform designed to teach students about robotics, programming, and controls. Most self-balancing bike systems are either open source and passive, or expensive and closed source. Our team built a Ducati based educational platform that is not only exciting and capable of performing stunts, but also features a visual interface and adjustable control parameters, enabling students to learn control theory through hands-on experience.</p>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="carousel-slide">
+
+                    <div class="project-content">
+                        <a href="projects/pestroleum.html">
+                            <img src="projects/pestroleum/pet_mobility.PNG" alt="Pestroleum">
+                        </a>
+                        <div class="project-text">
+                            <h2>Pestroleum/Petmobility: A Rodent-Powered Energy & Robotics Startup</h2>
+                            <p>An innovative concept combining pest management with renewable energy generation.</p>
+                            </div>
+                        </div>
+                </div>
+
+                <!-- Laika
+                <div class="carousel-slide">
+                    <div class="project-content">
+                        <a href="projects/laika.html">
+                            <img src="projects/roboclub/compare.jpg" alt="Laika">
+                        </a>
+                        <div class="project-text">
+                            <a href="projects/laika.html"><h1>Laika</h1></a>
+                            <h2>Building a quadruped from scratch</h2>
+                            <p>Laika is a quadruped robot like SPOT that is being built from scratch as part of <a href="https://roboclub.org/">Roboclub</a>. I am part of both the hardware and the software team working on the chassis design and simulation using Gazebo.</p>
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+
+            <div class="carousel-dots"></div>
+        </div>
+    </section>
+    <!-- End of current project section -->
+
+    <section class="projects" id="projects">
+        <div class="projects-box">
+            <h2 class="heading">Robotics Projects</h2>
+            <div class="wrapper">
+                <div class="project-item" id="planning">
+                    <div class="robot-image">
+                        <video src="projects/planning/Planning thumbnail.mp4" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>Proprioceptive Traversal</h2>
+                        <p>Robotic navigation where instead of treating all obstacles as untraversable, their cost are estimated for an initial path. Upon collision, the cost of the obstacle is updated and the path is recomputed.</p>
+                    </div>
+                </div>
+
+                <div class="project-item" id="patrick">
+                    <div class="robot-image">
+                        <video src="projects/patrick/IMG_1660.MOV" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>Patrick</h2>
+                        <p>Autonomous environmental monitoring robot for forested areas using LiDAR, camera sensor fusion, and adaptive density drive.</p>
+                    </div>
+                </div>
+
+                <div class="project-item" id="mobot">
+                    <div class="robot-image">
+                        <video src="projects/mobots/mobot thumbnail.MOV" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>Mobot</h2>
+                        <p>Traditional CMU line tracing robot competition entry with autonomous navigation and precision control systems.</p>
+                    </div>
+                </div>
+
+                <div class="project-item" id="uwd">
+                    <div class="robot-image">
+                        <video src="projects/uwd_18/build18 thumbnail.mov" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>Hydrone</h2>
+                        <p>Underwater drone project built during CMU's <a href="https://www.build18.org/"> Build 18 </a> competition for recreational, environmental, and safety applications.</p>
+                    </div>
+                </div>
+
+                <div class="project-item eighty-box" id="tbone">
+                    <div class="robot-image">
+                        <video src="projects/t_bone/TBONE_thumbnail.mp4" alt="T-Bone Robot" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>T-Bone: Fish Tail Inspired Robot</h2>
+                        <p>Biomimetic underwater robot inspired by fish tail propulsion, designed for efficient aquatic locomotion and maneuverability.</p>
+                    </div>
+                </div>
+                
+                <div class="project-item" id="robomaster">
+                    <div class="robot-image">
+                        <video src="projects/robomaster/Robomaster_thumbnail.mp4" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>Wisconsin Robotics<br>RoboMaster</h2>
+                        <p>Competitive robotics team competing in RoboMaster, focusing on autonomous navigation and precision targeting systems.</p>
+                    </div>
+                </div>
+
+                <div class="project-item" id="torsobot">
+                    <div class="robot-image">
+                        <video src="projects/torsobot/Torsobot_thumbnail.mov" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>Torsobot</h2>
+                        <p>Self-balancing rimless wheel robot investigating fundamental properties of human walk cycle with enhanced stability using PID control.</p>
+                    </div>
+                </div>
+
+                <div class="project-item" id="pbf">
+                    <div class="robot-image">
+                        <video src="projects/pbf/Powder Bed Thumbnail.mov" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>Powder Spreader</h2>
+                        <p>Powder bed fusion manufacturing system created for ML analysis on powder spread conditions and quality control.</p>
+                    </div>
+                </div>
+
+                <div class ="project-item" id="cord">
+                    <div class ="robot-image">
+                        <video src="projects/cord/cord thumbnail.mov" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class = "robot-text">
+                        <h2>Cheap Opensource Robot Dog (CORD)</h2>
+                        <p>Open-source quadruped robot platform designed for educational purposes and affordable robotics research.</p>
+                    </div>
+                </div>
+
+                <div class="project-item" id="wybot">
+                    <div class="robot-image">
+                        <video src="projects/wybot/WYPD thumbnail.mp4" autoplay muted loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="robot-text">
+                        <h2>WYBot</h2>
+                        <p>Versatile robotic platform designed for multiple applications, featuring modular design and adaptive control systems.</p>
+                    </div>
+                </div>
+
+                <div class="project-item full-box" id="howl">
+                    <div class="robot-image">
+                        <img src="projects/3d_prints/HOWL.jpeg" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>HOWL</h2>
+                        <p>Advanced robotic system designed for autonomous exploration and navigation in challenging environments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class = "heading">Software Projects</h2>
+            <div class = "wrapper software-wrapper">
+                <div class="project-item full-box" id="drag">
+                    <div class="robot-image">
+                        <img src="Images/SPOT.png" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>ComputerVision Solution for<br>Automated Power Plant Inspection</h2>
+                    </div>
+                </div>
+                <div class="project-item full-box" id="moldex">
+                    <div class="robot-image">
+                        <img src="Images/moldex.png" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>Learning with Moldex</h2>
+                    </div>
+                </div>
+
+                <div class="project-item full-box" id="pbf">
+                    <div class="robot-image">
+                        <img src="Images/PBF_ML.png" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>Learning for Powder Bed Fusion</h2>
+                    </div>
+                </div>
+
+                <div class="project-item full-box" id="unity">
+                    <div class="robot-image">
+                        <img src="Images/Unity.jpeg" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>Unity Based Infantry Army Training Simulation</h2>
+                    </div>
+                </div>
+
+            </div>
+            <h2 class="heading">Free Build Projects</h2>
+            <div class="wrapper">
+
+                <div class="project-item large" id="azsz2">
+                    <div class="robot-image">
+                        <img src="Images/ASZS2.jpeg" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>Recycled Newspaper Mache Canoe</h2>
+                    </div>
+                </div>
+
+                <div class="project-item large" id="azsz1">
+                    <div class="robot-image">
+                        <img src="Images/AZSZ1.png" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>Recycled Arizona "Can"oe</h2>
+                    </div>
+                </div>
+
+                <div class="project-item large" id="bambu">
+                    <div class="robot-image">
+                        <img src="projects/3d_prints/A1_printer.webp" alt="">
+                    </div>
+                    <div class="robot-text">
+                        <h2>3D Print Projects</h2>
+                    </div>
+                </div>
+
+                <!-- Additional project2-item boxes here if needed-->
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <div class="input-group">
+                <input type="hidden" name="access_key" value="574ad4e4-96d9-487b-9585-cf995b9a619f">
+                <div class="input-box">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" name="phone" placeholder="Phone Number">
+                    <input type="text" name="subject" placeholder="Subject">
+                </div>
+            </div>
+            <div class="input-group-2">
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </div>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <!-- <a href="#"><img src="crescent.png" alt="logo"></a> -->
+            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
+            <!-- <a href="#"><i class='bx bxl-instagram'></i></a> -->
+            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        </div>
+
+        <ul class="list">
+            <li>
+                <a href="#home">About Me</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+            <li>
+                <a href="projects.html">Projects</a>
+            </li>
+        </ul>
+        <p class="copyright">
+            © David Seong | All Rights Reserved
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
