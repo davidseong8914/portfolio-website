@@ -1,0 +1,34 @@
+게이지 탐지 결과 |  Gauge Detection Results
+_______________________________________
+
+총 1개의 게이지가 탐지되었습니다. | 1 gauges detected.
+
+1번 게이지 | Gauge no. 1:
+--------------------------
+Gauge Type: Digital Gauge
+
+--- 이미지 처리내역 | Process Details: ---
+YOLO Total Digit Read: 
+YOLO detected 4 digits: "0002"
+----------------------
+SSOCR Total Digit Read: 
+SSOCR detected 0 digits
+----------------------
+YOLO Segment Digit Read: 
+YOLO read 4 digits: "0002"
+----------------------
+SSOCR Segment Digit Read: 
+SSOCR read 0 digits
+----------------------
+Verified Gauge Reading: 0002
+Verified by:
+ - Total YOLO - 
+ - Segment YOLO - 
+----------------------
+Period detected
+----------------------
+Minus sign not detected
+----------------------
+계기값 | Gauge Value: 0.002
+-------------------------------
+

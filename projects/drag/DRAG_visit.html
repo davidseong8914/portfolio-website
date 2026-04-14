@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAG Process Visualization</title>
+    <link rel="stylesheet" href="static/DRAG_visit.css">
+    <link rel="icon" href="static/gauge_icon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href ="https://www.davidseong.com">
+            <img src="static/img/david_seong_logo.png" alt="David Seong Logo" class="logo_1">
+            </a>
+            <div class="header-text">
+                <h1>DRAG</h1>
+                <h2><b>D</b>etection and <b>R</b>eading of <b>A</b>nalog (Digital) <b>G</b>auges</h2>
+            </div>
+            <a href ="http://www.uisn.co.kr/home/">
+            <img src="static/img/shinc.png" alt="SHInc Logo" class="logo_2">
+            </a>
+        </div>
+        <div class="author-info">
+            <p>By: <b>David Seong & SHInc</b></p>
+            <p>Visit our <a href="http://www.uisn.co.kr/home/">website</a> for more information</p>
+        </div>
+    </header>
+    <main>
+        <div class="process-column">
+        <section id="Description">
+            <h2>Description | 설명</h2>
+            <p>To enhance automation, safety, and reduce fatigue in power plant inspections, I am developing a solution integrating robotics and AI technologies with a focus on automating gauge inspections. Given the large number of gauges, mobile robotic units will replace fixed CCTV cameras to provide efficient monitoring. Furthermore, due to the diversity of gauge type, condition, wear, effective processing of these images will be required for accurate inspection. The developed solution model utilizes object detection AI models, image analysis, and OCR methods to accurately inspect and analyze gauges.</p>
+            <p>발전소 점검원들의 피로도와 사고 위험을 줄이기 위해 로봇과 인공지능 기술을 통합한 솔루션을 개발하고 있습니다. 다양한 종류와 많은 양의 계측기 때문에 고정된 CCTV 대신 이동식 로봇을 사용하여 효율적으로 설비를 감시할 것입니다. 본 솔루션 모델은 객체 탐지 AI, 이미지 분석 및 OCR 기술을 활용하여 계측기를 정확하게 추출하고 분석합니다.</p>
+        </section>
+        <section id="Description">
+            <h2>Try our tool | 직접 체험해보기</h2>
+            <a href="#">
+                <img src="static/img/DRAG_demo.gif" alt="DRAG Demo" class="demo">
+            </a>
+            <p class="gif-description">Try out our interactive <a href="#">DEMO</a>!<br>데모 체험해보기</p>
+        </section>
+        </div>
+
+        <section id="Process">
+            <h2>Process | 과정</h2>
+            <div class="grid-wrapper">
+                <div class="process-column">
+                    <h3>1. Robot Selection | 로봇 선정</h3>
+                    <h3>2. Inspection Data Acquisition | 점검 데이터 수집</h3>
+                    <p class="process-description">Selection of robot that meets specifications and requirements<br>규격과 요구 사항을 충족하는 로봇 선택</p>
+                    <p class="process-description">Possible gauge inspection outcome combinations<br>계기 점검 결과 종류</p>
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <img src="static/img/Robot_1_GE.jpeg" alt="GE" class="robot_img">
+                            <p>GE: Wheeled robot</p>
+                        </div>
+                        <div class="grid-item">
+                            <img src="static/img/Robot_2_EX.jpg" alt="EX" class="robot_img">
+                            <p>EX Robotics: Tracked Robot</p>
+                        </div>
+                        <div class="grid-item">
+                            <img src="static/img/Robot_3_BD.webp" alt="BD" class="robot_img">
+                            <p>Boston Dynamicss: Quadruped Robot</p>
+                        </div>
+                        <div class="grid-item">
+                            <img src="static/img/Robot_4_ETRI.jpg" alt="ETRI" class="robot_img">
+                            <p>ETRI: Rail Robot</p>
+                        </div>
+                    </div>
+
+                    <div class="grid-container">
+                        <div class="grid-item gauge_hover" data-type="single" onclick="selectGauge('single')">
+                            <img src="static/img/gauge_1_1.jpg" alt="New1" class="gauge_img">
+                            <p>Single Gauge</p>
+                        </div>
+                        <div class="grid-item gauge_hover" data-type="multiple" onclick="selectGauge('multiple')">
+                            <img src="static/img/gauge_1_3.png" alt="New2" class="gauge_img">
+                            <p>Multiple Gauges</p>
+                        </div>
+                        <div class="grid-item gauge_hover" data-type="digital" onclick="selectGauge('digital')">
+                            <img src="static/img/gauge_1_dg.jpg" alt="New3" class="gauge_img">
+                            <p>Digital Gauge</p>
+                        </div>
+                        <div class="grid-item gauge_hover" data-type="mixed" onclick="selectGauge('mixed')">
+                            <img src="static/img/gauge_1_mix.jpg" alt="New4" class="gauge_img">
+                            <p>Mixed Gauges</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="final-image">
+            <h3>3. <b>DRAG</b> the Image | 이미지에 <b>DRAG</b> 적용</h3>
+            <img src="static/img/default/example.png" alt="example gauge" class="example" id="main-image">
+            <p class="example_p">Select a possible Inspection result scenario from <b>"2. Inspection Data Acquisition"</b>.</p>
+            <div class="grid-4-wrapper">
+                <h3><b class = "process-bold">3.1</b> <b class ="solo">Gauge Detection | 계기 탐지</b></h3>
+            </div>
+            <div class="grid-4-wrapper" id="bbox-container">
+                <img src="static/img/default/example_bbox.jpg" alt="Default Image" class="default-image" id="bbox-image">
+            </div>
+            <p class="process-subs">Use object detection models to detect gauges in image.<br>객체 탐지 모델을 사용하여 이미지에서 계기를 탐지합니다.</p>
+            
+            <div class="grid-4-wrapper">
+                <h3><b class = "process-bold">3.2</b> <b class = "solo">Bounding Box Crop | 바운딩 박스 크롭</b></h3>
+            </div>
+            <div class="grid-4-wrapper" id="crop-container">
+                <img src="static/img/default/example_crop.jpg" alt="Default Image" class="default-image" id="crop-image">
+            </div>
+            <p class="process-subs">Crop the detected gauge from the image.<br>이미지에서 탐지된 계기를 잘라냅니다.</p>
+            
+            <div class="grid-4-wrapper">
+                <h3><b class = "process-bold">3.3</b><br><b class = "gdes">AG:</b> Ellipse Detection | 타원 검출<br><b class = "gdes">DG:</b> Total Digit Reading | 전체 추론 읽기</h3>
+            </div>
+            <div class="grid-4-wrapper" id="ellipse-container">
+                <img src="static/img/default/example_ellipse.jpg" alt="Default Image" class="default-image" id="ellipse-image">
+            </div>
+            <p class="process-subs">AG: Detect ellipses from image. DG: Read gauge using digit detection<br>AG: 이미지 내 타원을 검출합니다. DG: 객체추론을 통해 게이지를 읽습니다.</p>
+            <div class="grid-4-wrapper">
+                <h3><b class = "process-bold">3.4</b><br><b class = "gdes">AG:</b> Gauge Outline Circle Crop | 계기 테두리 원 크롭<br><b class = "gdes">DG:</b> Total OCR Reading | 전체 OCR 읽기</h3>
+            </div>
+            <div class="grid-4-wrapper" id="ellipse-crop-container">
+                <img src="static/img/default/example_circle_crop.jpg" alt="Default Image" class="default-image" id="ellipse-crop-image">
+            </div>
+            <p class="process-subs">AG: Crop and mask ellipse that best matches the gauge outline. DG: Read gauge using OCR.<br>AG: 게이지 외곽선과 가장 잘 맞는 타원을 잘라내고 마스크 처리합니다. DG: OCR을 통해 게이지를 읽습니다</p>
+
+            
+            <div class="grid-4-wrapper">
+                <h3><b class = "process-bold">3.5</b><br><b class = "gdes">AG:</b> Feature Detection (Base, tip) | 주요 포인트 탐지<br><b class ="gdes">DG:</b> Digit Detection | 디짓 탐지</h3>
+            </div>
+            <div class="grid-4-wrapper" id="feature-container">
+                <img src="static/img/default/example_feature.jpg" alt="Default Image" class="default-image" id="feature-image">
+            </div>
+            <p class="process-subs">AG: Detect essential features for analysis. DG: Digit detection.<br>AG: 분석을 위한 포인트들을 추가 탐지합니다. DG: 객체 추론을 통해 디짓을 검출합니다.</p>
+            <div class="grid-4-wrapper">
+                <h3><b class = "process-bold">3.6</b> <b class = "solo">OCR</b></h3>
+            </div>
+            <div class="grid-4-wrapper" id="ocr-container">
+                <img src="static/img/default/example_OCR.jpg" alt="Default Image" class="default-image" id="ocr-image">
+            </div>
+            <p class="process-subs">Extract and convert text information using OCR.<br>OCR을 사용하여 계기 내 문자를 탐지 및 변환합니다.</p>
+            <div class="grid-4-wrapper">
+                <h3><b class = "process-bold">3.7</b><br><b class = "gdes">AG:</b> Number-Angle mapping | 텍스트-각도 할당<br><b class ="gdes">DG:</b> Digit Inference | 숫자 추론</h3>
+            </div>
+            <div class="grid-4-wrapper" id="num-ang-container">
+                <img src="static/img/default/example_num_ang.png" alt="Default Image" class="default-image" id="num-ang-image">
+            </div>
+            <p class="process-subs">AG: Map gauge value to its corresponding angle. DG: Infer digit value.<br>AG: 탐지된 계기값들을 해당 각도로 매핑합니다. DG: 검출된 디짓별 숫자를 검출합니다.</p>
+            <div class="grid-4-wrapper">
+                <h3><b class = "process-bold">3.8</b><br><b class ="gdes">AG:</b> Outlier Removal | 이상치 제거<br><b class ="gdes">DG:</b> Value Verification | 검출값 검증</h3>
+            </div>
+            <div class="grid-4-wrapper" id="cook-container">
+                <img src="static/img/default/example_cook.jpg" alt="Default Image" class="default-image" id="cook-image">
+            </div>
+            <p class="process-subs">AG: Remove outliers using various statistical methods. DG: Values found using the 4 techniques are compared and verified.<br>AG: 다양한 통계 기법을 사용하여 이상값을 제거합니다. DG: 검출된 숫자들을 검증합니다.</p>
+            <div class="grid-4-wrapper">
+                <h3><b class = "process-bold">3.9</b><br><b class = "gdes">AG:</b> Needle Detection | 바늘 탐지<br><b class ="gdes">DG:</b> Decimal Point Detection | 소수점 탐지</h3>
+            </div>
+            <div class="grid-4-wrapper" id="needle-container">
+                <img src="static/img/default/example_needle.jpg" alt="Default Image" class="default-image" id="needle-image">
+            </div>
+            <p class="process-subs">AG: Use detected features to determine needle position. DG: Use digit coordinates to detect decimal point.<br>AG: 탐지된 특징들을 사용하여 바늘 위치를 결정합니다. DG: 디짓 위치를 이용하여 소수점을 찾아냅니다.</p>
+            <div class="grid-4-wrapper">
+            </div>
+            <h3><b class = "process-bold">3.10</b><br><b class = "gdes">AG:</b> Needle Angle Calculation | 바늘 각도 추정<br><b class ="gdes">DG:</b> Minus Sign Detection | 마이너스 기호 탐지</h3>
+
+            <div class="grid-4-wrapper" id="needle-angle-container">
+                <img src="static/img/default/example_needle_angle.jpg" alt="Default Image" class="default-image" id="needle-angle-image">
+            </div>
+            <p class="process-subs">AG: Calculate the needle angle based on the detected needle position and lowest value position. DG: Use digit coordinates to detect minus sign.<br>AG: 탐지된 바늘 위치와 최저값 위치를 기반으로 바늘 각도를 계산합니다. DG: 디짓 위치를 이용하여 마이너스 기호를 찾아냅니다.</p>
+            <div class="grid-4-wrapper">
+                <h3><b class = "process-bold">3.11</b> <b class= "solo">Gauge Reading | 계기 판독</b></h3>
+            </div>
+            <div class="grid-4-wrapper" id="gauge-value-container">
+                <img src="static/img/default/example_gauge_value.jpg" alt="Default Image" class="default-image" id="gauge-value-image">
+            </div>
+            <p class="process-subs">Read the gauge value.<br>계기 값을 읽습니다.</p>
+        </section>
+    
+    <div class="process-column">
+    <section id="Description">
+        <h2>References | 참고 문헌</h2>
+        <p class="reference">
+            1. Peixoto, J., Sousa, J., Carvalho, R., Santos, G., Mendes, J., Cardoso, R., & Reis, A. (2022). Development of an Analog Gauge Reading Solution Based on Computer Vision and Deep Learning for an IoT Application. <i>Telecom, 3(4), 564-580.</i><br><br>
+            2. Leon-Alcazar, J., Alnumay, Y., Zheng, C., Trigui, H., Patel, S., & Ghanem, B. (2022). Learning to Read Analog Gauges from Synthetic Data. In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV).<br><br>
+            3. Adsul, S., Kulkarni, S., Godbole, S., & Narwane, M. (2021). Reading Analog Gauges Using Open CV for Hazardous Area Applications. <i>International Journal of New Technology and Research (IJNTR), Special Issue VIT Campus, 39-42.</i><br><br>
+            4. Song, J., & Zhang, L. (2015). Research of Automatic Interpretation of Analog Gauge's Indicating Data. <i>International Symposium on Knowledge Acquisition and Modeling (KAM 2015).</i><br><br>
+            5. Gellaboina, M. K., Swaminathan, G., & Venkoparao, V. (2013). Analog dial gauge reader for handheld devices. In Proceedings of the 2013 IEEE 8th Conference on Industrial Electronics and Applications (ICIEA), 1147-1150.<br><br>
+            6. Lauridsen, J., Grassmé, J., Pedersen, M., Jensen, D., Andersen, S., & Moeslund, T. (2019). Reading Circular Analogue Gauges using Digital Image Processing. In Proceedings of the 14th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications (Visigrapp 2019), 373-382.<br><br>
+            7. Zuo, L., He, P., Zhang, C., & Zhang, Z. (2020). A robust approach to reading recognition of pointer meters based on improved mask-RCNN. <i>Neurocomputing, 388, 90-101.</i><br><br>
+            8. Cai, W., Ma, B., Zhang, L., & Han, Y. (2020). A pointer meter recognition method based on virtual sample generation technology. <i>Measurement, 163, 107962.</i><br><br>
+            9. Wang, L., Wang, P., Wu, L., Xu, L., Huang, P., & Kang, Z. (2021). Computer vision based automatic recognition of pointer instruments: Data set optimization and reading. <i>Entropy, 23(2), 272.</i><br><br>
+            10. Milana, E., Ramírez-Agudelo, O.H., Estevam Schmiedt, J. (2022). Autonomous Reading of Gauges in Unstructured Environments. <i>Sensors, 22,6681.</i><br><br>
+            11. Ranjan, P., Sushruth, N., Thejus, P., Vandana, T. (2018). Automated Analog Meter Reading System Using Image Processing and Machine Learning. <i>SJCE, Mysuru</i><br>
+        </p>
+        
+    </section>
+    <section id="Description">
+        <h2>Inspired by: </h2>
+        <p class="reference"><b>ConvNetJS </b>| <a href='https://cs.stanford.edu/people/karpathy/convnetjs/'>https://cs.stanford.edu/people/karpathy/convnetjs/</p></a>
+        <h2>Special thanks to: </h2>
+        <p class="reference"><b>Yolov7: </b><a href='https://github.com/WongKinYiu/yolov7'>https://github.com/WongKinYiu/yolov7</p></a>
+        <p class="reference"><b>Object Tracking:</b> <a href ='https://github.com/RizwanMunawar/yolov7-object-tracking'>https://github.com/RizwanMunawar/yolov7-object-tracking</p></a>
+        <p class="reference"><b> SSOCR: </b><a href = 'https://github.com/jiweibo/SSOCR'>https://github.com/jiweibo/SSOCR</p></a>
+    </section>
+    </div>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 David Seong & SHInc | All rights reserved.</p>
+    </footer>
+    <script src="static/DRAG_script.js"></script>
+</body>
+</html>
