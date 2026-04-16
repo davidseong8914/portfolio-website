@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>YC-Blocks — David Seong</title>
+  <link rel="icon" href="../david_seong_logo.png" type="image/png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQYT5B9N7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PHQYT5B9N7');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --gold: #ffd700;
+      --text: #ffffff;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+    }
+
+    /* ── Top bar ─────────────────────────────────────────── */
+    #topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 44px;
+      background: rgba(8,8,8,0.92);
+      border-bottom: 1px solid rgba(255,215,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      z-index: 100;
+      backdrop-filter: blur(6px);
+    }
+
+    #topbar .logo-link {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    #topbar .logo-link span { color: var(--gold); }
+
+    #topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Volume control */
+    #volume-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    #volume-icon {
+      font-size: 16px;
+      cursor: pointer;
+      user-select: none;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+    }
+    #volume-icon:hover { opacity: 1; }
+    #volume-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 64px;
+      height: 4px;
+      background: rgba(255,215,0,0.3);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+    #volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      cursor: pointer;
+    }
+
+    #back-link {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      transition: color 0.15s;
+    }
+    #back-link:hover { color: var(--gold); }
+
+    /* ── Canvas container ───────────────────────────────── */
+    #game-wrap {
+      position: fixed;
+      top: 44px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+
+    #game {
+      display: block;
+      touch-action: manipulation;
+      cursor: default;
+      image-rendering: pixelated;
+    }
+
+    /* ── Loading ─────────────────────────────────────────── */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      font-size: 18px;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top navigation bar -->
+  <div id="topbar">
+    <a href="../index.html" class="logo-link">David <span>Seong</span></a>
+    <div id="topbar-right">
+      <div id="volume-wrap">
+        <span id="volume-icon" title="Toggle mute">🔊</span>
+        <input id="volume-slider" type="range" min="0" max="100" value="50" title="Volume">
+      </div>
+      <a href="../projects.html" id="back-link">← Projects</a>
+    </div>
+  </div>
+
+  <div id="game-wrap">
+    <canvas id="game"></canvas>
+  </div>
+
+  <div id="loading">LOADING…</div>
+
+  <!-- ── Game algorithm modules (order matters) ──────────── -->
+  <script src="YC_school_26/game_algorithm/constants.js"></script>
+  <script src="YC_school_26/game_algorithm/board.js"></script>
+  <script src="YC_school_26/game_algorithm/piece.js"></script>
+  <script src="YC_school_26/game_algorithm/bag_randomizer.js"></script>
+  <script src="YC_school_26/game_algorithm/game_state.js"></script>
+
+  <!-- ── Frontend modules ────────────────────────────────── -->
+  <script src="YC_school_26/frontend/theme_manager.js"></script>
+  <script src="YC_school_26/frontend/particle_system.js"></script>
+  <script src="YC_school_26/frontend/renderer.js"></script>
+  <script src="YC_school_26/frontend/input_handler.js"></script>
+  <script src="YC_school_26/frontend/audio_manager.js"></script>
+  <script src="YC_school_26/frontend/screen_manager.js"></script>
+
+  <!-- ── Game loop ────────────────────────────────────────── -->
+  <script>
+  (function() {
+    'use strict';
+
+    // ── Module instances ──────────────────────────────────
+    const canvas        = document.getElementById('game');
+    const gameState     = new GameState();
+    const themeManager  = new ThemeManager();
+    const particles     = new ParticleSystem();
+    const renderer      = new Renderer(canvas);
+    const inputHandler  = new InputHandler(canvas);
+    const audioManager  = new AudioManager();
+    const screenManager = new ScreenManager();
+
+    // Expose themeManager globally so renderer can read flash alpha
+    window._themeManager = themeManager;
+
+    // ── Audio init (lazy on first interaction) ────────────
+    let audioReady = false;
+    function ensureAudio() {
+      if (audioReady) return;
+      audioManager.init();
+      audioReady = true;
+    }
+    document.addEventListener('keydown', ensureAudio, { once: false });
+    canvas.addEventListener('touchstart', ensureAudio, { once: false });
+
+    // Volume control
+    const volSlider = document.getElementById('volume-slider');
+    const volIcon   = document.getElementById('volume-icon');
+    volSlider.addEventListener('input', () => {
+      audioManager.setVolume(+volSlider.value / 100);
+      volIcon.textContent = +volSlider.value === 0 ? '🔇' : '🔊';
+    });
+    volIcon.addEventListener('click', () => {
+      if (+volSlider.value > 0) {
+        volSlider.value = 0;
+        audioManager.mute();
+        volIcon.textContent = '🔇';
+      } else {
+        volSlider.value = 50;
+        audioManager.setVolume(0.5);
+        audioManager.unmute();
+        volIcon.textContent = '🔊';
+      }
+    });
+
+    // ── Responsive resize ─────────────────────────────────
+    function onResize() {
+      renderer.resize();
+    }
+    window.addEventListener('resize', onResize);
+    window.addEventListener('orientationchange', () => setTimeout(onResize, 100));
+
+    // ── Game actions ──────────────────────────────────────
+    function applyAction(action) {
+      const phase = gameState.phase;
+
+      if (action === 'pause') {
+        if (phase === 'playing' || phase === 'lineclear' || phase === 'paused') {
+          gameState.pause();
+        }
+        return;
+      }
+
+      if (phase === 'start' || phase === 'gameover') {
+        if (action === 'hardDrop' || action === 'rotateCW') {
+          startOrRestart();
+        }
+        return;
+      }
+
+      if (phase !== 'playing') return;
+
+      let extraEvents = [];
+      switch (action) {
+        case 'moveLeft':   gameState.moveLeft();  audioManager.play('move'); break;
+        case 'moveRight':  gameState.moveRight(); audioManager.play('move'); break;
+        case 'softDrop':   gameState.softDrop();  break;
+        case 'hardDrop':   extraEvents = gameState.hardDrop(); break;
+        case 'rotateCW':   gameState.rotateCW();  audioManager.play('rotate'); break;
+        case 'rotateCCW':  gameState.rotateCCW(); audioManager.play('rotate'); break;
+        case 'hold':
+          if (gameState.hold()) audioManager.play('hold');
+          break;
+      }
+      handleEvents(extraEvents);
+    }
+
+    function handleEvents(events) {
+      if (!events || events.length === 0) return;
+      const center = renderer.getBoardCenter();
+
+      for (const e of events) {
+        switch (e.type) {
+          case 'piece_locked':
+            audioManager.play('piece_locked');
+            break;
+
+          case 'lines_cleared':
+            // Line clear anim + particles are driven by lineclear sub-events below
+            break;
+
+          case 'single': case 'double': case 'triple': case 'yc_blocks':
+          case 'tspin_zero': case 'tspin_single': case 'tspin_double': case 'tspin_triple':
+          case 'tspin_mini_zero': case 'tspin_mini_single': case 'tspin_mini_double': {
+            audioManager.play(e.type);
+            renderer.addTextPopup(e.label, center.x, center.y - 20, null);
+
+            const isBig = e.type === 'yc_blocks' || e.type.startsWith('tspin_double') || e.type === 'tspin_triple';
+            if (isBig) {
+              renderer.triggerScreenShake(e.type === 'yc_blocks' ? 7 : 5, 300);
+              particles.emitCelebration(center.x, center.y,
+                themeManager.getCurrentTheme().accentColor);
+            }
+
+            // Start line clear animation
+            if (e.rows && e.rows.length > 0) {
+              renderer.startLineClearAnim(e.rows);
+              particles.emitLineClear(e.rows,
+                renderer.cellSize, renderer.boardOffsetX, renderer.boardOffsetY);
+            }
+            break;
+          }
+
+          case 'combo':
+            audioManager.play('combo');
+            renderer.addTextPopup(e.label, center.x, center.y + 30,
+              themeManager.getCurrentTheme().accentColor);
+            break;
+
+          case 'levelup':
+            audioManager.play('levelup');
+            themeManager.checkTransition(gameState.lines);
+            renderer.addTextPopup(`LEVEL ${e.level}!`, center.x, center.y + 60,
+              themeManager.getCurrentTheme().textGlow);
+            break;
+
+          case 'gameover':
+            audioManager.play('gameover');
+            break;
+        }
+      }
+    }
+
+    function startOrRestart() {
+      ensureAudio();
+      particles.clear();
+      themeManager.checkTransition(0);
+      // Force reset to theme 0
+      themeManager._themeIndex = 0;
+      themeManager._transitioning = false;
+      gameState.startGame();
+    }
+
+    // ── Main game loop ────────────────────────────────────
+    let lastTimestamp = 0;
+
+    function gameLoop(timestamp) {
+      requestAnimationFrame(gameLoop);
+
+      const dt = Math.min(timestamp - lastTimestamp, 50); // cap at 50ms
+      lastTimestamp = timestamp;
+
+      // Input
+      const actions = inputHandler.update(dt);
+
+      // Screen manager update (for pulse animations)
+      screenManager.update(dt);
+
+      // Apply player actions
+      for (const action of actions) {
+        applyAction(action);
+      }
+
+      // Advance game state (gravity, lock delay, line clear phase)
+      if (gameState.phase === 'playing' || gameState.phase === 'lineclear') {
+        const events = gameState.update(dt);
+        handleEvents(events);
+      }
+
+      // Update visual systems
+      themeManager.update(dt);
+      particles.update(dt);
+      renderer.advanceShake(dt);
+      renderer.updateEffects(dt);
+
+      // Emit ambient particles
+      const theme = themeManager.getCurrentTheme();
+      particles.emitAmbient(theme, renderer.canvasLogW, renderer.canvasLogH);
+
+      // Render
+      const rs = gameState.toRenderState();
+      renderer.render(rs, theme, particles, screenManager);
+    }
+
+    // ── Boot ──────────────────────────────────────────────
+    document.getElementById('loading').style.display = 'none';
+    requestAnimationFrame(function(ts) {
+      lastTimestamp = ts;
+      requestAnimationFrame(gameLoop);
+    });
+
+  })();
+  </script>
+</body>
+</html>
