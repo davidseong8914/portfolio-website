@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Robodave's Portfolio - Project Details</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,97 +22,154 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-            David <span>Seong</span>
-        </a>
-        <i class='bx bx-menu' id='menu-icon'></i>
-        <nav class="navbar">
+<div class="page">
+    <header class="site-header">
+        <a href="../index.html" class="site-logo"><img src="../media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
             <a href="../projects.html" class="active">Projects</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="project-details" id="project-details">
+    <main>
+        <section class="detail-head">
+            <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
+            <div class="detail-head-inner">
+                <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
+                <h1 class="detail-title">Proprioceptive Traversal</h1>
+                <div class="tags">
+                    <span class="tag">Vegetated environments</span>
+                    <span class="tag">Proprioceptive sensors</span>
+                    <span class="tag">ROS2 Humble</span>
+                    <span class="tag">Gazebo</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section detail-hero">
+            <figure class="frame frame--hero frame--contain">
+                <video src="../media/video/projects-planning-planning-thumbnail.mp4" poster="../media/video/projects-planning-planning-thumbnail.jpg" width="960" height="820" muted loop playsinline preload="none" data-autoplay></video>
+            </figure>
+            <div class="fig-caption"><span>Fig. 01 — Gazebo simulation, traditional vs. ours</span></div>
+        </section>
+
+        <section class="detail-section detail-specs">
+            <div class="specs">
+                <div class="spec">
+                    <div class="spec-label">Approach</div>
+                    <div class="spec-value">Estimate traversal costs and update them upon collision</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Sensing</div>
+                    <div class="spec-value">Proprioceptive sensors</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Simulation</div>
+                    <div class="spec-value">End-to-end, using ROS2 Humble and Gazebo</div>
+                </div>
+            </div>
+        </section>
+
         <!-- Abstract -->
-        <div class="container">
-            <div class="media">
-                <div class="pdf-container">
-                    <object
-                        data="planning/16350_Final_Project___Traversing_through_unknown_vegetated_environment_using_proprioceptive_sensors.pdf"
-                        type="application/pdf"
-                        width="100%"
-                        height="100%">
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Abstract</h2>
+                    <p>Novel planning approach for robot navigation in vegetated environments. Instead of treating all obstacles as untraversable, our method estimates traversal costs and updates them upon collision using proprioceptive sensors.</p>
+                </div>
+                <figure class="frame">
+                    <object data="planning/16350_Final_Project___Traversing_through_unknown_vegetated_environment_using_proprioceptive_sensors.pdf" type="application/pdf">
                         <div class="pdf-fallback">
                             <i class='bx bxs-file-pdf'></i>
                             <p>PDF Preview Not Available</p>
-                            <a href="planning/16350_Final_Project___Traversing_through_unknown_vegetated_environment_using_proprioceptive_sensors.pdf" target="_blank" class="pdf-link">
-                                Click here to view the PDF
-                            </a>
+                            <a href="planning/16350_Final_Project___Traversing_through_unknown_vegetated_environment_using_proprioceptive_sensors.pdf" target="_blank" class="pdf-link">Click here to view the PDF</a>
                         </div>
                     </object>
-                </div>
+                    <figcaption class="fig-caption">Fig. 02 — Final project (PDF)</figcaption>
+                </figure>
             </div>
-            <div class="description">
-                <h2><span>Abstract</span></h2>
-                <p>Novel planning approach for robot navigation in vegetated environments. Instead of treating all obstacles as untraversable, our method estimates traversal costs and updates them upon collision using proprioceptive sensors.</p>
-            </div>
-        </div>
+        </section>
 
         <!-- Introduction -->
-        <div class="container">
-            <div class="media">
-                <div class="pdf-container">
-                    <object
-                        data="planning/Planning Final Presentation.pdf"
-                        type="application/pdf"
-                        width="100%"
-                        height="100%">
-                        <div class="pdf-fallback">
-                            <i class='bx bxs-file-pdf'></i>
-                            <p>PDF Preview Not Available</p>
-                            <a href="planning/Planning Final Presentation.pdf" target="_blank" class="pdf-link">
-                                Click here to view the PDF
-                            </a>
-                        </div>
-                    </object>
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <object data="planning/Planning Final Presentation.pdf" type="application/pdf">
+                            <div class="pdf-fallback">
+                                <i class='bx bxs-file-pdf'></i>
+                                <p>PDF Preview Not Available</p>
+                                <a href="planning/Planning Final Presentation.pdf" target="_blank" class="pdf-link">Click here to view the PDF</a>
+                            </div>
+                        </object>
+                        <figcaption class="fig-caption">Fig. 03 — Final presentation (PDF)</figcaption>
+                    </figure>
+                    <div class="block-text">
+                        <h2>Introduction</h2>
+                        <p>Traditional perception-based navigation methods are too conservative in vegetated environments. Our approach assumes all obstacles are traversable with estimated costs, then updates these costs using proprioceptive sensors upon collision.</p>
+                    </div>
                 </div>
             </div>
-            <div class="description">                <p>Traditional perception-based navigation methods are too conservative in vegetated environments. Our approach assumes all obstacles are traversable with estimated costs, then updates these costs using proprioceptive sensors upon collision.</p>
-            </div>
-        </div>
+        </section>
 
         <!-- Simulation Video -->
-        <div class="container">
-            <div class="media">
-                <video src="planning/Planning thumbnail.mp4" autoplay muted loop class="planning-video">
-                    Your browser does not support the video tag.
-                </video>
+        <section class="detail-section detail-block">
+            <div class="block block--text">
+                <div class="block-text">
+                    <h2>Simulation Results</h2>
+                    <p>End-to-end simulation using ROS2 Humble and Gazebo demonstrates our algorithm's effectiveness in navigating through vegetated environments.</p>
+                </div>
             </div>
-            <div class="description">
-                <h2>Simulation Results</h2>
-                <p>End-to-end simulation using ROS2 Humble and Gazebo demonstrates our algorithm's effectiveness in navigating through vegetated environments.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        <section class="detail-section detail-related">
+            <div class="section-head">
+                <h2>Similar work</h2>
+                <span class="section-rule"></span>
+            </div>
+            <div class="card-grid">
+                <a class="card card--related" href="simon.html">
+                    <div class="card-media"><video src="../media/video/projects-simon-simon.mp4" poster="../media/video/projects-simon-simon.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
+                    <div class="card-body">
+                        <h3>Simon</h3>
+                        <p>Autonomous driving in the forest. Through fusion of 2D and 3D perception and proprioceptive sensors, wheeled robots will effectively and efficiently navigate through heavily vegetated environments.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="patrick.html">
+                    <div class="card-media"><img src="../media/img/projects-patrick-patrick-ylw-reduced-800.webp" alt="" width="800" height="896" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Patrick</h3>
+                        <p>Autonomous environmental monitoring robot for forested areas using LiDAR, camera sensor fusion, and adaptive density drive.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="cord.html">
+                    <div class="card-media"><img src="../media/img/images-cord-800.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Cheap Opensource Robot Dog (CORD)</h3>
+                        <p>Open-source quadruped robot platform designed for educational purposes and affordable robotics research.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
         </div>
-        <ul class="list">
-            <li><a href="../index.html">About Me</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-        </ul>
+        <nav class="footer-links">
+            <a href="../index.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
         <p class="copyright">© David Seong | All Rights Reserved</p>
     </footer>
-    
-    <script src="script.js"></script>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>

@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Robodave's Portfolio - Project Details</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,85 +22,174 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-            David <span>Seong</span>
-        </a>
-        <i class='bx bx-menu' id='menu-icon'></i>
-        <nav class="navbar">
+<div class="page">
+    <header class="site-header">
+        <a href="../index.html" class="site-logo"><img src="../media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
             <a href="../projects.html" class="active">Projects</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="project-details" id="project-details">
-        <div class="container">
-            <div class="media">
-                <img src="wybot/1.jpg" alt="Project Image">
+    <main>
+        <section class="detail-head">
+            <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
+            <div class="detail-head-inner">
+                <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
+                <h1 class="detail-title">Wisconsin Yonsei Bot</h1>
+                <div class="tags">
+                    <span class="tag">Quadruped</span>
+                    <span class="tag">Gait algorithms</span>
+                    <span class="tag">Raspberry Pi</span>
+                    <span class="tag">ROS</span>
+                    <span class="tag">Obstacle avoidance</span>
+                </div>
             </div>
-            <div class="description">
-                <h2><span>Wisconsin Yonsei Bot</span></h2>
-                <p>This was the first quadruped robot I built from scratch to study quaduped gait efficiency and autonomous navigation. Using Raspberry Pi, and SG 90 servos, I was able to implement various gait algorithms.
-            </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <img src="wybot/2.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <p>Design & Assembly: Design and mechanism variations were tested using Creo 5.0 and Virtual Robot Experimentation Platform (V-REP).</p>
-                <p><br>Wiring & Programming: Robot's joint movement and gait algorithms were implemented using Raspberry Pi, ROS.</p>
-                <p><br>Prototype I: Camera module was added to prototype I to implement an autonomous, obstacle avoiding navigation system.</p>
-            </div>
-        </div>
+        <section class="detail-section detail-hero">
+            <figure class="frame frame--hero">
+                <iframe src="https://www.youtube.com/embed/8zmdWHa_jcY" title="First small step for WYBot" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </figure>
+            <div class="fig-caption"><span>Fig. 01 — First small step for WYBot</span></div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <iframe width="560" height="505" src="https://www.youtube.com/embed/8zmdWHa_jcY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section class="detail-section detail-specs">
+            <div class="specs">
+                <div class="spec">
+                    <div class="spec-label">Hardware</div>
+                    <div class="spec-value">Raspberry Pi, SG 90 servos</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Design and simulation</div>
+                    <div class="spec-value">Creo 5.0, Virtual Robot Experimentation Platform (V-REP)</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Programming</div>
+                    <div class="spec-value">Raspberry Pi, ROS</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Prototype I</div>
+                    <div class="spec-value">Camera module for autonomous, obstacle avoiding navigation</div>
+                </div>
             </div>
-            <div class="description">
-                <p>"First small step for WYBot, one giant leap for my robotics career..."</p>
-            </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <iframe width="560" height="505" src="https://www.youtube.com/embed/3i-zWODVoa8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Overview</h2>
+                    <p>This was the first quadruped robot I built from scratch to study quaduped gait efficiency and autonomous navigation. Using Raspberry Pi, and SG 90 servos, I was able to implement various gait algorithms.</p>
+                </div>
+                <figure class="frame">
+                    <img src="../media/img/projects-wybot-1-1600.webp" alt="Project Image" width="1600" height="597" loading="lazy" decoding="async">
+                    <figcaption class="fig-caption">Fig. 02 — Printed parts, Raspberry Pi wiring and first frame</figcaption>
+                </figure>
             </div>
-            <div class="description">
-                <p>    <span>sit(), stand()</span></p>
-            </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <iframe width="560" height="505" src="https://www.youtube.com/embed/KWuz8MRJZis" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-wybot-2-1600.webp" alt="Project Image" width="1600" height="597" loading="lazy" decoding="async">
+                        <figcaption class="fig-caption">Fig. 03 — Assembled robot and Prototype I camera module</figcaption>
+                    </figure>
+                    <div class="block-text">
+                        <h2>Design and build</h2>
+                        <p>Design & Assembly: Design and mechanism variations were tested using Creo 5.0 and Virtual Robot Experimentation Platform (V-REP).</p>
+                        <p>Wiring & Programming: Robot's joint movement and gait algorithms were implemented using Raspberry Pi, ROS.</p>
+                        <p>Prototype I: Camera module was added to prototype I to implement an autonomous, obstacle avoiding navigation system.</p>
+                    </div>
+                </div>
             </div>
-            <div class="description">
-                <p>Final Demonstration</p>
+        </section>
+
+        <section class="detail-section detail-block">
+            <div class="block block--text">
+                <div class="block-text">
+                    <h2>First steps</h2>
+                    <p>"First small step for WYBot, one giant leap for my robotics career..."</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-    </section>
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <iframe src="https://www.youtube.com/embed/3i-zWODVoa8" title="WYBot sit() and stand()" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <figcaption class="fig-caption">Fig. 04 — sit(), stand()</figcaption>
+                    </figure>
+                    <div class="block-text">
+                        <h2>Sit and stand</h2>
+                        <p><span>sit(), stand()</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Demonstration</h2>
+                    <p>Final Demonstration</p>
+                </div>
+                <figure class="frame">
+                    <iframe src="https://www.youtube.com/embed/KWuz8MRJZis" title="WYBot final demonstration" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <figcaption class="fig-caption">Fig. 05 — WYBot final demonstration</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="detail-section detail-related">
+            <div class="section-head">
+                <h2>Similar work</h2>
+                <span class="section-rule"></span>
+            </div>
+            <div class="card-grid">
+                <a class="card card--related" href="cord.html">
+                    <div class="card-media"><img src="../media/img/images-cord-800.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Cheap Opensource Robot Dog (CORD)</h3>
+                        <p>Open-source quadruped robot platform designed for educational purposes and affordable robotics research.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="laika.html">
+                    <div class="card-media"><img src="roboclub/Laika_ylw.png" alt="" width="595" height="503" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Laika</h3>
+                        <p>Laika is a quadruped robot like SPOT that is being built from scratch as part of Roboclub.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="torsobot.html">
+                    <div class="card-media"><img src="../media/img/images-robot-2-800.webp" alt="" width="800" height="1171" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Torsobot</h3>
+                        <p>Self-balancing rimless wheel robot investigating fundamental properties of human walk cycle with enhanced stability using PID control.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
         </div>
-        <ul class="list">
-            <li><a href="../index.html">About Me</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-        </ul>
+        <nav class="footer-links">
+            <a href="../index.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
         <p class="copyright">© David Seong | All Rights Reserved</p>
     </footer>
-    
-    <script src="../script.js"></script>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>

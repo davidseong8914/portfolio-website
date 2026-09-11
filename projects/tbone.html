@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>T-Bone Robot – Project Details</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,111 +22,129 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-            David <span>Seong</span>
-        </a>
-        <i class='bx bx-menu' id='menu-icon'></i>
-        <nav class="navbar">
+<div class="page">
+    <header class="site-header">
+        <a href="../index.html" class="site-logo"><img src="../media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
             <a href="../projects.html" class="active">Projects</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="project-details" id="project-details">
-        <!-- Documentary Video -->
-        <div class="container">
-            <div class="media">
-                <iframe
-                    src="https://www.youtube.com/embed/_cZWqivbB60"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="description">
-                <h2><span>T-Bone: Tail-Based Oscillatory Navigator Explorer</span></h2>
-                <p>
-                    Inspired by the elegance of fish propulsion, T-Bone is a bio-inspired robotic swimmer with five modular tail segments
-                    and interchangeable fins. Its design lets us rapidly swap horizontal and vertical profiles to optimize thrust,
-                    stability, and maneuverability in water.
-                </p>
-                <p>
-                    <b>Watch our full documentary:</b>
-                    <a href="https://www.youtube.com/watch?v=_cZWqivbB60" target="_blank">
-                        YouTube Video <i class='bx bx-play-circle'></i>
-                    </a>
-                </p>
-            </div>
-        </div>
-
-        <!-- PDF Technical Report -->
-        <div class="container">
-            <div class="media">
-                <div class="pdf-container">
-                    <object
-                        data="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf"
-                        type="application/pdf">
-                        <div class="pdf-fallback">
-                            <i class='bx bxs-file-pdf'></i>
-                            <p>PDF Preview Not Available</p>
-                            <a href="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf" target="_blank" class="pdf-link">
-                                Click here to view the PDF
-                            </a>
-                        </div>
-                    </object>
+    <main>
+        <section class="detail-head">
+            <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
+            <div class="detail-head-inner">
+                <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
+                <h1 class="detail-title">T-Bone: Tail-Based Oscillatory Navigator Explorer</h1>
+                <div class="tags">
+                    <span class="tag">Bio-inspired</span>
+                    <span class="tag">Robotic swimmer</span>
+                    <span class="tag">Modular tail segments</span>
+                    <span class="tag">Interchangeable fins</span>
                 </div>
             </div>
-            <div class="description">
-                <h2>Technical Report</h2>
-                <p>
-                    <b>Download Technical Report:</b>
-                    <a href="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf" target="_blank">
-                        PDF <i class='bx bx-download'></i>
-                    </a>
-                </p>
-            </div>
-        </div>
+        </section>
 
-        <!-- Final Presentation Video -->
-        <div class="container">
-            <div class="media">
-                <iframe
-                    src="https://www.youtube.com/embed/x85f9HfAhCY"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="description">
-                <h2>Final Presentation</h2>
-                <p>
-                    <b>Watch our final presentation:</b>
-                    <a href="https://www.youtube.com/watch?v=x85f9HfAhCY" target="_blank">
-                        YouTube Video <i class='bx bx-play-circle'></i>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
+        <section class="detail-section detail-hero">
+            <figure class="frame frame--hero">
+                <iframe src="https://www.youtube.com/embed/_cZWqivbB60" title="T-Bone documentary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </figure>
+            <div class="fig-caption"><span>Fig. 01 — T-Bone documentary</span></div>
+        </section>
 
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        <section class="detail-section detail-block">
+            <div class="block block--text">
+                <div class="block-text">
+                    <h2>Overview</h2>
+                    <p>Inspired by the elegance of fish propulsion, T-Bone is a bio-inspired robotic swimmer with five modular tail segments and interchangeable fins. Its design lets us rapidly swap horizontal and vertical profiles to optimize thrust, stability, and maneuverability in water.</p>
+                    <p><b>Watch our full documentary:</b> <a href="https://www.youtube.com/watch?v=_cZWqivbB60" target="_blank">YouTube Video <i class='bx bx-play-circle'></i></a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <object data="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf" type="application/pdf">
+                            <div class="pdf-fallback">
+                                <i class='bx bxs-file-pdf'></i>
+                                <p>PDF Preview Not Available</p>
+                                <a href="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf" target="_blank" class="pdf-link">Click here to view the PDF</a>
+                            </div>
+                        </object>
+                        <figcaption class="fig-caption">Fig. 02 — Technical report (PDF)</figcaption>
+                    </figure>
+                    <div class="block-text">
+                        <h2>Technical Report</h2>
+                        <p><b>Download Technical Report:</b> <a href="t_bone/Autobots_Meche_Expo_Poster.pptx.pdf" target="_blank">PDF <i class='bx bx-download'></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Final Presentation</h2>
+                    <p><b>Watch our final presentation:</b> <a href="https://www.youtube.com/watch?v=x85f9HfAhCY" target="_blank">YouTube Video <i class='bx bx-play-circle'></i></a></p>
+                </div>
+                <figure class="frame">
+                    <iframe src="https://www.youtube.com/embed/x85f9HfAhCY" title="T-Bone final presentation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <figcaption class="fig-caption">Fig. 03 — Final presentation</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="detail-section detail-related">
+            <div class="section-head">
+                <h2>Similar work</h2>
+                <span class="section-rule"></span>
+            </div>
+            <div class="card-grid">
+                <a class="card card--related" href="uwd.html">
+                    <div class="card-media"><video src="../media/video/projects-uwd-18-build18-thumbnail.mp4" poster="../media/video/projects-uwd-18-build18-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
+                    <div class="card-body">
+                        <h3>Hydrone</h3>
+                        <p>Underwater drone project built during CMU's Build 18 competition for recreational, environmental, and safety applications.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="torsobot.html">
+                    <div class="card-media"><img src="../media/img/images-robot-2-800.webp" alt="" width="800" height="1171" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Torsobot</h3>
+                        <p>Self-balancing rimless wheel robot investigating fundamental properties of human walk cycle with enhanced stability using PID control.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="laika.html">
+                    <div class="card-media"><img src="roboclub/Laika_ylw.png" alt="" width="595" height="503" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Laika</h3>
+                        <p>Laika is a quadruped robot like SPOT that is being built from scratch as part of Roboclub.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
         </div>
-        <ul class="list">
-            <li><a href="../index.html">About Me</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-        </ul>
+        <nav class="footer-links">
+            <a href="../index.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
         <p class="copyright">© David Seong | All Rights Reserved</p>
     </footer>
-    
-    <script src="../script.js"></script>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>

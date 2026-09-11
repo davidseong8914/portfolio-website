@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Robodave's Portfolio - Project Details</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,111 +22,216 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-            David <span>Seong</span>
-        </a>
-        <i class='bx bx-menu' id='menu-icon'></i>
-        <nav class="navbar">
+<div class="page">
+    <header class="site-header">
+        <a href="../index.html" class="site-logo"><img src="../media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
             <a href="../projects.html" class="active">Projects</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="project-details" id="project-details">
-
-        <div class="container">
-            <div class="media">
-                <img src="pbf/ME 352 Poster.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <h2><span>Novel Powder Spreadability System for Powderbed Fusion</span></h2>
-                <p>For my senior design project, I worked with Dr. Lianyi Chen and 3 other talented engineers to develop a 1' x 1' Powder Spreading and Powder Spread Evaluating device that spreads various metal powders and measures parameters essential to Powder Bed Fusion (PBF) such as Surface Roughness, Powder Denudation, Powderbed Density, Powder Scrape angle. </p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="media">
-                <img src="pbf/1.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <p>Due to the complexity of our task and our client's request for addtional functionalities, I went through 5 different designs for the device.</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="media">
-                <img src="pbf/2.jpg" alt="Project Image">            
-            </div>
-            <div class="description">
-                <p>Powder height adjustment mechanism was implemented to provide small (micrometer level) height changes between powder spreads. The mechanism uses a simple z-axis actuation enforced by constraining movement in the x-y axis (tight fit between powder bed and platform) and connecting the powder bed to a stepper motor.</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="media">
-                <img src="pbf/3.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <p>To claculate the powder bed density, the mass of the powder on the powder bed had to be obtained. Wheat bridge circuit was used with strain gauges before the dump (attached to aluminum beam) and after the dump (HX711 load cells) to effectively measure the change in powder mass to calculate powder density. The small changes in resistance were picked up and normalized using LabVIEW.</p>
+    <main>
+        <section class="detail-head">
+            <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
+            <div class="detail-head-inner">
+                <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
+                <div class="eyebrow">Senior design project</div>
+                <h1 class="detail-title">Novel Powder Spreadability System for Powderbed Fusion</h1>
+                <div class="tags">
+                    <span class="tag">Powder Bed Fusion</span>
+                    <span class="tag">Stepper motors</span>
+                    <span class="tag">Strain gauges</span>
+                    <span class="tag">LabVIEW</span>
+                    <span class="tag">Pronterface</span>
                 </div>
-        </div>
+            </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <img src="pbf/4.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <p>Realizing the spreader's mechanism is a 3-axis stepper motor system (if dumper's rotational axis is set as one of the linear axis), I decided to use Pronterface, a 3D printer automation software that enables stepper motor control with G-code. By linking each of the stepper motor actuation with Pronterface's axis, I was able to easily automate the spreading process, create macro for step by step execution.</p>
-            </div>
-        </div>
+        <section class="detail-section detail-hero">
+            <figure class="frame frame--hero">
+                <iframe src="https://www.youtube.com/embed/uyVPiQPRIKE" title="Live demo of the powder spreading device" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </figure>
+            <div class="fig-caption"><span>Fig. 01 — Live demo of the device, before completion</span></div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <img src="pbf/5.jpg" alt="Project Image">
+        <section class="detail-section detail-specs">
+            <div class="specs">
+                <div class="spec">
+                    <div class="spec-label">Team</div>
+                    <div class="spec-value">Dr. Lianyi Chen and 3 other engineers</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Device</div>
+                    <div class="spec-value">1' x 1' Powder Spreading and Powder Spread Evaluating device</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Measures</div>
+                    <div class="spec-value">Surface Roughness, Powder Denudation, Powderbed Density, Powder Scrape angle</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Control</div>
+                    <div class="spec-value">Pronterface (G-code), A-4988 stepper motor drivers</div>
+                </div>
             </div>
-            <div class="description">
-                <p>Using A-4988 Stepper Motor Driver for each of the stepper motors, I was able to enforce microstepping resulting in smooth actuation of the motors. This enabled effective dumping, spreading, and bed height adjusting mechanisms.</p>
-            </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <iframe width="560" height="505" src="https://www.youtube.com/embed/uyVPiQPRIKE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Overview</h2>
+                    <p>For my senior design project, I worked with Dr. Lianyi Chen and 3 other talented engineers to develop a 1' x 1' Powder Spreading and Powder Spread Evaluating device that spreads various metal powders and measures parameters essential to Powder Bed Fusion (PBF) such as Surface Roughness, Powder Denudation, Powderbed Density, Powder Scrape angle. </p>
+                </div>
+                <figure class="frame">
+                    <img src="../media/img/projects-pbf-me-352-poster-1600.webp" alt="Project Image" width="1600" height="2133" loading="lazy" decoding="async">
+                    <figcaption class="fig-caption">Fig. 02 — Project poster</figcaption>
+                </figure>
             </div>
-            <div class="description">
-                <p>Live demo of our device - before completion.</p>
-            </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <img src="pbf/6.jpg" alt="Project Image">
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-pbf-1-1600.webp" alt="Project Image" width="1600" height="295" loading="lazy" decoding="async">
+                        <figcaption class="fig-caption">Fig. 03 — Five designs for the device</figcaption>
+                    </figure>
+                    <div class="block-text">
+                        <h2>Design iterations</h2>
+                        <p>Due to the complexity of our task and our client's request for addtional functionalities, I went through 5 different designs for the device.</p>
+                    </div>
+                </div>
             </div>
-            <div class="description">
-                <p>Moving forward, supervised learning will need to be performed from powder spread images and respose angle images taken from the side to be able to determine the quality of metal powder spread using computer vision.</p>
+        </section>
+
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Powder height adjustment</h2>
+                    <p>Powder height adjustment mechanism was implemented to provide small (micrometer level) height changes between powder spreads. The mechanism uses a simple z-axis actuation enforced by constraining movement in the x-y axis (tight fit between powder bed and platform) and connecting the powder bed to a stepper motor.</p>
+                </div>
+                <figure class="frame">
+                    <img src="../media/img/projects-pbf-2-1600.webp" alt="Project Image" width="1600" height="597" loading="lazy" decoding="async">
+                    <figcaption class="fig-caption">Fig. 04 — Device layout and powder bed height adjustment mechanism</figcaption>
+                </figure>
             </div>
-        </div>
+        </section>
 
-    </section>
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-pbf-3-1600.webp" alt="Project Image" width="1600" height="597" loading="lazy" decoding="async">
+                        <figcaption class="fig-caption">Fig. 05 — Load cells, bridge circuit and strain gauges</figcaption>
+                    </figure>
+                    <div class="block-text">
+                        <h2>Powder bed density</h2>
+                        <p>To claculate the powder bed density, the mass of the powder on the powder bed had to be obtained. Wheat bridge circuit was used with strain gauges before the dump (attached to aluminum beam) and after the dump (HX711 load cells) to effectively measure the change in powder mass to calculate powder density. The small changes in resistance were picked up and normalized using LabVIEW.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Automation with Pronterface</h2>
+                    <p>Realizing the spreader's mechanism is a 3-axis stepper motor system (if dumper's rotational axis is set as one of the linear axis), I decided to use Pronterface, a 3D printer automation software that enables stepper motor control with G-code. By linking each of the stepper motor actuation with Pronterface's axis, I was able to easily automate the spreading process, create macro for step by step execution.</p>
+                </div>
+                <figure class="frame">
+                    <img src="../media/img/projects-pbf-4-1600.webp" alt="Project Image" width="1600" height="597" loading="lazy" decoding="async">
+                    <figcaption class="fig-caption">Fig. 06 — Pronterface G-code mapped to the device axes</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-pbf-5-1600.webp" alt="Project Image" width="1600" height="597" loading="lazy" decoding="async">
+                        <figcaption class="fig-caption">Fig. 07 — Driver wiring and assembled device</figcaption>
+                    </figure>
+                    <div class="block-text">
+                        <h2>Stepper motor drivers</h2>
+                        <p>Using A-4988 Stepper Motor Driver for each of the stepper motors, I was able to enforce microstepping resulting in smooth actuation of the motors. This enabled effective dumping, spreading, and bed height adjusting mechanisms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section detail-block">
+            <div class="block block--text">
+                <div class="block-text">
+                    <h2>Live demo</h2>
+                    <p>Live demo of our device - before completion.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-pbf-6-1600.webp" alt="Project Image" width="1600" height="597" loading="lazy" decoding="async">
+                        <figcaption class="fig-caption">Fig. 08 — Powder spread images and angle of repose</figcaption>
+                    </figure>
+                    <div class="block-text">
+                        <h2>Moving forward</h2>
+                        <p>Moving forward, supervised learning will need to be performed from powder spread images and respose angle images taken from the side to be able to determine the quality of metal powder spread using computer vision.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section detail-related">
+            <div class="section-head">
+                <h2>Similar work</h2>
+                <span class="section-rule"></span>
+            </div>
+            <div class="card-grid">
+                <a class="card card--related" href="moldex.html">
+                    <div class="card-media"><img src="../Images/moldex.png" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Learning with Moldex</h3>
+                        <p>Collaborated with Dr. Jinsu Gim and Dr. Chung-Yin Lin on materials research for the manufacturing of thermoplastic composite structures.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="drag.html">
+                    <div class="card-media"><img src="../Images/SPOT.png" alt="" width="524" height="525" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>ComputerVision Solution for Automated Power Plant Inspection</h3>
+                        <p>Robotics and AI solution automating power plant gauge inspections with object detection, image analysis, and OCR.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="torsobot.html">
+                    <div class="card-media"><img src="../media/img/images-robot-2-800.webp" alt="" width="800" height="1171" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Torsobot</h3>
+                        <p>Self-balancing rimless wheel robot investigating fundamental properties of human walk cycle with enhanced stability using PID control.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
         </div>
-        <ul class="list">
-            <li><a href="../index.html">About Me</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-        </ul>
+        <nav class="footer-links">
+            <a href="../index.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
         <p class="copyright">© David Seong | All Rights Reserved</p>
     </footer>
-    
-    <script src="../script.js"></script>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>

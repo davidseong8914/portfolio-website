@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Robodave's Portfolio - Project Details</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,57 +22,130 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-            David <span>Seong</span>
-        </a>
-        <i class='bx bx-menu' id='menu-icon'></i>
-        <nav class="navbar">
+<div class="page">
+    <header class="site-header">
+        <a href="../index.html" class="site-logo"><img src="../media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
             <a href="../projects.html" class="active">Projects</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="project-details" id="project-details">
-        <div class="container">
-            <div class="media">
-                <iframe width="560" height="505" src="https://www.youtube.com/embed/ibktlodKoo8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <main>
+        <section class="detail-head">
+            <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
+            <div class="detail-head-inner">
+                <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
+                <h1 class="detail-title">Virtual Infantry Training Simulation - Unity</h1>
+                <div class="tags">
+                    <span class="tag">Unity</span>
+                    <span class="tag">Physics engine</span>
+                    <span class="tag">Keyboard controls</span>
+                    <span class="tag">FPS style</span>
+                </div>
             </div>
-            <div class="description">
-                <h2><span>Virtual Infantry Training Simulation - Unity</span></h2>
-                <p>Developed an immersive digital simulation of the Nonsan Training Ground, featuring a detailed landscape and comprehensive training exercises. Utilized a physics engine to ensure realistic interactions and dynamics within the environment. Integrated easy keyboard based player control mechanisms to enhance user experience and training effectiveness.</p>
+        </section>
+
+        <section class="detail-section detail-hero">
+            <figure class="frame frame--hero">
+                <iframe src="https://www.youtube.com/embed/ibktlodKoo8" title="Virtual Infantry Training Simulation - Unity" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </figure>
+            <div class="fig-caption"><span>Fig. 01 — Nonsan Training Ground simulation</span></div>
+        </section>
+
+        <section class="detail-section detail-specs">
+            <div class="specs">
+                <div class="spec">
+                    <div class="spec-label">Setting</div>
+                    <div class="spec-value">Nonsan Training Ground</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Physics</div>
+                    <div class="spec-value">Physics engine for realistic interactions and dynamics</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Controls</div>
+                    <div class="spec-value">Easy keyboard based player control</div>
+                </div>
+                <div class="spec">
+                    <div class="spec-label">Format</div>
+                    <div class="spec-value">Multi-stage fps style program</div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <img src="Unity/1.jpg" alt="Project Image">
+        <section class="detail-section detail-block">
+            <div class="block block--text">
+                <div class="block-text">
+                    <h2>Overview</h2>
+                    <p>Developed an immersive digital simulation of the Nonsan Training Ground, featuring a detailed landscape and comprehensive training exercises. Utilized a physics engine to ensure realistic interactions and dynamics within the environment. Integrated easy keyboard based player control mechanisms to enhance user experience and training effectiveness.</p>
+                </div>
             </div>
-            <div class="description">
-                <p>Nonsan Training Ground simulation is a multi-stage fps style program where users can move, jump, crawl and perform various actions to avoid obstacles and get to the end.</p>
-  
-              </div>
-        </div>
+        </section>
 
-    </section>
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-unity-1-1368.webp" alt="Project Image" width="1368" height="697" loading="lazy" decoding="async">
+                        <figcaption class="fig-caption">Fig. 02 — Stages of the training ground</figcaption>
+                    </figure>
+                    <div class="block-text">
+                        <h2>Gameplay</h2>
+                        <p>Nonsan Training Ground simulation is a multi-stage fps style program where users can move, jump, crawl and perform various actions to avoid obstacles and get to the end.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        <section class="detail-section detail-related">
+            <div class="section-head">
+                <h2>Similar work</h2>
+                <span class="section-rule"></span>
+            </div>
+            <div class="card-grid">
+                <a class="card card--related" href="moldex.html">
+                    <div class="card-media"><img src="../Images/moldex.png" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Learning with Moldex</h3>
+                        <p>Collaborated with Dr. Jinsu Gim and Dr. Chung-Yin Lin on materials research for the manufacturing of thermoplastic composite structures.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="pbf.html">
+                    <div class="card-media"><img src="../media/img/images-pbf-ml-800.webp" alt="" width="800" height="546" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Learning for Powder Bed Fusion</h3>
+                        <p>Supervised learning on powder spread and repose angle images to determine the quality of metal powder spread.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="jediode.html">
+                    <div class="card-media"><img src="../media/img/projects-jediode-jediode-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Return of the Jediode</h3>
+                        <p>An all-inclusive, immersive Star Wars project that takes users from building the lightsaber, choosing a crystal, to duel practice against Darth Vader.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
         </div>
-        <ul class="list">
-            <li><a href="../index.html">About Me</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-        </ul>
+        <nav class="footer-links">
+            <a href="../index.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
         <p class="copyright">© David Seong | All Rights Reserved</p>
     </footer>
-    
-    <script src="../script.js"></script>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>
