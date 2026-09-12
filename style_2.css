@@ -203,6 +203,12 @@ img, video { height: auto; }
 .btn--primary:hover { background: var(--accent-hover); color: var(--ink); }
 .btn--ghost { border-color: rgba(233, 237, 232, 0.3); }
 .btn--ghost:hover { border-color: var(--accent); }
+.btn--store { display: inline-flex; align-items: center; gap: 9px; }
+.btn--store i { font-size: 19px; }
+.detail-cta { display: flex; justify-content: center; padding-top: 8px; }
+/* The app's name in the title links to the store without breaking the headline's colour. */
+.detail-title a { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 7px; }
+.detail-title a:hover { color: var(--accent-bright); }
 
 /* ---------- Home: dot field ---------- */
 
@@ -367,6 +373,8 @@ img, video { height: auto; }
 .card-flow { columns: 280px; column-gap: 20px; }
 .card-flow > .card { break-inside: avoid; margin-bottom: 20px; }
 .card-flow .card-media img, .card-flow .card-media video { height: auto; }
+/* A portrait phone screenshot would tower over its neighbours in the flow. */
+.card-flow .card-media--crop img, .card-flow .card-media--crop video { height: 190px; object-fit: cover; }
 
 .card {
     display: block;
@@ -575,6 +583,46 @@ textarea.field { grid-column: 1 / -1; resize: none; }
 .fig-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .fig-pair img { display: block; width: 100%; height: 280px; object-fit: cover; border-radius: 14px; filter: saturate(0.82); }
 
+/* App screenshots/recordings shown inside a device bezel. The screen is the child img/video. */
+.phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; justify-items: center; }
+.phones--single { grid-template-columns: minmax(0, 1fr); }
+.phones--four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.block + .phones { margin-top: 44px; }
+.phone {
+    /* Everything below scales off the frame width, so a smaller phone keeps its proportions. */
+    --pw: 220px;
+    position: relative;
+    width: 100%;
+    max-width: var(--pw);
+    aspect-ratio: 9 / 19.5;
+    padding: calc(var(--pw) * 0.035);
+    background: linear-gradient(155deg, #313a33, #141a16);
+    border: 1px solid var(--hairline-strong);
+    border-radius: calc(var(--pw) * 0.154);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+}
+/* Dynamic island. */
+.phone::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--pw) * 0.077);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32%;
+    height: calc(var(--pw) * 0.042);
+    border-radius: 999px;
+    background: #0a0e0c;
+}
+.phone img, .phone video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: calc(var(--pw) * 0.123);
+    background: var(--sunken);
+    filter: saturate(0.85);
+}
+
 .specs {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
@@ -621,6 +669,7 @@ textarea.field { grid-column: 1 / -1; resize: none; }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
+    .phones--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .stem { display: none; }
     .page--home { --gl: var(--gx); }
 }
@@ -636,6 +685,7 @@ textarea.field { grid-column: 1 / -1; resize: none; }
 }
 
 @media (max-width: 600px) {
+    .phones { grid-template-columns: minmax(0, 1fr); }
     :root { --gx: 20px; --gl: 20px; }
 
     .site-header { padding-top: 14px; padding-bottom: 14px; }

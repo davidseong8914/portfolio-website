@@ -34,7 +34,7 @@ OUT_IMG, OUT_VID = "media/img", "media/video"
 # Pages with their own bespoke design and media handling.
 SKIP_PAGES = {"projects/pestroleum.html", "projects/yc-blocks.html"}
 # Image width by the container it sits in; anything else (detail-page figures) gets DEFAULT_WIDTH.
-ROLE_WIDTH = [("site-logo", 160), ("hero-portrait", 800), ("card-media", 800), ("shot-media", 900), ("slide-media", 1200)]
+ROLE_WIDTH = [("site-logo", 160), ("hero-portrait", 800), ("card-media", 800), ("shot-media", 900), ("phone", 800), ("slide-media", 1200)]
 DEFAULT_WIDTH = 1600
 # Above-the-fold images that shouldn't be lazy-loaded.
 EAGER = ("site-logo", "hero-portrait", "frame--hero")
