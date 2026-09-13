@@ -338,10 +338,12 @@ function initSalmon(page) {
     svg.innerHTML = `<defs>${SAL_DEFS}</defs>`
         + `<g filter="url(#sal-warp)" fill="none" stroke="rgba(126,242,192,0.55)" stroke-width="1.4">${'<circle r="0"/>'.repeat(5)}</g>`
         + `<g fill="rgba(189,255,226,0.55)">${'<circle r="0"/>'.repeat(34)}</g>`
+        + '<g fill="#ffd9a0" filter="url(#sal-glow)"></g>'
         + FISH.repeat(7);
     page.prepend(svg);
 
-    const [, rippleGroup, bubbleGroup] = svg.children;
+    const [, rippleGroup, bubbleGroup, foodGroup] = svg.children;
+    const food = []; // pellets dropped by clicks, in page coordinates so they scroll with the content
     const ripples = Array.from(rippleGroup.children, el => ({ el, alive: false }));
     const bubbles = Array.from(bubbleGroup.children, el => ({ el, alive: false }));
     const morph = {};
@@ -383,33 +385,51 @@ function initSalmon(page) {
         mouse.at = performance.now();
     }, { passive: true });
 
+    // A click drops a few pellets where it lands (not on links, buttons or form fields). They sink a
+    // little and stay until the resident eats them.
+    let gulpUntil = 0;
+    window.addEventListener('click', e => {
+        if (!visible || e.target.closest('a, button, input, textarea, select, label')) return;
+        const n = 3 + Math.floor(Math.random() * 3);
+        for (let i = 0; i < n; i++) {
+            const el = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            el.setAttribute('r', (1.6 + Math.random() * 1.2).toFixed(2));
+            foodGroup.appendChild(el);
+            const a = Math.random() * Math.PI * 2, spread = Math.random() * 18;
+            food.push({ el, age: 0, x: e.pageX + Math.cos(a) * spread, y0: e.pageY + Math.sin(a) * spread,
+                y: e.pageY, sink: 14 + Math.random() * 22, bob: Math.random() * 6 });
+        }
+        while (food.length > 60) food.shift().el.remove();
+    });
+
     function pickWander(now) {
         wanderX = 70 + Math.random() * Math.max(0, W - 140);
         wanderY = 70 + Math.random() * Math.max(0, H - 140);
         wanderUntil = now + 4000 + Math.random() * 5000;
     }
 
-    // Steer toward a target: the cursor while chasing, else the wander point. Bounces off a 70px margin.
-    function steer(f, tx, ty, chasing, dt) {
+    // Steer toward a target: a pellet or the cursor while chasing, else the wander point. Bounces off the margin.
+    function steer(f, tx, ty, chasing, dt, margin = 70) {
         const dx = tx - f.x, dy = ty - f.y, d = Math.hypot(dx, dy) || 1;
         const ease = Math.min(1, d / 80), k = chasing ? 3.0 : 1.5, spd = chasing ? 260 : 92;
         f.vx += ((dx / d) * spd * ease - f.vx) * k * dt;
         f.vy += ((dy / d) * spd * ease - f.vy) * k * dt;
         f.x += f.vx * dt;
         f.y += f.vy * dt;
-        if (f.x < 70) { f.x = 70; f.vx = Math.abs(f.vx); } else if (f.x > W - 70) { f.x = W - 70; f.vx = -Math.abs(f.vx); }
-        if (f.y < 70) { f.y = 70; f.vy = Math.abs(f.vy); } else if (f.y > H - 70) { f.y = H - 70; f.vy = -Math.abs(f.vy); }
+        if (f.x < margin) { f.x = margin; f.vx = Math.abs(f.vx); } else if (f.x > W - margin) { f.x = W - margin; f.vx = -Math.abs(f.vx); }
+        if (f.y < margin) { f.y = margin; f.vy = Math.abs(f.vy); } else if (f.y > H - margin) { f.y = H - margin; f.vy = -Math.abs(f.vy); }
     }
 
     function draw(f, dt) {
         f.sp = Math.hypot(f.vx, f.vy);
-        f.ph += (2.4 + f.sp * 0.03) * dt * 6; // tail beat scales with speed
+        // Slow, wide strokes: ~1.5 beats/s cruising, ~3 at a dash, so each beat carries the fish most of a body length.
+        f.ph += (0.8 + f.sp * 0.008) * Math.PI * 2 * dt;
         f.h = Math.atan2(f.vy, f.vx) * 180 / Math.PI;
         const flip = Math.abs(f.h) > 90 ? 1 : -1; // artwork faces -x, so mirror going right
         const ang = flip === 1 ? f.h + 180 : -f.h;
-        const wob = Math.sin(f.ph) * Math.min(6, 1.4 + f.sp * 0.02);
+        const wob = Math.sin(f.ph) * Math.min(3.5, 0.8 + f.sp * 0.01);
         f.node.setAttribute('transform', `translate(${f.x.toFixed(1)},${f.y.toFixed(1)}) scale(${flip * f.sc},${f.sc}) rotate(${(ang + wob).toFixed(2)})`);
-        f.tail.style.transform = `rotate(${(Math.sin(f.ph - 0.9) * Math.min(18, 5 + f.sp * 0.07)).toFixed(2)}deg)`;
+        f.tail.style.transform = `rotate(${(Math.sin(f.ph - 0.9) * Math.min(24, 9 + f.sp * 0.055)).toFixed(2)}deg)`;
     }
 
     function launchSchool() {
@@ -493,10 +513,33 @@ function initSalmon(page) {
         }
     }
 
-    // The mouth rides open and closes when the resident reaches the cursor.
-    function mouth(dt, chasing) {
+    function updateFood(dt, sx, sy) {
+        for (const p of food) {
+            p.age += dt;
+            const k = Math.min(1, p.age / 1.6);
+            p.y = p.y0 + p.sink * (1 - (1 - k) * (1 - k)) + Math.sin(p.age * 1.3 + p.bob) * 1.5; // settles, then bobs
+            p.el.setAttribute('cx', (p.x - sx).toFixed(1));
+            p.el.setAttribute('cy', (p.y - sy).toFixed(1));
+            p.el.setAttribute('opacity', (0.85 * Math.min(1, p.age * 4)).toFixed(3));
+        }
+    }
+
+    // The on-screen pellet closest to the resident, or null.
+    function nearestMeal(sx, sy) {
+        let best = null, bestD = Infinity;
+        for (const p of food) {
+            const x = p.x - sx, y = p.y - sy;
+            if (x < 0 || x > W || y < 0 || y > H) continue;
+            const d = Math.hypot(x - resident.x, y - resident.y);
+            if (d < bestD) { best = p; bestD = d; }
+        }
+        return best;
+    }
+
+    // The mouth rides open and closes when the resident reaches the cursor or takes a pellet.
+    function mouth(dt, now, chasing) {
         const near = chasing ? Math.hypot(mouse.x - resident.x, mouse.y - resident.y) : 1e4;
-        const target = near < 95 ? 0 : 1;
+        const target = near < 95 || now < gulpUntil ? 0 : 1;
         mt += (target - mt) * Math.min(1, dt * (target === 0 ? 9 : 3.5));
         const t = mt * mt * (3 - 2 * mt);
         if (Math.abs(t - lastT) < 0.004) return;
@@ -516,11 +559,30 @@ function initSalmon(page) {
             willing = Math.random() < 0.72; // comes to the cursor most of the time, not every time
             willingFlip = now + 5000 + Math.random() * 6000;
         }
-        const chasing = willing && now - mouse.at < 2400;
+        const sx = window.scrollX, sy = window.scrollY;
+        updateFood(dt, sx, sy);
+        const meal = nearestMeal(sx, sy); // food beats the cursor, every time
+        const chasing = !meal && willing && now - mouse.at < 2400;
 
-        if (!chasing && (now > wanderUntil || Math.hypot(wanderX - resident.x, wanderY - resident.y) < 60)) pickWander(now);
-        steer(resident, chasing ? mouse.x : wanderX, chasing ? mouse.y : wanderY, chasing, dt);
+        if (meal) {
+            steer(resident, meal.x - sx, meal.y - sy, true, dt, 20);
+        } else {
+            if (!chasing && (now > wanderUntil || Math.hypot(wanderX - resident.x, wanderY - resident.y) < 60)) pickWander(now);
+            steer(resident, chasing ? mouse.x : wanderX, chasing ? mouse.y : wanderY, chasing, dt);
+        }
         draw(resident, dt);
+
+        // Eat the pellet once the mouth, ~118 artwork units ahead of centre along the heading, reaches it.
+        if (meal) {
+            const hr = resident.h * Math.PI / 180, reach = 118 * resident.sc;
+            const px = meal.x - sx, py = meal.y - sy;
+            if (Math.hypot(px - resident.x - Math.cos(hr) * reach, py - resident.y - Math.sin(hr) * reach) < 16
+                || Math.hypot(px - resident.x, py - resident.y) < 12) {
+                meal.el.remove();
+                food.splice(food.indexOf(meal), 1);
+                gulpUntil = now + 260;
+            }
+        }
 
         // A hard turn by the resident sends out a ripple.
         if (now - headingAt > 200) {
@@ -549,7 +611,7 @@ function initSalmon(page) {
         }
         updateBubbles(dt);
         updateRipples(dt);
-        mouth(dt, chasing);
+        mouth(dt, now, chasing);
     }
 
     evaluate();
