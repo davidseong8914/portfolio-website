@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Robodave's Portfolio - Project Details</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,96 +22,158 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-            David <span>Seong</span>
-        </a>
-        <i class='bx bx-menu' id='menu-icon'></i>
-        <nav class="navbar">
+<div class="page">
+    <header class="site-header">
+        <a href="../index.html" class="site-logo"><img src="../media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
+            <a href="../index.html#current">Current</a>
             <a href="../projects.html" class="active">Projects</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="project-details" id="project-details">
-        <div class="container">
-            <div class="media">
-                <iframe width="560" height="505" src="https://www.youtube.com/embed/ipPe0j_YZGk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <main>
+        <section class="detail-head">
+            <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
+            <div class="detail-head-inner">
+                <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
+                <div class="eyebrow">Wisconsin Robotics · RoboMaster University Series</div>
+                <h1 class="detail-title">Wisconsin Robotics - RoboMaster Competition</h1>
             </div>
-            <div class="description">
-                <h2><span>Wisconsin Robotics - RoboMaster Competition</span></h2>
-                <p>Wisconsin Robotics is a group of talented robotics engineers that get together to design and build the next generation Mars rovers that will one day work alongside astronauts exploring the Red Planet.</p>
-                <p><br>This year, I founded the RoboMaster's team with 4 other members to compete in the RoboMaster University Series (RMU) to build a PVP live firing robot.</p>
-                <p><br><br><a href="https://wisconsinrobotics.org/robots"><b>More on Wisconsin Robotics... </b></a> <br><a href="https://www.robomaster.com/en-US/robo/overview"><b>More about RMU...</b></a></p>
-            </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <img src="robomaster/1.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <p>After our initial set-up and testing, we divided up our roles. I was in charge of the turret design, control, with a touch of automated targetting using computer vision.</p>
-            </div>
-        </div>
+        <section class="detail-section detail-hero">
+            <figure class="frame frame--hero">
+                <iframe src="https://www.youtube.com/embed/ipPe0j_YZGk" title="Wisconsin Robotics RoboMaster" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </figure>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <iframe width="560" height="505" src="https://www.youtube.com/embed/RC35PBDDDhc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="description">
-                <p>Our <b>Final Assessment Submission</b> highlighting our robot's driving, shooting, and mobility capabilities.</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="media">
-                <img src="robomaster/2.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <p>In the new turret design, a slip ring was integrated to enhance the turret's rotational range. The stand's height was adjusted for rapid targeting and internal design was revised to provide stronger support. The ammo basket's frame design was optimized to reduce weight, and it was also moved above the shooter for more efficient reloading mechanism. Additionally, the rotating reloader design was revised to minimize jams and improve the overall firing rate.</p>
+        <section class="detail-section detail-block">
+            <div class="block block--text">
+                <div class="block-text">
+                    <h2>Overview</h2>
+                    <p>Wisconsin Robotics is a group of talented robotics engineers that get together to design and build the next generation Mars rovers that will one day work alongside astronauts exploring the Red Planet.</p>
+                    <p>This year, I founded the RoboMaster's team with 4 other members to compete in the RoboMaster University Series (RMU) to build a PVP live firing robot.</p>
+                    <p><a href="https://wisconsinrobotics.org/robots"><b>More on Wisconsin Robotics... </b></a> <br><a href="https://www.robomaster.com/en-US/robo/overview"><b>More about RMU...</b></a></p>
                 </div>
-        </div>
-
-        <div class="container">
-            <div class="media">
-                <img src="robomaster/3.jpg" alt="Project Image">
             </div>
-            <div class="description">
-                <p>The competition results were: 1 win, 2 ties, and 2 losses, placing us 19th out of 25 teams and 2nd among all rookie (first-year) teams. Our performance is impressive considering that the system only failed once, we only had 5 members on the team, and completed the entire sign up/design/build process in less than 3 months (other schools often work on it for a year with dozens of team members). This is a remarkable achievement for our first season, and I have high hopes for the future of the Wisconsin Robotics RoboMaster team.</p>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-robomaster-1-1600.webp" alt="Project Image" width="1600" height="597" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="block-text">
+                        <h2>Roles</h2>
+                        <p>After our initial set-up and testing, we divided up our roles. I was in charge of the turret design, control, with a touch of automated targetting using computer vision.</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <iframe width="560" height="505" src="https://www.youtube.com/embed/aQBHR_0Ymuo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Final assessment</h2>
+                    <p>Our <b>Final Assessment Submission</b> highlighting our robot's driving, shooting, and mobility capabilities.</p>
+                </div>
+                <figure class="frame">
+                    <iframe src="https://www.youtube.com/embed/RC35PBDDDhc" title="Final Assessment Submission" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </figure>
             </div>
-            <div class="description">
-                <p>Testing of new turret design.</p>
-                <p><br><Span>Battle videos coming soon!</Span></p>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-robomaster-2-1600.webp" alt="Project Image" width="1600" height="597" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="block-text">
+                        <h2>New turret design</h2>
+                        <p>In the new turret design, a slip ring was integrated to enhance the turret's rotational range. The stand's height was adjusted for rapid targeting and internal design was revised to provide stronger support. The ammo basket's frame design was optimized to reduce weight, and it was also moved above the shooter for more efficient reloading mechanism. Additionally, the rotating reloader design was revised to minimize jams and improve the overall firing rate.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Competition results</h2>
+                    <p>The competition results were: 1 win, 2 ties, and 2 losses, placing us 19th out of 25 teams and 2nd among all rookie (first-year) teams. Our performance is impressive considering that the system only failed once, we only had 5 members on the team, and completed the entire sign up/design/build process in less than 3 months (other schools often work on it for a year with dozens of team members). This is a remarkable achievement for our first season, and I have high hopes for the future of the Wisconsin Robotics RoboMaster team.</p>
+                </div>
+                <figure class="frame">
+                    <img src="../media/img/projects-robomaster-3-1600.webp" alt="Project Image" width="1600" height="597" loading="lazy" decoding="async">
+                </figure>
+            </div>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <iframe src="https://www.youtube.com/embed/aQBHR_0Ymuo" title="Testing of new turret design" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </figure>
+                    <div class="block-text">
+                        <h2>Turret testing</h2>
+                        <p>Testing of new turret design.</p>
+                        <p><span>Battle videos coming soon!</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section detail-related">
+            <div class="section-head">
+                <h2>Similar work</h2>
+                <span class="section-rule"></span>
+            </div>
+            <div class="card-grid">
+                <a class="card card--related" href="uwd.html">
+                    <div class="card-media"><video src="../media/video/projects-uwd-18-build18-thumbnail.mp4" poster="../media/video/projects-uwd-18-build18-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
+                    <div class="card-body">
+                        <h3>Hydrone</h3>
+                        <p>Underwater drone project built during CMU's Build 18 competition for recreational, environmental, and safety applications.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="laika.html">
+                    <div class="card-media"><img src="roboclub/Laika_ylw.png" alt="" width="595" height="503" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Laika</h3>
+                        <p>Laika is a quadruped robot like SPOT that is being built from scratch as part of Roboclub.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="drag.html">
+                    <div class="card-media"><img src="../Images/SPOT.png" alt="" width="524" height="525" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>ComputerVision Solution for Automated Power Plant Inspection</h3>
+                        <p>Robotics and AI solution automating power plant gauge inspections with object detection, image analysis, and OCR.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
         </div>
-
-
-    </section>
-
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
-        </div>
-        <ul class="list">
-            <li><a href="../index.html">About Me</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-        </ul>
+        <nav class="footer-links">
+            <a href="../index.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
         <p class="copyright">© David Seong | All Rights Reserved</p>
     </footer>
-    
-    <script src="../script.js"></script>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>

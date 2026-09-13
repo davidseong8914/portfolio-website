@@ -6,6 +6,9 @@
         <title>Robodave's Portfolio - Projects</title>
         <link rel="icon" href="favicon.png" type="image/png">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style_2.css">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,234 +21,286 @@
 
           gtag('config', 'G-PHQYT5B9N7');
         </script>
-        
+
     </head>
 
     <body>
-        <header class="header">
-            <a href="index.html" class="logo">
-                <img src="robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-                David <span>Seong</span>
-            </a>
-
-            <i class='bx bx-menu' id='menu-icon'></i>
-            <nav class="navbar">
+    <div class="page">
+        <header class="site-header">
+            <a href="index.html" class="site-logo"><img src="media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+            <nav class="site-nav">
                 <a href="index.html">Home</a>
+                <a href="index.html#current">Current</a>
                 <a href="projects.html" class="active">Projects</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </header>
 
-        <section class="projects" id="projects">
-            <div class = "projects-top-margin"></div>
-
-            <div class="projects-box">
-                <h2 class="heading">Current Projects</h2>
-
-                <div class="wrapper">
-                    <div class = "project-item" id="patrick">
-                        <div class ="robot-image">
-                            <img src="projects/patrick/Patrick_ylw_reduced.png" alt="">
-                        </div>
-                    
-                        <div class ="robot-text">
-                            <h2>Patrick</h2>
-                        </div>
-                    </div>
-
-                    <div class = "project-item" id = "laika">
-                        <div class = "robot-image">
-                            <img src="projects/roboclub/Laika_ylw.png">
-                        </div>
-                        <div class = "robot-text">
-                            <h2>Laika</h2>
-                        </div>
-                    </div>
-
-                    <div class = "project-item" id = "howl">
-                        <div class = "robot-image">
-                            <img src="projects/3d_prints/HOWL.jpeg">
-                        </div>
-                        <div class = "robot-text">
-                            <h2>HOWL</h2>
-                        </div>
-                    </div>
+        <section class="index-head">
+            <div class="plant plant--tr plant--index-monstera"><img src="Images/leaves/leafpix_monstera.png" alt=""></div>
+            <div class="plant plant--bl plant--index-cactus"><img src="Images/leaves/leafpix_cactus.png" alt=""></div>
+            <div class="index-head-inner">
+                <div class="eyebrow">27 projects · 4 categories</div>
+                <h1 class="page-title">Projects</h1>
+                <p class="lead">Everything I have built, from research platforms to boats made of newspaper. Filter by category or scroll through the lot.</p>
+                <div class="chips">
+                    <button type="button" class="chip active" data-filter="All" aria-pressed="true">All <span class="chip-count">27</span></button>
+                    <button type="button" class="chip" data-filter="Robotics" aria-pressed="false">Robotics <span class="chip-count">17</span></button>
+                    <button type="button" class="chip" data-filter="Software" aria-pressed="false">Software <span class="chip-count">4</span></button>
+                    <button type="button" class="chip" data-filter="Free Build" aria-pressed="false">Free Build <span class="chip-count">2</span></button>
+                    <button type="button" class="chip" data-filter="3D Printing" aria-pressed="false">3D Printing <span class="chip-count">4</span></button>
                 </div>
-
-                <h2 class="heading">Robotics Projects</h2>
-                <div class="wrapper">
-                    <div class="project-item" id="robomaster">
-                        <div class="robot-image">
-                            <img src="Images/Robomaster.png" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Wisconsin Robotics<br>RoboMaster</h2>                    
-                        </div>
-                    </div>
-    
-                    <div class="project-item" id="torsobot">
-                        <div class="robot-image">
-                            <img src="Images/robot_2.png" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Torsobot</h2>
-                        </div>
-                    </div>
-    
-                    <div class="project-item" id="pbf">
-                        <div class="robot-image">
-                            <img src="Images/robot_3.png" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Powder Spreader</h2>
-                        </div>
-                    </div>
-    
-                    <div class ="project-item" id="cord">
-                        <div class ="robot-image">
-                            <img src="Images/cord.png" alt="">
-                        </div>
-                        <div class = "robot-text">
-                            <h2>Cheap Opensource Robot Dog (CORD)</h2>
-                        </div>
-                    </div>
-    
-                    <div class="project-item" id="wybot">
-                        <div class="robot-image">
-                            <img src="Images/robot_1.png" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>WYBot</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class = "heading">Software Projects</h2>
-                <div class = "wrapper">
-                    <div class="project-item full-box" id="drag">
-                        <div class="robot-image">
-                            <img src="Images/SPOT.png" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>ComputerVision Solution for<br>Automated Power Plant Inspection</h2>
-                        </div>
-                    </div>
-                    <div class="project-item full-box" id="moldex">
-                        <div class="robot-image">
-                            <img src="Images/moldex.png" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Learning with Moldex</h2>
-                        </div>
-                    </div>
-    
-                    <div class="project-item full-box" id="pbf">
-                        <div class="robot-image">
-                            <img src="Images/PBF_ML.png" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Learning for Powder Bed Fusion</h2>
-                        </div>
-                    </div>
-
-                    <div class="project-item full-box" id="unity">
-                        <div class="robot-image">
-                            <img src="Images/Unity.jpeg" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Unity Based Infantry Army Training Simulation</h2>
-                        </div>
-                        </div>
-                </div>
-
-                <h2 class="heading">Free Build Projects</h2>
-                <div class="wrapper">
-    
-                    <div class="project-item large" id="azsz2">
-                        <div class="robot-image">
-                            <img src="Images/ASZS2.jpeg" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Recycled Newspaper Mache Canoe</h2>
-                        </div>
-                    </div>
-    
-                    <div class="project-item large" id="azsz1">
-                        <div class="robot-image">
-                            <img src="Images/AZSZ1.png" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Recycled Arizona "Can"oe</h2>
-                        </div>
-                    </div>
-    
-                    <!-- Additional project2-item boxes here if needed-->
-                </div>
-
-                <h2 class="heading">3D Printing Projects</h2>
-                <div class = "wrapper">
-
-                    <!-- <div class="project-item large" id="sisyphus"> -->
-                    <div class="project-item large" id="bambu">
-                        <div class="robot-image">
-                            <img src="projects/3d_prints/Sisyphus.jpeg" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Sisyphus - Desktop Study Mate</h2>
-                        </div>
-                    </div>
-
-                    <!-- <div class="project-item large" id="somek"> -->
-                    <div class="project-item large" id="bambu">
-                        <div class="robot-image">
-                            <img src="projects/3d_prints/Somek.jpeg" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Somek Tower Builder</h2>
-                        </div>
-                    </div>
-
-                    <!-- <div class="project-item large" id="gauntlet"> -->
-                        <div class="robot-image">
-                            <img src="projects/3d_prints/Gauntlet Thumbnail.jpeg" alt="">
-                        </div>
-                        <div class="robot-text">
-                            <h2>Infinity Gauntlet - JBL Speaker Cover</h2>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
+        <main class="index-body">
+            <section class="group" data-cat="Robotics">
+                <div class="section-head">
+                    <h2>Robotics Projects</h2>
+                    <span class="section-rule"></span>
+                    <span class="section-count">17 PROJECTS</span>
+                </div>
+                <div class="card-flow">
+                    <a class="card card--index" href="projects/simon.html">
+                        <div class="card-media"><video src="media/video/projects-simon-simon.mp4" poster="media/video/projects-simon-simon.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Simon</h3>
+                            <p>Autonomous navigation in densely vegetated environments. Fusion of 2D and 3D perception and proprioceptive feedback enables wheeled robots to more accurately assess the traversability of their environment based on their capabilities.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/patrick.html">
+                        <div class="card-media"><video src="media/video/projects-patrick-img-1660.mp4" poster="media/video/projects-patrick-img-1660.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Patrick</h3>
+                            <p>Autonomous environmental monitoring robot for forested areas using LiDAR, camera sensor fusion, and adaptive density drive.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/planning.html">
+                        <div class="card-media"><video src="media/video/projects-planning-planning-thumbnail.mp4" poster="media/video/projects-planning-planning-thumbnail.jpg" width="960" height="820" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Proprioceptive Traversal</h3>
+                            <p>Robotic navigation where instead of treating all obstacles as untraversable, their cost are estimated for an initial path. Upon collision, the cost of the obstacle is updated and the path is recomputed.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/jediode.html">
+                        <div class="card-media"><img src="media/img/projects-jediode-jediode-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Return of the Jediode</h3>
+                            <p>An all-inclusive, immersive Star Wars project that takes users from building the lightsaber, choosing a crystal, to duel practice against Darth Vader.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/e_ducati_on.html">
+                        <div class="card-media"><img src="media/img/projects-e-ducati-on-proto-2-2-800.webp" alt="" width="800" height="600" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>E-Ducati-On</h3>
+                            <p>Educational two wheeled robotics platform designed to test control systems. It's a Ducati inspired robot that is capable of self balancing, driving and performing stunts.</p>
+                        </div>
+                    </a>
+                    <!-- Mobot has no project page yet, so this card isn't a link. -->
+                    <div class="card card--index">
+                        <div class="card-media"><video src="media/video/projects-mobots-mobot-thumbnail.mp4" poster="media/video/projects-mobots-mobot-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Mobot</h3>
+                            <p>Traditional CMU line tracing robot competition entry with autonomous navigation and precision control systems.</p>
+                        </div>
+                    </div>
+                    <a class="card card--index" href="projects/uwd.html">
+                        <div class="card-media"><video src="media/video/projects-uwd-18-build18-thumbnail.mp4" poster="media/video/projects-uwd-18-build18-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Hydrone</h3>
+                            <p>Underwater drone project built during CMU's Build 18 competition for recreational, environmental, and safety applications.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/tbone.html">
+                        <div class="card-media"><video src="media/video/projects-t-bone-tbone-thumbnail.mp4" poster="media/video/projects-t-bone-tbone-thumbnail.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>T-Bone: Fish Tail Inspired Robot</h3>
+                            <p>Biomimetic underwater robot inspired by fish tail propulsion, designed for efficient aquatic locomotion and maneuverability.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/drag.html">
+                        <div class="card-media"><img src="Images/SPOT.png" alt="" width="524" height="525" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>ComputerVision Solution for Automated Power Plant Inspection</h3>
+                            <p>Robotics and AI solution automating power plant gauge inspections with object detection, image analysis, and OCR.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/robomaster.html">
+                        <div class="card-media"><video src="media/video/projects-robomaster-robomaster-thumbnail.mp4" poster="media/video/projects-robomaster-robomaster-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Wisconsin Robotics RoboMaster</h3>
+                            <p>Competitive robotics team competing in RoboMaster, focusing on autonomous navigation and precision targeting systems.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/torsobot.html">
+                        <div class="card-media"><video src="media/video/projects-torsobot-torsobot-thumbnail.mp4" poster="media/video/projects-torsobot-torsobot-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Torsobot</h3>
+                            <p>Self-balancing rimless wheel robot investigating fundamental properties of human walk cycle with enhanced stability using PID control.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/pbf.html">
+                        <div class="card-media"><video src="media/video/projects-pbf-powder-bed-thumbnail.mp4" poster="media/video/projects-pbf-powder-bed-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Powder Spreader</h3>
+                            <p>Powder bed fusion manufacturing system created for ML analysis on powder spread conditions and quality control.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/cord.html">
+                        <div class="card-media"><video src="media/video/projects-cord-cord-thumbnail.mp4" poster="media/video/projects-cord-cord-thumbnail.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Cheap Opensource Robot Dog (CORD)</h3>
+                            <p>Open-source quadruped robot platform designed for educational purposes and affordable robotics research.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/laika.html">
+                        <div class="card-media"><img src="media/img/projects-roboclub-compare-800.webp" alt="" width="800" height="367" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Laika</h3>
+                            <p>Laika is a quadruped robot like SPOT that is being built from scratch as part of Roboclub.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/wybot.html">
+                        <div class="card-media"><video src="media/video/projects-wybot-wypd-thumbnail.mp4" poster="media/video/projects-wybot-wypd-thumbnail.jpg" width="480" height="852" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>WYBot</h3>
+                            <p>Versatile robotic platform designed for multiple applications, featuring modular design and adaptive control systems.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/howl.html">
+                        <div class="card-media"><img src="media/img/projects-3d-prints-howl-800.webp" alt="" width="800" height="581" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>HOWL</h3>
+                            <p>Advanced robotic system designed for autonomous exploration and navigation in challenging environments.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/pestroleum.html">
+                        <div class="card-media"><video src="media/video/projects-pestroleum-energy-harvesting.mp4" poster="media/video/projects-pestroleum-energy-harvesting.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Pestroleum</h3>
+                            <p>An innovative concept that turns pest management into renewable energy generation.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
 
-        <footer class="footer">
-            <div class="social">
-                <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-                <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-                <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+            <section class="group" data-cat="Software">
+                <div class="section-head">
+                    <h2>Software Projects</h2>
+                    <span class="section-rule"></span>
+                    <span class="section-count">4 PROJECTS</span>
+                </div>
+                <div class="card-flow">
+                    <a class="card card--index" href="projects/offish.html">
+                        <div class="card-media card-media--crop"><video src="media/video/projects-offish-video3.mp4" poster="media/video/projects-offish-video3.jpg" width="444" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
+                        <div class="card-body">
+                            <h3>Offish</h3>
+                            <p>A fishing game based on locations I fished at. My first ever phone app built for friends, passionate anglers.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/moldex.html">
+                        <div class="card-media"><img src="Images/moldex.png" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Learning with Moldex</h3>
+                            <p>Collaborated with Dr. Jinsu Gim and Dr. Chung-Yin Lin on materials research for the manufacturing of thermoplastic composite structures.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/pbf.html">
+                        <div class="card-media"><img src="media/img/images-pbf-ml-800.webp" alt="" width="800" height="546" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Learning for Powder Bed Fusion</h3>
+                            <p>Supervised learning on powder spread and repose angle images to determine the quality of metal powder spread.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/unity.html">
+                        <div class="card-media"><img src="media/img/images-unity-800.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Unity Based Infantry Army Training Simulation</h3>
+                            <p>An immersive digital simulation of the Nonsan Training Ground, featuring a detailed landscape and comprehensive training exercises.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="group" data-cat="Free Build">
+                <div class="section-head">
+                    <h2>Free Build Projects</h2>
+                    <span class="section-rule"></span>
+                    <span class="section-count">2 PROJECTS</span>
+                </div>
+                <div class="card-flow">
+                    <a class="card card--index" href="projects/azsz2.html">
+                        <div class="card-media"><img src="media/img/images-aszs2-800.webp" alt="" width="800" height="1067" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Recycled Newspaper Mache Canoe</h3>
+                            <p>I love camping. I love Canoeing. And I love Fishing. I also had prior experience building a canoe from recycled materials (AZSZ 1.0). So why not build another?</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/azsz1.html">
+                        <div class="card-media"><img src="media/img/images-azsz1-800.webp" alt="" width="800" height="1060" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Recycled Arizona "Can"oe</h3>
+                            <p>When Covid hit and classes moved online, my friends and I started drinking Arizona (a lot of it). We collected around 80 cans in a matter of a few weeks.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="group" data-cat="3D Printing">
+                <div class="section-head">
+                    <h2>3D Printing Projects</h2>
+                    <span class="section-rule"></span>
+                    <span class="section-count">4 PROJECTS</span>
+                </div>
+                <div class="card-flow">
+                    <a class="card card--index" href="projects/bambu.html#sisyphus">
+                        <div class="card-media"><img src="media/img/projects-3d-prints-sisyphus-800.webp" alt="" width="800" height="717" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Sisyphus - Desktop Study Mate</h3>
+                            <p>Inspired by Sisyphus, the Greek mythological king condemned to an eternal struggle, this desktop object serves as both a toy and a motivational tool.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/bambu.html#somek">
+                        <div class="card-media"><img src="media/img/projects-3d-prints-somek-800.webp" alt="" width="800" height="1169" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Somek Tower Builder</h3>
+                            <p>This machine sets up a 'Domino Drop Shot' where shot glasses get knocked over in a chain reaction.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/bambu.html#gauntlet">
+                        <div class="card-media"><img src="media/img/projects-3d-prints-gauntlet-thumbnail-800.webp" alt="" width="800" height="1232" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Infinity Gauntlet - JBL Speaker Cover</h3>
+                            <p>Gauntlet shaped JBL speaker cover that uses the colorful lights from the JBL Pulse 4 to mimic the infinity gems, serving as both a replica and a night lamp.</p>
+                        </div>
+                    </a>
+                    <a class="card card--index" href="projects/bambu.html#book-case">
+                        <div class="card-media"><img src="media/img/projects-3d-prints-book-800.webp" alt="" width="800" height="298" loading="lazy" decoding="async"></div>
+                        <div class="card-body">
+                            <h3>Book Case</h3>
+                            <p>Book case to protect books from damage during transportation, with a screw to support different book thicknesses.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="socials">
+                <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
             </div>
-
-            <ul class="list">
-                <li>
-                    <a href="index.html">About Me</a>
-                </li>
-
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-
-                <li>
-                    <a href="projects.html">Projects</a>
-                </li>
-            </ul>
-
-            <p class="copyright">
-                © David Seong | All Rights Reserved
-            </p>
+            <nav class="footer-links">
+                <a href="index.html">About Me</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p class="copyright">© David Seong | All Rights Reserved</p>
         </footer>
-        
+    </div>
+
         <script src="script.js"></script>
     </body>
 </html>

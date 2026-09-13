@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Robodave's Portfolio - Project Details</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,78 +22,120 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-            David <span>Seong</span>
-        </a>
-        <i class='bx bx-menu' id='menu-icon'></i>
-        <nav class="navbar">
+<div class="page">
+    <header class="site-header">
+        <a href="../index.html" class="site-logo"><img src="../media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
+            <a href="../index.html#current">Current</a>
             <a href="../projects.html" class="active">Projects</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="project-details" id="project-details">
-        <div class="container">
-            <div class="media">
-                <img src="torsobot/1.jpg" alt="Project Image">
+    <main>
+        <section class="detail-head">
+            <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
+            <div class="detail-head-inner">
+                <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
+                <h1 class="detail-title">Torsobot</h1>
             </div>
-            <div class="description">
-                <h2><span>Torsobot</span></h2>
-                <p>Torsobot is a self-balancing rimless wheel robot built to investigate fundamental properties of human walk cycle. I enhanced its stability using PID control, redesigned and built its curret chasis, and implemented a dual gear drive system.</p>
-                <p><br>The robot is programmed with ROS and operates on a combination of Raspberry Pi and Arduino.</p>
-                <p><br><a href="https://uwbadgerlab.engr.wisc.edu/research/roboticmobility/" class ="lab"><span><b>More TORSO!</b></span></a></p>
-            </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <img src="torsobot/2.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <p>The updated design replaces the previous system's pulley belt drive, which consistently introduced noise due to slippage issues, with a bevel gear dual drive system to enhance efficiency and reduce noise. Additionally, I designed a "backpack" that secures its battery, sensors, and regulator in place while also allowing easy access.</p>
-            </div>
-        </div>
+        <section class="detail-section detail-hero">
+            <figure class="frame frame--hero">
+                <iframe src="https://www.youtube.com/embed/0nVPCiSApB0" title="Torsobot in action" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </figure>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <iframe width="560" height="505" src="https://www.youtube.com/embed/0nVPCiSApB0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Overview</h2>
+                    <p>Torsobot in action!</p>
+                    <p>Torsobot is a self-balancing rimless wheel robot built to investigate fundamental properties of human walk cycle. I enhanced its stability using PID control, redesigned and built its curret chasis, and implemented a dual gear drive system.</p>
+                    <p>The robot is programmed with ROS and operates on a combination of Raspberry Pi and Arduino.</p>
+                    <p><a href="https://uwbadgerlab.engr.wisc.edu/research/roboticmobility/"><span><b>More TORSO!</b></span></a></p>
+                </div>
+                <figure class="frame">
+                    <img src="../media/img/projects-torsobot-1-1569.webp" alt="Project Image" width="1569" height="697" loading="lazy" decoding="async">
+                </figure>
             </div>
-            <div class="description">
-                <p>Torsobot in action!</p>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-torsobot-2-1569.webp" alt="Project Image" width="1569" height="697" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="block-text">
+                        <h2>Bevel Gear Dual Drive</h2>
+                        <p>The updated design replaces the previous system's pulley belt drive, which consistently introduced noise due to slippage issues, with a bevel gear dual drive system to enhance efficiency and reduce noise. Additionally, I designed a "backpack" that secures its battery, sensors, and regulator in place while also allowing easy access.</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <iframe width="560" height="505" src="https://www.youtube.com/embed/LUeUxcaJ_ns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Push-off Mechanism</h2>
+                    <p>I also designed an independent push-off mechanism using crank-piston linear actuators. Suspended from the wheel shaft, this system harnesses torque from the wheels to deliver a consistent "kick" each time Torsobot's "feet" is about to leave the ground, independent of its lean angle.</p>
+                </div>
+                <figure class="frame">
+                    <iframe src="https://www.youtube.com/embed/LUeUxcaJ_ns" title="Torsobot push-off mechanism" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </figure>
             </div>
-            <div class="description">
-                <p>I also designed an independent push-off mechanism using crank-piston linear actuators. Suspended from the wheel shaft, this system harnesses torque from the wheels to deliver a consistent "kick" each time Torsobot's "feet" is about to leave the ground, independent of its lean angle.</p>
+        </section>
+
+        <section class="detail-section detail-related">
+            <div class="section-head">
+                <h2>Similar work</h2>
+                <span class="section-rule"></span>
             </div>
-        </div>
-        </div>
+            <div class="card-grid">
+                <a class="card card--related" href="e_ducati_on.html">
+                    <div class="card-media"><img src="../media/img/projects-e-ducati-on-proto-2-2-800.webp" alt="" width="800" height="600" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>E-Ducati-On</h3>
+                        <p>Educational two wheeled robotics platform designed to test control systems. It's a Ducati inspired robot that is capable of self balancing, driving and performing stunts.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="tbone.html">
+                    <div class="card-media"><img src="../media/img/projects-t-bone-t-bone-800.webp" alt="" width="800" height="449" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>T-Bone: Fish Tail Inspired Robot</h3>
+                        <p>Biomimetic underwater robot inspired by fish tail propulsion, designed for efficient aquatic locomotion and maneuverability.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="cord.html">
+                    <div class="card-media"><img src="../media/img/images-cord-800.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Cheap Opensource Robot Dog (CORD)</h3>
+                        <p>Open-source quadruped robot platform designed for educational purposes and affordable robotics research.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
 
-
-    </section>
-
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+    <footer class="site-footer">
+        <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
         </div>
-        <ul class="list">
-            <li><a href="../index.html">About Me</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-        </ul>
+        <nav class="footer-links">
+            <a href="../index.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
         <p class="copyright">© David Seong | All Rights Reserved</p>
     </footer>
-    
-    <script src="../script.js"></script>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>

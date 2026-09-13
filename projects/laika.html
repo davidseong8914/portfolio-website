@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Robodave's Portfolio - Project Details</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,81 +22,133 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-            David <span>Seong</span>
-        </a>
-        <i class='bx bx-menu' id='menu-icon'></i>
-        <nav class="navbar">
+<div class="page">
+    <header class="site-header">
+        <a href="../index.html" class="site-logo"><img src="../media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
+            <a href="../index.html#current">Current</a>
             <a href="../projects.html" class="active">Projects</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="project-details" id="project-details">
-        <div class="container">
-            <div class="media">
-                <img src="roboclub/Comparison.webp" alt="Project Image">
+    <main>
+        <section class="detail-head">
+            <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
+            <div class="detail-head-inner">
+                <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
+                <div class="eyebrow">Quadrupeds project · Roboclub</div>
+                <h1 class="detail-title">Laika</h1>
             </div>
-            <div class="description">
-                <h2><span>Laika</span></h2>
-                <p>The Quadrupeds project is a new project at Roboclub. <br></p>
-                <p><br>We are designing and building an quadruped robot from scratch - everything except the motors, electronics and a ROS2-based autonomy stack.</p>
-                <p><br>In this project, we extensively analyzed the positioning of the motors to optimize the robot's movement capabilities, balance, and energy efficiency. Gear ratios were calculated to maximize torque output while minimizing mechanical interference and weight distribution issues.</p>
+        </section>
+
+        <section class="detail-section detail-hero">
+            <figure class="frame frame--hero">
+                <img src="roboclub/Comparison.webp" alt="Project Image" width="1237" height="567">
+            </figure>
+        </section>
+
+        <section class="detail-section detail-block">
+            <div class="block block--text">
+                <div class="block-text">
+                    <h2>Overview</h2>
+                    <p>The Quadrupeds project is a new project at Roboclub.</p>
+                    <p>We are designing and building an quadruped robot from scratch - everything except the motors, electronics and a ROS2-based autonomy stack.</p>
+                    <p>In this project, we extensively analyzed the positioning of the motors to optimize the robot's movement capabilities, balance, and energy efficiency. Gear ratios were calculated to maximize torque output while minimizing mechanical interference and weight distribution issues.</p>
+                </div>
             </div>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-roboclub-fan-design-web-1340.webp" alt="Project Image" width="1340" height="697" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="block-text">
+                        <h2>Motor cooling</h2>
+                        <p>My initial design focused on creating a prototype for a snapping fan holder integrated into the motor cooling system. The objective was to develop a housing around the motor, along with a fan plate, to ensure optimal airflow. The fan effectively dissipates heat and maintaining a stable operating temperature, thus enhancing the motor's overall performance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Chassis and leg configuration</h2>
+                    <p>Initial chassis design and leg configuration, showcasing key considerations for actuator placement and movement. The images highlight two different actuator positions, showing the superiority of the upper configuration due to a more evenly distributed load.</p>
+                </div>
+                <figure class="frame">
+                    <!-- <img src="../media/img/projects-roboclub-chassis-leg-web-1600.webp" alt="Project Image" width="1600" height="615" loading="lazy" decoding="async"> -->
+                    <img src="../media/img/projects-roboclub-chassis-grow-web-1600.webp" alt="Project Image" width="1600" height="676" loading="lazy" decoding="async">
+                </figure>
+            </div>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="roboclub/compare.jpg" alt="Project Image" width="1237" height="567" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="block-text">
+                        <h2>Chassis designs</h2>
+                        <p>Comparison of two possible current chassis designs - we are discussing overall weight balance, whether to make the main body out of cf tubes or plates.</p>
+                        <p>Last updated: 2024 Nov 23</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section detail-related">
+            <div class="section-head">
+                <h2>Similar work</h2>
+                <span class="section-rule"></span>
+            </div>
+            <div class="card-grid">
+                <a class="card card--related" href="cord.html">
+                    <div class="card-media"><img src="../media/img/images-cord-800.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Cheap Opensource Robot Dog (CORD)</h3>
+                        <p>Open-source quadruped robot platform designed for educational purposes and affordable robotics research.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="wybot.html">
+                    <div class="card-media"><img src="../media/img/images-robot-1-800.webp" alt="" width="800" height="594" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>WYBot</h3>
+                        <p>Versatile robotic platform designed for multiple applications, featuring modular design and adaptive control systems.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="simon.html">
+                    <div class="card-media"><video src="../media/video/projects-simon-simon.mp4" poster="../media/video/projects-simon-simon.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
+                    <div class="card-body">
+                        <h3>Simon</h3>
+                        <p>Autonomous navigation in densely vegetated environments. Fusion of 2D and 3D perception and proprioceptive feedback enables wheeled robots to more accurately assess the traversability of their environment based on their capabilities.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
         </div>
-
-        <div class="container">
-            <div class="media">
-                <img src="roboclub/fan_design_web.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <p>My initial design focused on creating a prototype for a snapping fan holder integrated into the motor cooling system. The objective was to develop a housing around the motor, along with a fan plate, to ensure optimal airflow. The fan effectively dissipates heat and maintaining a stable operating temperature, thus enhancing the motor's overall performance</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="media">
-                <!-- <img src="roboclub/chassis_leg_web.jpg" alt="Project Image"> -->
-                <img src="roboclub/chassis_grow_web.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <p>Initial chassis design and leg configuration, showcasing key considerations for actuator placement and movement. The images highlight two different actuator positions, showing the superiority of the upper configuration due to a more evenly distributed load.</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="media">
-                <img src="roboclub/compare.jpg" alt="Project Image">
-            </div>
-            <div class="description">
-                <p>Comparison of two possible current chassis designs - we are discussing overall weight balance, whether to make the main body out of cf tubes or plates.</p>
-                <p><br>Last updated: 2024 Nov 23</p>
-            </div>
-        </div>
-
-
-
-
-    </section>
-
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
-        </div>
-        <ul class="list">
-            <li><a href="../index.html">About Me</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-        </ul>
+        <nav class="footer-links">
+            <a href="../index.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
         <p class="copyright">© David Seong | All Rights Reserved</p>
     </footer>
-    
-    <script src="../script.js"></script>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>

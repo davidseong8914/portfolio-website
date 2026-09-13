@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Robodave's Portfolio - Project Details</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,61 +22,106 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-            David <span>Seong</span>
-        </a>
-        <i class='bx bx-menu' id='menu-icon'></i>
-        <nav class="navbar">
+<div class="page">
+    <header class="site-header">
+        <a href="../index.html" class="site-logo"><img src="../media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
+            <a href="../index.html#current">Current</a>
             <a href="../projects.html" class="active">Projects</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="project-details" id="project-details">
+    <main>
+        <section class="detail-head">
+            <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
+            <div class="detail-head-inner">
+                <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
+                <div class="eyebrow">Build 18 · CMU</div>
+                <h1 class="detail-title">Underwater Drone</h1>
+            </div>
+        </section>
 
-        <div class="container">
-            <div class="media patrick">
-                <div class="side-by-side-images">
-                    <img src="uwd_18/IMG_3093.JPG" alt="Project Image 1">
-                    <img src="uwd_18/uwd.jpg" alt="Project Image 2">
+        <section class="detail-section detail-hero">
+            <figure class="frame frame--hero">
+                <img src="../media/img/projects-uwd-18-img-3093-1600.webp" alt="Project Image 1" width="1600" height="2133">
+            </figure>
+        </section>
+
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Overview</h2>
+                    <p>Underwater Drone is a robot built during CMU's <a href=""> Build 18 </a> competition. Our team is continuing to work on the project for recreational, environmental, and safety applications.</p>
+                </div>
+                <figure class="frame">
+                    <img src="../media/img/projects-uwd-18-uwd-1600.webp" alt="Project Image 2" width="1600" height="900" loading="lazy" decoding="async">
+                </figure>
+            </div>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-uwd-18-jpeg-image-4b7a-8e85-db-0-1000.webp" alt="Project Image" width="1000" height="1041" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="block-text">
+                        <h2>Current work:</h2>
+                        <p>Updating design to integrate additional motors, sensors, mechanisms.</p>
+                    </div>
                 </div>
             </div>
-            <div class="description">
-                <h2><span>Underwater Drone</span></h2>
-                <p>Underwater Drone is a robot built during CMU's <a href=""> Build 18 </a> competition. Our team is continuing to work on the project for recreational, environmental, and safety applications.</p>
-            </div>
-        </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <img src="uwd_18/JPEG image-4B7A-8E85-DB-0.jpeg" alt="Project Image">
+        <section class="detail-section detail-related">
+            <div class="section-head">
+                <h2>Similar work</h2>
+                <span class="section-rule"></span>
             </div>
-            <div class="description">
-                <h2>Current work:</h2>
-                <p>Updating design to integrate additional motors, sensors, mechanisms.</p>
+            <div class="card-grid">
+                <a class="card card--related" href="tbone.html">
+                    <div class="card-media"><img src="../media/img/projects-t-bone-t-bone-800.webp" alt="" width="800" height="449" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>T-Bone: Fish Tail Inspired Robot</h3>
+                        <p>Biomimetic underwater robot inspired by fish tail propulsion, designed for efficient aquatic locomotion and maneuverability.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="patrick.html">
+                    <div class="card-media"><img src="../media/img/projects-patrick-patrick-ylw-reduced-800.webp" alt="" width="800" height="896" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Patrick</h3>
+                        <p>Autonomous environmental monitoring robot for forested areas using LiDAR, camera sensor fusion, and adaptive density drive.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="laika.html">
+                    <div class="card-media"><img src="roboclub/Laika_ylw.png" alt="" width="595" height="503" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Laika</h3>
+                        <p>Laika is a quadruped robot like SPOT that is being built from scratch as part of Roboclub.</p>
+                    </div>
+                </a>
             </div>
-        </div>
+        </section>
+    </main>
 
-    </section>
-
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+    <footer class="site-footer">
+        <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
         </div>
-        <ul class="list">
-            <li><a href="../index.html">About Me</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-        </ul>
+        <nav class="footer-links">
+            <a href="../index.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
         <p class="copyright">© David Seong | All Rights Reserved</p>
     </footer>
-    
-    <script src="../script.js"></script>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<style>
+html { scroll-behavior:smooth; }
+body { margin:0; background:#0d1110; }
+a { color:#e9ede8; text-decoration:none; }
+a:hover { color:oklch(0.78 0.14 152); }
+@keyframes sway { 0%,100% { transform:rotate(-1.1deg); } 50% { transform:rotate(1.1deg); } }
+</style>
+</helmet>
+<div style="background:#0d1110; color:#e9ede8; font-family:'Space Grotesk',sans-serif; overflow-x:clip; position:relative; min-height:100vh">
+
+  <header style="position:sticky; top:0; z-index:8; display:flex; justify-content:space-between; align-items:center; padding:18px 46px; background:rgba(13,17,16,0.86); backdrop-filter:blur(10px); border-bottom:1px solid rgba(233,237,232,0.1)">
+    <a href="Portfolio Home.dc.html" style="display:flex; align-items:center; gap:11px"><img src="assets/robodave_logo.png" alt="David Seong" style="height:28px" /></a>
+    <nav style="display:flex; gap:8px; align-items:center; font-size:14px">
+      <a href="Portfolio Home.dc.html" style="padding:8px 16px; border-radius:999px" style-hover="background:rgba(233,237,232,0.07)">Home</a>
+      <a href="#top" style="padding:8px 16px; border-radius:999px; background:rgba(120,215,160,0.14); color:oklch(0.74 0.13 152)">Projects</a>
+      <a href="Portfolio Home.dc.html#contact" style="padding:8px 16px; border-radius:999px" style-hover="background:rgba(233,237,232,0.07)">Contact</a>
+    </nav>
+  </header>
+
+  <section id="top" style="position:relative; overflow:hidden; border-bottom:1px solid rgba(233,237,232,0.1)">
+    <div style="position:absolute; right:-70px; top:-70px; transform:rotate(13deg); transform-origin:top right; pointer-events:none">
+      <img src="assets/leafpix_monstera.png" alt="" style="height:420px; opacity:0.2; image-rendering:pixelated; animation:sway 17s ease-in-out infinite; transform-origin:top right" />
+    </div>
+    <div style="position:absolute; left:-30px; bottom:-80px; transform:rotate(-9deg); transform-origin:bottom left; pointer-events:none">
+      <img src="assets/leafpix_cactus.png" alt="" style="height:300px; opacity:0.14; image-rendering:pixelated; animation:sway 24s ease-in-out 2s infinite; transform-origin:bottom left" />
+    </div>
+    <div style="position:relative; max-width:1320px; margin:0 auto; padding:60px 46px 40px">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:oklch(0.74 0.13 152); margin-bottom:16px">{{ total }} projects · {{ catCount }} categories</div>
+      <h1 style="font-family:'Newsreader',serif; font-weight:400; font-size:54px; line-height:1.05; margin:0 0 16px">Projects</h1>
+      <p style="font-size:15.5px; line-height:1.8; max-width:60ch; margin:0 0 30px; color:#c3ccc2">Everything I have built, from research platforms to boats made of newspaper. Filter by category or scroll through the lot.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
+          <div onClick="{{ f.go }}" style="padding:9px 18px; border-radius:999px; font-size:13.5px; cursor:pointer; border:1px solid {{ f.border }}; background:{{ f.bg }}; color:{{ f.color }}; transition:all 250ms ease">{{ f.label }} <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; opacity:0.7">{{ f.count }}</span></div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1320px; margin:0 auto; padding:44px 46px 80px">
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+      <div style="margin-bottom:56px">
+        <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:22px">
+          <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:32px; margin:0">{{ g.title }}</h2>
+          <div style="flex:1; height:1px; background:rgba(233,237,232,0.12)"></div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; color:#8e988d">{{ g.count }}</div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:20px">
+          <sc-for list="{{ g.items }}" as="p" hint-placeholder-count="6">
+            <a href="{{ p.href }}" style="display:block; background:#141a16; border:1px solid rgba(233,237,232,0.1); border-radius:16px; overflow:hidden; transition:transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease" style-hover="transform:translateY(-6px); box-shadow:0 0 34px rgba(110,215,150,0.14); border-color:oklch(0.72 0.13 152)">
+              <div style="padding:10px 10px 0"><img src="{{ p.img }}" alt="" style="width:100%; height:190px; object-fit:cover; display:block; border-radius:11px; filter:saturate(0.78) brightness(0.92)" /></div>
+              <div style="padding:14px 16px 18px">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:6px">
+                  <h3 style="font-size:16px; margin:0; font-weight:600; color:#e9ede8">{{ p.title }}</h3>
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.1em; color:oklch(0.74 0.13 152); white-space:nowrap">{{ p.year }}</span>
+                </div>
+                <p style="font-size:13px; line-height:1.6; margin:0; color:#96a095">{{ p.body }}</p>
+              </div>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </section>
+
+  <footer style="background:#101614; padding:34px 46px 30px; display:flex; flex-direction:column; align-items:center; gap:18px; border-top:1px solid rgba(233,237,232,0.1)">
+    <div style="display:flex; gap:12px">
+      <a href="https://www.linkedin.com/in/davidseong-uw/" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:20px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/davidseong8914" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:20px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-github"></i></a>
+      <a href="https://www.instagram.com/davidseong/" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:20px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-instagram"></i></a>
+      <a href="https://www.youtube.com/@Kusupman" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:20px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-youtube"></i></a>
+    </div>
+    <div style="display:flex; gap:26px; font-size:14px"><a href="Portfolio Home.dc.html">About Me</a><a href="#top">Projects</a><a href="Portfolio Home.dc.html#contact">Contact</a></div>
+    <div style="font-size:13px; color:#7f8a7e">© David Seong | All Rights Reserved</div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { filter: "All" };
+  cats = ["Robotics", "Software", "Free Build", "3D Printing"];
+  projects = [
+    { cat: "Robotics", img: "assets/simon_still.jpg", title: "Simon", year: "2025", body: "Autonomous driving in heavily vegetated environments — perception fused with proprioception.", href: "Project Detail.dc.html" },
+    { cat: "Robotics", img: "assets/Patrick_ylw_reduced.png", title: "Patrick", year: "2024", body: "Autonomous environmental monitoring robot for forested areas using LiDAR, camera sensor fusion, and adaptive density drive.", href: "projects/patrick.html" },
+    { cat: "Robotics", img: "assets/slam_image.png", title: "Proprioceptive Traversal", year: "2024", body: "Obstacle cost estimated for an initial path, then updated on collision and replanned.", href: "projects/planning.html" },
+    { cat: "Robotics", img: "assets/Jediode.jpg", title: "Return of the Jediode", year: "2024", body: "Embedded coding, mechatronic components, and sensor fusion implemented from scratch without any libraries.", href: "projects/jediode.html" },
+    { cat: "Robotics", img: "assets/proto_2_2.JPG", title: "E-Ducati-On", year: "2024", body: "Self-balancing Ducati platform with a visual interface and adjustable control parameters for teaching control theory.", href: "projects/e_ducati_on.html" },
+    { cat: "Robotics", img: "assets/mobot.png", title: "Mobot", year: "2025", body: "Traditional CMU line tracing robot competition entry with autonomous navigation and precision control.", href: "projects/cord.html" },
+    { cat: "Robotics", img: "assets/hydrome.jpg", title: "Hydrone", year: "2024", body: "Underwater drone built during CMU's Build 18 for recreational, environmental, and safety applications.", href: "projects/uwd.html" },
+    { cat: "Robotics", img: "assets/T_Bone.jpg", title: "T-Bone", year: "2023", body: "Biomimetic underwater robot inspired by fish tail propulsion for efficient aquatic locomotion.", href: "projects/tbone.html" },
+    { cat: "Robotics", img: "assets/drag.png", title: "Power Plant Inspection CV", year: "2023", body: "Autonomous inspection of power plant infrastructure with a legged platform and a computer vision pipeline.", href: "projects/drag.html" },
+    { cat: "Robotics", img: "assets/Robomaster.png", title: "Wisconsin Robotics RoboMaster", year: "2023", body: "Competitive robotics team focused on autonomous navigation and precision targeting systems.", href: "projects/robomaster.html" },
+    { cat: "Robotics", img: "assets/torsobot.jpg", title: "Torsobot", year: "2023", body: "Self-balancing rimless wheel robot investigating the human walk cycle, stabilised with PID control.", href: "projects/torsobot.html" },
+    { cat: "Robotics", img: "assets/pbf.jpg", title: "Powder Spreader", year: "2022", body: "Powder bed fusion system built to generate ML training data on spread conditions and quality.", href: "projects/pbf.html" },
+    { cat: "Robotics", img: "assets/CORD_real.jpg", title: "Cheap Opensource Robot Dog", year: "2022", body: "Open-source quadruped platform for education and affordable robotics research.", href: "projects/laika.html" },
+    { cat: "Robotics", img: "assets/robot_1.png", title: "WYBot", year: "2022", body: "Versatile robotic platform with a modular design and adaptive control systems.", href: "projects/wybot.html" },
+    { cat: "Robotics", img: "assets/HOWL.jpeg", title: "HOWL", year: "2022", body: "Robotic system for autonomous exploration and navigation in challenging environments.", href: "projects/howl.html" },
+    { cat: "Robotics", img: "assets/pet_mobility.PNG", title: "Pestroleum / Petmobility", year: "2025", body: "A rodent-powered energy and robotics concept combining pest management with renewable energy generation.", href: "projects/pestroleum.html" },
+    { cat: "Software", img: "assets/moldex.png", title: "Learning with Moldex", year: "2023", body: "Machine learning applied to injection moulding simulation data.", href: "projects/moldex.html" },
+    { cat: "Software", img: "assets/PBF_ML.png", title: "Learning for Powder Bed Fusion", year: "2023", body: "Models trained to classify powder spread quality in additive manufacturing.", href: "projects/pbf.html" },
+    { cat: "Software", img: "assets/Unity.jpeg", title: "Unity Infantry Training Simulation", year: "2021", body: "Unity based army training simulation for infantry scenarios.", href: "projects/unity.html" },
+    { cat: "Software", img: "assets/robot_3.png", title: "YC Blocks", year: "2026", body: "Software project built for YC School.", href: "projects/yc-blocks.html" },
+    { cat: "Free Build", img: "assets/ASZS2.jpeg", title: "Recycled Newspaper Mache Canoe", year: "2022", body: "A canoe made of recycled newspaper that floated, which is the whole review.", href: "projects/azsz2.html" },
+    { cat: "Free Build", img: "assets/AZSZ1.png", title: "Recycled Arizona \"Can\"oe", year: "2021", body: "A canoe built from recycled aluminium cans for the same competition, one year earlier.", href: "projects/azsz1.html" },
+    { cat: "3D Printing", img: "assets/sisyphus.jpeg", title: "Sisyphus — Desktop Study Mate", year: "2025", body: "A desktop companion that pushes its boulder while you work.", href: "projects/sisyphys.html" },
+    { cat: "3D Printing", img: "assets/somek.jpeg", title: "Somek Tower Builder", year: "2025", body: "Printed tower building toy, designed for repeat assembly.", href: "projects/somek.html" },
+    { cat: "3D Printing", img: "assets/gauntlet.jpeg", title: "Infinity Gauntlet JBL Speaker Cover", year: "2024", body: "A speaker cover that snaps the room's attention.", href: "projects/gauntlet.html" },
+    { cat: "3D Printing", img: "assets/A1_printer.webp", title: "3D Print Projects", year: "2024", body: "The wider set of prints, jigs and fixtures made on the A1.", href: "projects/bambu.html" }
+  ];
+  renderVals() {
+    const f = this.state.filter;
+    const counts = { All: this.projects.length };
+    for (const c of this.cats) counts[c] = this.projects.filter(p => p.cat === c).length;
+    const shown = this.cats.filter(c => f === "All" || c === f);
+    return {
+      total: this.projects.length,
+      catCount: this.cats.length,
+      filters: ["All"].concat(this.cats).map(label => ({
+        label, count: counts[label],
+        border: f === label ? "oklch(0.72 0.13 152)" : "rgba(233,237,232,0.22)",
+        bg: f === label ? "rgba(120,215,160,0.14)" : "transparent",
+        color: f === label ? "oklch(0.78 0.14 152)" : "#c3ccc2",
+        go: () => this.setState({ filter: label })
+      })),
+      groups: shown.map(c => ({
+        title: c === "Robotics" ? "Robotics Projects" : c === "Software" ? "Software Projects" : c === "Free Build" ? "Free Build Projects" : "3D Printing Projects",
+        count: counts[c] + (counts[c] === 1 ? " PROJECT" : " PROJECTS"),
+        items: this.projects.filter(p => p.cat === c).map(p => ({ ...p, href: p.href || "#top" }))
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Robodave's Portfolio - E-Ducati-On</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style_2.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -18,75 +22,117 @@
     </script>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../robodave_logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
-            David <span>Seong</span>
-        </a>
-        <i class='bx bx-menu' id='menu-icon'></i>
-        <nav class="navbar">
+<div class="page">
+    <header class="site-header">
+        <a href="../index.html" class="site-logo"><img src="../media/img/robodave-logo-160.webp" alt="David Seong" width="160" height="97"></a>
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
+            <a href="../index.html#current">Current</a>
             <a href="../projects.html" class="active">Projects</a>
             <a href="../contact.html">Contact</a>
         </nav>
     </header>
 
-    <section class="project-details" id="project-details">
+    <main>
+        <section class="detail-head">
+            <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
+            <div class="detail-head-inner">
+                <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
+                <h1 class="detail-title">E-Ducati-On: An Educational Robotics Platform</h1>
+            </div>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <img src="e_ducati_on/proto_2_2.JPG" alt="E-Ducati-On Educational Robotics Platform">
-            </div>
-            <div class="description">
-                <h2><span>E-Ducati-On: An Educational Robotics Platform</span></h2>
-                <p>Educational robotics platforms play a crucial role in teaching students about robotics, programming, and control theory. However, most self-balancing bike systems are either open source and passive, or expensive and closed source, limiting their effectiveness as educational tools.</p>
-                <p><br>E-Ducati-On is an educational robotics platform designed to teach students about robotics, programming, and controls. Our team built a Ducati based educational platform that is not only exciting and capable of performing stunts, but also features a visual interface and adjustable control parameters, enabling students to learn control theory through hands-on experience.</p>
-            </div>
-        </div>
+        <section class="detail-section detail-hero">
+            <figure class="frame frame--hero">
+                <img src="../media/img/projects-e-ducati-on-proto-2-2-1600.webp" alt="E-Ducati-On Educational Robotics Platform" width="1600" height="1200">
+            </figure>
+        </section>
 
-        <div class="container">
-            <div class="media">
-                <img src="e_ducati_on/proto_1.JPG" alt="Early Prototype Development">
-            </div>
-            <div class="description">
-                <h2>Prototype Development</h2>
-                <p>The project went through multiple iterations, starting with early prototypes that tested individual subsystems before integration. This iterative development process allowed for refinement of the mechanical design, optimization of the control systems, and fine-tuning of the user interface to create an effective educational platform.</p>
-                <p><br>The early prototype phase focused on validating the core self-balancing mechanism and ensuring the platform could perform the exciting stunts that make it engaging for students while maintaining safety and educational value.</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="media">
-                <div class="side-by-side-images">
-                    <img src="e_ducati_on/proto_2_1.JPG" alt="E-Ducati-On System">
-                    <img src="e_ducati_on/proto_2_2.JPG" alt="E-Ducati-On Platform">
+        <section class="detail-section detail-block">
+            <div class="block block--text">
+                <div class="block-text">
+                    <h2>Overview</h2>
+                    <p>Educational robotics platforms play a crucial role in teaching students about robotics, programming, and control theory. However, most self-balancing bike systems are either open source and passive, or expensive and closed source, limiting their effectiveness as educational tools.</p>
+                    <p>E-Ducati-On is an educational robotics platform designed to teach students about robotics, programming, and controls. Our team built a Ducati based educational platform that is not only exciting and capable of performing stunts, but also features a visual interface and adjustable control parameters, enabling students to learn control theory through hands-on experience.</p>
                 </div>
             </div>
-            <div class="description">
-                <h2>System Design and Educational Features</h2>
-                <p>The platform combines the excitement of a Ducati motorcycle with comprehensive educational tools. The visual interface allows students to see real-time control parameters and system responses, while adjustable control parameters enable hands-on experimentation with different control strategies.</p>
-                <p><br>The system's ability to perform stunts makes it engaging and exciting for students, while the open architecture and visual feedback provide deep learning opportunities. Students can modify control parameters and observe the effects in real-time, gaining practical understanding of control theory, feedback systems, and robotics principles.</p>
+        </section>
+
+        <section class="detail-band">
+            <div class="detail-section">
+                <div class="block">
+                    <figure class="frame">
+                        <img src="../media/img/projects-e-ducati-on-proto-1-1600.webp" alt="Early Prototype Development" width="1600" height="2133" loading="lazy" decoding="async">
+                    </figure>
+                    <div class="block-text">
+                        <h2>Prototype Development</h2>
+                        <p>The project went through multiple iterations, starting with early prototypes that tested individual subsystems before integration. This iterative development process allowed for refinement of the mechanical design, optimization of the control systems, and fine-tuning of the user interface to create an effective educational platform.</p>
+                        <p>The early prototype phase focused on validating the core self-balancing mechanism and ensuring the platform could perform the exciting stunts that make it engaging for students while maintaining safety and educational value.</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-    </section>
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>System Design and Educational Features</h2>
+                    <p>The platform combines the excitement of a Ducati motorcycle with comprehensive educational tools. The visual interface allows students to see real-time control parameters and system responses, while adjustable control parameters enable hands-on experimentation with different control strategies.</p>
+                    <p>The system's ability to perform stunts makes it engaging and exciting for students, while the open architecture and visual feedback provide deep learning opportunities. Students can modify control parameters and observe the effects in real-time, gaining practical understanding of control theory, feedback systems, and robotics principles.</p>
+                </div>
+                <figure class="frame">
+                    <img src="../media/img/projects-e-ducati-on-proto-2-1-1600.webp" alt="E-Ducati-On System" width="1600" height="2133" loading="lazy" decoding="async">
+                </figure>
+            </div>
+        </section>
 
-    <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/davidseong-uw/"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://github.com/davidseong8914"><i class='bx bxl-github'></i></a>
-            <a href="https://www.instagram.com/davidseong/"><i class='bx bxl-instagram'></i></a>
-            <a href="https://www.youtube.com/@Kusupman"><i class='bx bxl-youtube'></i></a>
+        <section class="detail-section detail-related">
+            <div class="section-head">
+                <h2>Similar work</h2>
+                <span class="section-rule"></span>
+            </div>
+            <div class="card-grid">
+                <a class="card card--related" href="torsobot.html">
+                    <div class="card-media"><img src="../media/img/images-robot-2-800.webp" alt="" width="800" height="1171" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Torsobot</h3>
+                        <p>Self-balancing rimless wheel robot investigating fundamental properties of human walk cycle with enhanced stability using PID control.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="cord.html">
+                    <div class="card-media"><img src="../media/img/images-cord-800.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Cheap Opensource Robot Dog (CORD)</h3>
+                        <p>Open-source quadruped robot platform designed for educational purposes and affordable robotics research.</p>
+                    </div>
+                </a>
+                <a class="card card--related" href="jediode.html">
+                    <div class="card-media"><img src="../media/img/projects-jediode-jediode-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async"></div>
+                    <div class="card-body">
+                        <h3>Return of the Jediode</h3>
+                        <p>An all-inclusive, immersive Star Wars project that takes users from building the lightsaber, choosing a crystal, to duel practice against Darth Vader.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="socials">
+            <a class="social" href="https://www.linkedin.com/in/davidseong-uw/" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a class="social" href="https://github.com/davidseong8914" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            <a class="social" href="https://www.instagram.com/davidseong/" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
         </div>
-        <ul class="list">
-            <li><a href="../index.html">About Me</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-            <li><a href="../projects.html">Projects</a></li>
-        </ul>
+        <nav class="footer-links">
+            <a href="../index.html">About Me</a>
+            <a href="../projects.html">Projects</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
         <p class="copyright">© David Seong | All Rights Reserved</p>
     </footer>
-    
-    <script src="../script.js"></script>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>
-
