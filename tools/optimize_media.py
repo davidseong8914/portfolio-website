@@ -17,7 +17,8 @@ media/, and for each one:
 Originals are never modified or deleted; copies go to media/img and media/video. Safe to re-run:
 tags that already point into media/ are left alone.
 
-Needs ffmpeg, ffprobe and cwebp (brew install ffmpeg webp) plus macOS's built-in sips.
+Needs ffmpeg, ffprobe, cwebp and exiftool (brew install ffmpeg webp exiftool) plus macOS's
+built-in sips.
 """
 import glob
 import json
@@ -63,11 +64,12 @@ def fit_long_side(n):
 
 
 def image_info(path):
-    out = run("sips", "-g", "pixelWidth", "-g", "pixelHeight", "-g", "orientation", path)
+    out = run("sips", "-g", "pixelWidth", "-g", "pixelHeight", path)
     w = int(re.search(r"pixelWidth: (\d+)", out).group(1))
     h = int(re.search(r"pixelHeight: (\d+)", out).group(1))
-    o = re.search(r"orientation: (\d+)", out)
-    o = int(o.group(1)) if o else 1
+    # sips doesn't report the EXIF orientation of many phone photos, so read it with exiftool.
+    o = run("exiftool", "-s3", "-n", "-Orientation", path).strip()
+    o = int(o) if o.isdigit() else 1
     return (h, w, o) if o in (5, 6, 7, 8) else (w, h, o)
 
 
@@ -161,9 +163,9 @@ def rewrite(page, tmp):
 
 
 def main():
-    missing = [t for t in ("ffmpeg", "ffprobe", "cwebp", "sips") if not shutil.which(t)]
+    missing = [t for t in ("ffmpeg", "ffprobe", "cwebp", "exiftool", "sips") if not shutil.which(t)]
     if missing:
-        sys.exit(f"Missing tools: {', '.join(missing)}. Install with: brew install ffmpeg webp")
+        sys.exit(f"Missing tools: {', '.join(missing)}. Install with: brew install ffmpeg webp exiftool")
     os.chdir(REPO)
     pages = ["index.html", "projects.html", "contact.html"] + sorted(
         p for p in glob.glob("projects/*.html") if p not in SKIP_PAGES and os.path.getsize(p) > 0)

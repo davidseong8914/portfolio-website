@@ -31,11 +31,11 @@
     <div class="stem" aria-hidden="true">
         <div class="stem-track"></div>
         <div class="stem-fill"></div>
-        <img class="stem-leaf" style="--at: 0.16" src="Images/leaves/leafpix_monstera.png" alt="">
+        <img class="stem-leaf" style="--at: 0.16" src="Images/leaves/leafpix_thistle.png" alt="">
         <img class="stem-leaf" style="--at: 0.34" src="Images/leaves/leafpix_linden.png" alt="">
         <img class="stem-leaf" style="--at: 0.56" src="Images/leaves/leafpix_ovate.png" alt="">
         <img class="stem-leaf" style="--at: 0.74" src="Images/leaves/leafpix_cactus.png" alt="">
-        <img class="stem-leaf" style="--at: 0.90" src="Images/leaves/leafpix_thistle.png" alt="">
+        <img class="stem-leaf" style="--at: 0.90" src="Images/leaves/leafpix_monstera.png" alt="">
     </div>
 
     <header class="site-header">
@@ -43,7 +43,7 @@
         <nav class="site-nav">
             <a href="#top" class="active">Home</a>
             <a href="#current">Current</a>
-            <a href="#robotics">Projects</a>
+            <a href="projects.html">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -59,7 +59,7 @@
                 <div>
                     <h1 class="hero-title">Hi, I'm <span class="accent">David</span></h1>
                     <p class="hero-role">I'm a <span class="role-slot"><span class="role-word">Robotics</span><span class="role-caret" aria-hidden="true">|</span></span> <span class="accent">Engineer</span></p>
-                    <p class="hero-bio">Currently building <a href="https://hermesvision.io/">Hermes Vision</a>, using AI and computer vision to make land management more efficient. In my free time, I love to explore the outdoors, build robots, and turn my daily problems into overcomplicated engineering projects.</p>
+                    <p class="hero-bio">Currently building <a href="https://hermesvision.io/">Hermes Vision</a>, using AI and computer vision to make weed and invasive species management more efficient. In my free time, I love to explore the outdoors, build robots, and turn my daily problems into overcomplicated engineering projects.</p>
                     <p class="hero-edu"><span class="accent">Master's:</span> Carnegie Mellon University</p>
                     <p class="hero-edu"><span class="accent">Bachelor's:</span> University of Wisconsin - Madison</p>
 
@@ -70,14 +70,45 @@
                         <a class="social" href="https://www.youtube.com/@Kusupman" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
                     </div>
 
-                    <div class="hero-actions">
-                        <a href="#" class="btn btn--primary" id="fun-fact-btn">Fun fact about me!</a>
-                        <a href="#contact" class="btn btn--ghost">Contact</a>
-                        <div class="fun-fact" id="fun-fact-container"></div>
-                    </div>
                 </div>
                 <div class="hero-portrait">
-                    <img src="media/img/image-1-reduced-800.webp" alt="David Seong" width="800" height="780">
+                    <!-- Per photo: --zoom (1 = whole photo fits the circle, larger crops in),
+                         --shift-x / --shift-y (move the photo, negative = left / up). -->
+                    <div class="portrait">
+                        <div class="portrait-photo is-active" data-icon="fish" style="--zoom: 1.37; --shift-x: 4px; --shift-y: -23px">
+                            <img class="hero-portrait-fill" src="media/img/profile-img-2638-800.webp" alt="" width="800" height="1067">
+                            <img class="hero-portrait-img" src="media/img/profile-img-2638-800.webp" alt="David Seong" width="800" height="1067">
+                        </div>
+                        <div class="portrait-photo" data-icon="business" style="--zoom: 1.55; --shift-x: 89px; --shift-y: 3px">
+                            <img class="hero-portrait-fill" src="media/img/profile-2026-0603-cmu-nyc-vb-demo-day-134-david-seong-hermes-vision-800.webp" alt="" width="800" height="533">
+                            <img class="hero-portrait-img" src="media/img/profile-2026-0603-cmu-nyc-vb-demo-day-134-david-seong-hermes-vision-800.webp" alt="" width="800" height="533">
+                        </div>
+                        <div class="portrait-photo" data-icon="robot" style="--zoom: 1.38; --shift-x: -1px; --shift-y: 2px">
+                            <img class="hero-portrait-fill" src="media/img/profile-img-1416-800.webp" alt="" width="800" height="600">
+                            <img class="hero-portrait-img" src="media/img/profile-img-1416-800.webp" alt="" width="800" height="600">
+                        </div>
+                        <div class="portrait-photo" data-icon="tree" style="--zoom: 1.31; --shift-x: -8px">
+                            <img class="hero-portrait-fill" src="media/img/profile-img-7465-800.webp" alt="" width="800" height="621">
+                            <img class="hero-portrait-img" src="media/img/profile-img-7465-800.webp" alt="" width="800" height="621">
+                        </div>
+                        <div class="portrait-photo" data-icon="mountain" style="--zoom: 1.53; --shift-x: -16px; --shift-y: -3px">
+                            <img src="media/img/profile-img-1768-800.webp" class="hero-portrait-fill" alt="" width="800" height="533">
+                            <img src="media/img/profile-img-1768-800.webp" class="hero-portrait-img" alt="" width="800" height="533">
+                        </div>
+                        <div class="portrait-photo" data-icon="plane" style="--zoom: 1.34; --shift-x: 11px; --shift-y: -2px">
+                            <img src="media/img/profile-img-2290-800.webp" class="hero-portrait-fill" alt="" width="800" height="600">
+                            <img src="media/img/profile-img-2290-800.webp" class="hero-portrait-img" alt="" width="800" height="600">
+                        </div>
+                        <div class="portrait-photo" data-icon="monkey" style="--zoom: 1.29; --shift-y: -14px">
+                            <img src="media/img/profile-img-3372-800.webp" class="hero-portrait-fill" alt="" width="800" height="1067">
+                            <img src="media/img/profile-img-3372-800.webp" class="hero-portrait-img" alt="" width="800" height="1067">
+                        </div>
+                        <div class="portrait-photo" data-icon="pyramid" style="--zoom: 1.82; --shift-x: -9px; --shift-y: -13px">
+                            <img src="media/img/profile-img-6960-800.webp" class="hero-portrait-fill" alt="" width="800" height="600">
+                            <img src="media/img/profile-img-6960-800.webp" class="hero-portrait-img" alt="" width="800" height="600">
+                        </div>
+                        <div class="portrait-dots"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -100,37 +131,32 @@
                             <video src="media/video/projects-simon-simon.mp4" poster="media/video/projects-simon-simon.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video>
                         </a>
                         <div class="slide-text">
-                            <div class="eyebrow">Active · Robomechanics Lab</div>
-                            <h3><a href="projects/simon.html">Simon</a></h3>
-                            <div class="slide-sub">Autonomous driving in the forest</div>
-                            <p>Autonomous navigation systems are suboptimal in vegetated environments due to their inability to distinguish between traversable and untraversable vegetation. Through fusion of 2D and 3D perception and proprioceptive sensors, wheeled robots will effectively and efficiently navigate through heavily vegetated environments.</p>
+                            <h3><a href="projects/simon.html">Autonomous navigation in densely vegetated environments</a></h3>
+                            <p>Autonomous navigation systems are suboptimal in vegetated environments due to their inability to distinguish between traversable and untraversable vegetation. Fusion of 2D and 3D perception and proprioceptive feedback enable wheeled robots to more accurately assess the traversability of their environment based on their capabilities.</p>
                             <p>R.I.P. <a href="projects/patrick.html">Patrick</a>.</p>
                         </div>
                     </article>
 
                     <article class="slide">
-                        <a class="slide-media" href="projects/jediode.html">
-                            <img src="media/img/projects-jediode-jediode-1200.webp" alt="Return of the Jediode" width="1200" height="675" loading="lazy" decoding="async">
+                        <a class="slide-media slide-media--phones" href="projects/offish.html">
+                            <div class="phones">
+                                <div class="phone">
+                                    <video src="media/video/projects-offish-video1.mp4" poster="media/video/projects-offish-video1.jpg" width="444" height="960" muted loop playsinline preload="none" data-autoplay></video>
+                                </div>
+                                <div class="phone">
+                                    <video src="media/video/projects-offish-video2.mp4" poster="media/video/projects-offish-video2.jpg" width="444" height="960" muted loop playsinline preload="none" data-autoplay></video>
+                                </div>
+                                <div class="phone">
+                                    <video src="media/video/projects-offish-video3.mp4" poster="media/video/projects-offish-video3.jpg" width="444" height="960" muted loop playsinline preload="none" data-autoplay></video>
+                                </div>
+                            </div>
                         </a>
                         <div class="slide-text">
-                            <div class="eyebrow">Embedded · Mechatronics</div>
-                            <h3><a href="projects/jediode.html">Return of the Jediode</a></h3>
-                            <div class="slide-sub">Built from scratch, no libraries</div>
-                            <p>An all-inclusive, immersive Star Wars project that takes users from building the lightsaber, choosing a crystal, to duel practice against Darth Vader. Focuses on embedded coding, mechatronic components, and sensor fusion implemented from scratch without any libraries.</p>
+                            <h3><a href="projects/offish.html">Offish: fishing experience for the office</a></h3>
+                            <p>A fishing game based on locations I fished at. My first ever phone app built for friends, passionate anglers.</p>
                         </div>
                     </article>
 
-                    <article class="slide">
-                        <a class="slide-media" href="projects/pestroleum.html">
-                            <img src="media/img/projects-pestroleum-pet-mobility-1024.webp" alt="Pestroleum" width="1024" height="1536" loading="lazy" decoding="async">
-                        </a>
-                        <div class="slide-text">
-                            <div class="eyebrow">Concept · Energy</div>
-                            <h3><a href="projects/pestroleum.html">Pestroleum / Petmobility</a></h3>
-                            <div class="slide-sub">A Rodent-Powered Energy &amp; Robotics Startup</div>
-                            <p>An innovative concept combining pest management with renewable energy generation.</p>
-                        </div>
-                    </article>
                 </div>
             </div>
 
@@ -138,47 +164,21 @@
         </section>
         <!-- End of current project section -->
 
-        <section class="band" id="robotics">
+        <section class="band" id="selected">
             <div class="band-inner">
                 <div class="section-head">
-                    <h2>Robotics Projects</h2>
+                    <h2>Selected Projects</h2>
                     <span class="section-rule"></span>
-                    <span class="section-count">13 PROJECTS</span>
+                    <a class="section-link" href="projects.html">All 27 projects →</a>
                 </div>
-                <div class="card-flow">
-                    <a class="card" href="projects/planning.html">
-                        <div class="card-media"><video src="media/video/projects-planning-planning-thumbnail.mp4" poster="media/video/projects-planning-planning-thumbnail.jpg" width="960" height="820" muted loop playsinline preload="none" data-autoplay></video></div>
+                <div class="card-grid card-grid--select">
+                    <a class="card" href="projects/pestroleum.html">
+                        <div class="card-media"><video src="media/video/projects-pestroleum-energy-harvesting.mp4" poster="media/video/projects-pestroleum-energy-harvesting.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
                         <div class="card-body">
-                            <h3>Proprioceptive Traversal</h3>
-                            <p>Robotic navigation where instead of treating all obstacles as untraversable, their cost are estimated for an initial path. Upon collision, the cost of the obstacle is updated and the path is recomputed.</p>
+                            <h3>Pestroleum</h3>
+                            <p>An innovative concept that turns pest management into renewable energy generation.</p>
                         </div>
                     </a>
-
-                    <a class="card" href="projects/patrick.html">
-                        <div class="card-media"><video src="media/video/projects-patrick-img-1660.mp4" poster="media/video/projects-patrick-img-1660.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
-                        <div class="card-body">
-                            <h3>Patrick</h3>
-                            <p>Autonomous environmental monitoring robot for forested areas using LiDAR, camera sensor fusion, and adaptive density drive.</p>
-                        </div>
-                    </a>
-
-                    <!-- Mobot has no project page yet, so this card isn't a link. -->
-                    <div class="card">
-                        <div class="card-media"><video src="media/video/projects-mobots-mobot-thumbnail.mp4" poster="media/video/projects-mobots-mobot-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
-                        <div class="card-body">
-                            <h3>Mobot</h3>
-                            <p>Traditional CMU line tracing robot competition entry with autonomous navigation and precision control systems.</p>
-                        </div>
-                    </div>
-
-                    <a class="card" href="projects/uwd.html">
-                        <div class="card-media"><video src="media/video/projects-uwd-18-build18-thumbnail.mp4" poster="media/video/projects-uwd-18-build18-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
-                        <div class="card-body">
-                            <h3>Hydrone</h3>
-                            <p>Underwater drone project built during CMU's Build 18 competition for recreational, environmental, and safety applications.</p>
-                        </div>
-                    </a>
-
                     <a class="card" href="projects/tbone.html">
                         <div class="card-media"><video src="media/video/projects-t-bone-tbone-thumbnail.mp4" poster="media/video/projects-t-bone-tbone-thumbnail.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
                         <div class="card-body">
@@ -186,107 +186,19 @@
                             <p>Biomimetic underwater robot inspired by fish tail propulsion, designed for efficient aquatic locomotion and maneuverability.</p>
                         </div>
                     </a>
-
-                    <a class="card" href="projects/drag.html">
-                        <div class="card-media"><img src="Images/SPOT.png" alt="" width="524" height="525" loading="lazy" decoding="async"></div>
+                    <a class="card" href="projects/jediode.html">
+                        <div class="card-media"><img src="media/img/projects-jediode-jediode-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async"></div>
                         <div class="card-body">
-                            <h3>ComputerVision Solution for Automated Power Plant Inspection</h3>
-                            <p>Robotics and AI solution automating power plant gauge inspections with object detection, image analysis, and OCR.</p>
+                            <h3>Return of the Jediode</h3>
+                            <p>An all-inclusive, immersive Star Wars project that takes users from building the lightsaber, choosing a crystal, to duel practice against Darth Vader.</p>
                         </div>
                     </a>
-
-                    <a class="card" href="projects/robomaster.html">
-                        <div class="card-media"><video src="media/video/projects-robomaster-robomaster-thumbnail.mp4" poster="media/video/projects-robomaster-robomaster-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
-                        <div class="card-body">
-                            <h3>Wisconsin Robotics RoboMaster</h3>
-                            <p>Competitive robotics team competing in RoboMaster, focusing on autonomous navigation and precision targeting systems.</p>
-                        </div>
-                    </a>
-
-                    <a class="card" href="projects/e_ducati_on.html">
-                        <div class="card-media"><img src="media/img/projects-e-ducati-on-proto-2-2-800.webp" alt="" width="800" height="600" loading="lazy" decoding="async"></div>
-                        <div class="card-body">
-                            <h3>E-Ducati-On: An Educational Robotics Platform</h3>
-                            <p>E-Ducati-On is an educational robotics platform designed to teach students about robotics, programming, and controls. Most self-balancing bike systems are either open source and passive, or expensive and closed source. Our team built a Ducati based educational platform that is not only exciting and capable of performing stunts, but also features a visual interface and adjustable control parameters, enabling students to learn control theory through hands-on experience.</p>
-                        </div>
-                    </a>
-
-                    <a class="card" href="projects/torsobot.html">
-                        <div class="card-media"><video src="media/video/projects-torsobot-torsobot-thumbnail.mp4" poster="media/video/projects-torsobot-torsobot-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
-                        <div class="card-body">
-                            <h3>Torsobot</h3>
-                            <p>Self-balancing rimless wheel robot investigating fundamental properties of human walk cycle with enhanced stability using PID control.</p>
-                        </div>
-                    </a>
-
-                    <a class="card" href="projects/pbf.html">
-                        <div class="card-media"><video src="media/video/projects-pbf-powder-bed-thumbnail.mp4" poster="media/video/projects-pbf-powder-bed-thumbnail.jpg" width="540" height="960" muted loop playsinline preload="none" data-autoplay></video></div>
-                        <div class="card-body">
-                            <h3>Powder Spreader</h3>
-                            <p>Powder bed fusion manufacturing system created for ML analysis on powder spread conditions and quality control.</p>
-                        </div>
-                    </a>
-
                     <a class="card" href="projects/cord.html">
                         <div class="card-media"><video src="media/video/projects-cord-cord-thumbnail.mp4" poster="media/video/projects-cord-cord-thumbnail.jpg" width="960" height="540" muted loop playsinline preload="none" data-autoplay></video></div>
                         <div class="card-body">
                             <h3>Cheap Opensource Robot Dog (CORD)</h3>
                             <p>Open-source quadruped robot platform designed for educational purposes and affordable robotics research.</p>
                         </div>
-                    </a>
-
-                    <a class="card" href="projects/wybot.html">
-                        <div class="card-media"><video src="media/video/projects-wybot-wypd-thumbnail.mp4" poster="media/video/projects-wybot-wypd-thumbnail.jpg" width="480" height="852" muted loop playsinline preload="none" data-autoplay></video></div>
-                        <div class="card-body">
-                            <h3>WYBot</h3>
-                            <p>Versatile robotic platform designed for multiple applications, featuring modular design and adaptive control systems.</p>
-                        </div>
-                    </a>
-
-                    <a class="card" href="projects/howl.html">
-                        <div class="card-media"><img src="media/img/projects-3d-prints-howl-800.webp" alt="" width="800" height="581" loading="lazy" decoding="async"></div>
-                        <div class="card-body">
-                            <h3>HOWL</h3>
-                            <p>Advanced robotic system designed for autonomous exploration and navigation in challenging environments.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="section-head section-head--next" id="software">
-                    <h2>Software Projects</h2>
-                    <span class="section-rule"></span>
-                </div>
-                <div class="card-grid card-grid--wide">
-                    <a class="shot" href="projects/moldex.html">
-                        <div class="shot-media"><img src="Images/moldex.png" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
-                        <h3 class="shot-title">Learning with Moldex</h3>
-                    </a>
-                    <a class="shot" href="projects/pbf.html">
-                        <div class="shot-media"><img src="media/img/images-pbf-ml-900.webp" alt="" width="900" height="614" loading="lazy" decoding="async"></div>
-                        <h3 class="shot-title">Learning for Powder Bed Fusion</h3>
-                    </a>
-                    <a class="shot" href="projects/unity.html">
-                        <div class="shot-media"><img src="Images/Unity.jpeg" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
-                        <h3 class="shot-title">Unity Based Infantry Army Training Simulation</h3>
-                    </a>
-                </div>
-
-                <div class="section-head section-head--next" id="freebuild">
-                    <h2>Free Build Projects</h2>
-                    <span class="section-rule"></span>
-                </div>
-                <div class="card-grid">
-                    <a class="card card--free" href="projects/azsz2.html">
-                        <div class="card-media"><img src="media/img/images-aszs2-800.webp" alt="" width="800" height="1067" loading="lazy" decoding="async"></div>
-                        <div class="card-body"><h3>Recycled Newspaper Mache Canoe</h3></div>
-                    </a>
-                    <a class="card card--free" href="projects/azsz1.html">
-                        <div class="card-media"><img src="media/img/images-azsz1-800.webp" alt="" width="800" height="1060" loading="lazy" decoding="async"></div>
-                        <div class="card-body"><h3>Recycled Arizona "Can"oe</h3></div>
-                    </a>
-                    <a class="card card--free" href="projects/bambu.html">
-                        <div class="card-media"><img src="media/img/projects-3d-prints-a1-printer-800.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></div>
-                        <div class="card-body"><h3>3D Print Projects</h3></div>
                     </a>
                 </div>
             </div>

@@ -87,10 +87,14 @@ img, video { height: auto; }
 .site-logo { display: flex; align-items: center; }
 .site-logo img { display: block; width: auto; height: 28px; }
 
-.site-nav { display: flex; gap: 8px; align-items: center; font-size: 14px; }
-.site-nav a { padding: 8px 16px; border-radius: 999px; }
-.site-nav a:hover { background: var(--hover-wash); }
-.site-nav a.active { background: var(--accent-wash); color: var(--accent-light); }
+.site-nav { position: relative; display: flex; gap: 8px; align-items: center; font-size: 14px; }
+.site-nav a { padding: 8px 16px; transition: color 200ms ease; }
+.site-nav a:hover { color: var(--accent-bright); }
+.site-nav a.active { color: var(--accent-light); }
+
+/* One underline slides between items: to whatever you hover, back to the current page on leave. */
+.nav-indicator { position: absolute; bottom: 3px; left: 0; width: 0; height: 2px; border-radius: 2px; background: var(--accent); pointer-events: none; }
+.nav-indicator.is-ready { transition: transform 320ms cubic-bezier(.3, .8, .3, 1), width 320ms cubic-bezier(.3, .8, .3, 1); }
 
 /* ---------- Scroll stem (Home, left margin) ---------- */
 
@@ -111,9 +115,10 @@ img, video { height: auto; }
 /* --at is the scroll fraction the leaf is pinned to; transform-origin is the stem attachment point. */
 .stem-leaf {
     position: absolute;
-    left: -11px;
-    top: calc(var(--at) * 100% - 16px);
-    width: 38px;
+    left: -15px;
+    top: calc(var(--at) * 100% - 18px);
+    width: 44px;
+    max-width: none; /* the stem column is only 14px wide, so the global img cap would shrink these */
     image-rendering: pixelated;
     transform-origin: 50% 92%;
     transform: rotate(-72deg) scale(0.45);
@@ -174,6 +179,8 @@ img, video { height: auto; }
 .section-head--next { margin-top: 58px; }
 .section-rule { flex: 1; height: 1px; background: var(--hairline-strong); }
 .section-count { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--text-faint); white-space: nowrap; }
+.section-link { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); white-space: nowrap; }
+.section-link:hover { color: var(--accent-bright); }
 
 .socials { display: flex; gap: 12px; }
 .social {
@@ -220,7 +227,8 @@ img, video { height: auto; }
 
 /* ---------- Home: hero ---------- */
 
-.hero { position: relative; overflow: hidden; }
+/* No overflow clip: the ambient plants hang past the hero into the section below. */
+.hero { position: relative; }
 
 /* Keeps the headline legible over the dots. */
 .hero-vignette {
@@ -242,14 +250,16 @@ img, video { height: auto; }
 
 .hero-title { margin-bottom: 10px; font-family: var(--serif); font-weight: 400; font-size: 62px; line-height: 1.04; }
 
-.hero-role { --role-scale: 1; margin-bottom: 24px; font-size: 26px; color: var(--text-3); }
+/* line-height is taller than the biggest role word, so typing and the per-word font sizes never
+   change the line's height (measured: 56px is the smallest that holds it steady). */
+.hero-role { --role-scale: 1; margin-bottom: 16px; font-size: 26px; line-height: calc(56px * var(--role-scale)); color: var(--text-3); }
 
-/* Fixed, right-aligned slot: "Engineer" never slides and the caret stays tight against the word.
-   script.js sets --role-size per word so each one fills the slot. */
+/* Fixed-width slot, so "Engineer" never slides while the qualifier types out in front of it.
+   script.js sets --role-size per word so each finished word fills the slot. */
 .role-slot {
     display: inline-flex;
     align-items: baseline;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: calc(182px * var(--role-scale));
     color: var(--accent-light);
 }
@@ -265,22 +275,85 @@ img, video { height: auto; }
 
 .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 
-.fun-fact { min-height: 20px; font-size: 14px; font-style: italic; color: var(--accent-bright); }
+/* Its own row under the buttons, so short and long facts always land in the same place. */
+.fun-fact { flex-basis: 100%; min-height: 20px; font-size: 14px; font-style: italic; color: var(--accent-bright); }
 
 .hero-portrait { display: flex; align-items: center; justify-content: center; max-width: 340px; justify-self: center; }
 
-/* The radial mask dissolves the edge instead of ending on a hard ring. */
-.hero-portrait img {
-    width: 100%;
-    max-width: 320px;
+/* Rotating portrait: stacked photos cross-fade, and a ring of dots orbits the circle so the
+   current photo's dot always settles at the bottom. Hovering grows the whole thing a little. */
+.portrait {
+    position: relative;
+    /* A fixed width, not a percentage: the column shrinks to fit this, and container-type means the
+       photos inside don't contribute a size of their own. */
+    width: 320px;
+    max-width: 100%;
     aspect-ratio: 1 / 1;
-    height: auto;
-    object-fit: cover;
-    border-radius: 50%;
-    filter: saturate(0.85);
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 58%, rgba(0, 0, 0, 0.25) 82%, transparent 100%);
-    mask-image: radial-gradient(circle at 50% 50%, #000 58%, rgba(0, 0, 0, 0.25) 82%, transparent 100%);
+    container-type: inline-size;
+    transition: transform 400ms cubic-bezier(.2, .8, .3, 1);
 }
+.portrait:hover { transform: scale(1.07); }
+
+/* One photo: a blurred, enlarged copy fills the circle and the photo sits on top at --zoom
+   (1 = the whole photo fits; larger crops in toward --focus), so zooming out never leaves a gap.
+   The mask only softens the outermost rim, so the photo stays bright. */
+.portrait-photo {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 800ms ease;
+    -webkit-mask-image: radial-gradient(circle closest-side, #000 94%, transparent 100%);
+    mask-image: radial-gradient(circle closest-side, #000 94%, transparent 100%);
+}
+.portrait-photo.is-active { opacity: 1; }
+.portrait-photo img { position: absolute; inset: 0; width: 100%; height: 100%; }
+/* Scaled well past the circle so the blur's own soft edge never reaches it: no blank rim. */
+.hero-portrait-fill { object-fit: cover; filter: blur(18px); transform: scale(1.4); }
+.hero-portrait-img {
+    object-fit: contain;
+    /* --shift-x/-y nudge the photo in the circle (negative = left / up); --zoom crops in. */
+    transform: translate(var(--shift-x, 0), var(--shift-y, 0)) scale(var(--zoom, 1.3));
+    transform-origin: var(--focus, 50% 50%);
+}
+
+/* Registered so the ring's turn animates as a value the icons can counter-rotate against. */
+@property --turn { syntax: '<angle>'; inherits: true; initial-value: 0deg; }
+.portrait-dots { position: absolute; inset: 0; transform: rotate(var(--turn)); transition: --turn 700ms cubic-bezier(.3, .8, .3, 1); }
+
+/* --angle places each icon on the ring (0deg is straight down); the ring sits just outside the photo. */
+.portrait-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: rgb(233, 237, 232);
+    cursor: pointer;
+    transform: rotate(var(--angle)) translateY(calc(50cqw + 22px));
+}
+/* Counter-rotated by the icon's own angle and the ring's turn so it always stands upright. */
+.portrait-dot svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.3;
+    transform: rotate(calc(-1 * (var(--angle) + var(--turn))));
+    transition: opacity 300ms ease, scale 300ms ease;
+}
+.portrait-dot:hover svg { opacity: 0.6; }
+.portrait-dot.active { color: var(--accent-light); }
+.portrait-dot.active svg { opacity: 1; scale: 1.2; }
 
 /* ---------- Home: current projects carousel ---------- */
 
@@ -320,28 +393,26 @@ img, video { height: auto; }
     border-radius: 18px;
 }
 
-/* Fixed-height well with contain, not cover: these media have wildly different aspect ratios. */
+/* The media sets the height, so no well shows around it. */
 .slide-media {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 320px;
+    display: block;
     overflow: hidden;
-    background: var(--sunken);
     border-radius: 14px;
 }
 .slide-media img, .slide-media video {
     display: block;
-    width: auto;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
     filter: saturate(0.85);
 }
 
+/* App screens in a slide: the same row of phones, sized to the narrower media column. */
+.slide-media--phones .phones { gap: 12px; }
+.slide-media--phones .phone { --pw: 172px; }
+
 .slide-text { padding-right: 14px; }
-.slide-text h3 { margin-bottom: 6px; font-family: var(--serif); font-weight: 400; font-size: 33px; }
+.slide-text h3 { margin-bottom: 6px; font-family: var(--serif); font-weight: 400; font-size: 28px; }
 .slide-sub { margin-bottom: 12px; font-size: 18px; color: var(--text-3); }
 .slide-text p { font-size: 14.5px; line-height: 1.75; color: var(--text-muted); }
 .slide-text p + p { margin-top: 10px; }
@@ -368,13 +439,16 @@ img, video { height: auto; }
 .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 20px; }
 .card-grid--wide { grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr)); }
 .card-grid--index { grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
+/* A handful of featured projects: two big cards per row, one column on phones. */
+.card-grid--select { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.card-grid--select .card-media img, .card-grid--select .card-media video { height: 280px; }
+.card-grid--select .card-body { padding: 16px 20px 22px; }
+.card-grid--select .card-body h3 { margin-bottom: 8px; font-size: 18px; }
+.card-grid--select .card-body p { font-size: 14px; }
 
-/* Home robotics: masonry columns, so each card keeps its video's natural shape. */
+/* Masonry columns, so each card keeps its media's natural shape. */
 .card-flow { columns: 280px; column-gap: 20px; }
 .card-flow > .card { break-inside: avoid; margin-bottom: 20px; }
-.card-flow .card-media img, .card-flow .card-media video { height: auto; }
-/* A portrait phone screenshot would tower over its neighbours in the flow. */
-.card-flow .card-media--crop img, .card-flow .card-media--crop video { height: 190px; object-fit: cover; }
 
 .card {
     display: block;
@@ -415,6 +489,11 @@ a.card--free:hover { box-shadow: none; }
 .card--related .card-body h3 { margin-bottom: 5px; font-size: 15.5px; }
 .card--related .card-body p { font-size: 12.5px; }
 a.card--related:hover { box-shadow: none; }
+
+/* After the card variants, so masonry wins over their fixed media heights. */
+.card-flow .card-media img, .card-flow .card-media video { height: auto; }
+/* A portrait phone screenshot would tower over its neighbours in the flow. */
+.card-flow .card-media--crop img, .card-flow .card-media--crop video { height: 190px; object-fit: cover; }
 
 /* Software: screenshots, so full-bleed and contained rather than cropped. */
 .shot {
@@ -541,12 +620,9 @@ textarea.field { grid-column: 1 / -1; resize: none; }
 
 .detail-title { max-width: 22ch; margin-bottom: 18px; font-family: var(--serif); font-weight: 400; font-size: 52px; line-height: 1.06; }
 
-.tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
-.tag { padding: 7px 14px; border: 1px solid rgba(233, 237, 232, 0.2); border-radius: 999px; font-size: 12.5px; color: var(--text-2); }
 
 .detail-section { max-width: 1100px; margin: 0 auto; padding: 0 var(--gx); }
 .detail-hero { padding-top: 36px; padding-bottom: 20px; }
-.detail-specs { padding-top: 30px; }
 .detail-block { padding-top: 56px; padding-bottom: 20px; }
 .detail-related { padding-top: 52px; padding-bottom: 70px; }
 
@@ -563,21 +639,6 @@ textarea.field { grid-column: 1 / -1; resize: none; }
 .frame--hero img, .frame--hero video { height: 440px; object-fit: cover; }
 /* For documents, diagrams and tall shots that cover would crop badly. */
 .frame--contain img, .frame--contain video { object-fit: contain; background: var(--sunken); }
-
-.fig-caption {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 4px 20px;
-    margin-top: 12px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-faint);
-}
-.frame .fig-caption { margin: 0; padding: 12px 8px 6px; font-size: 10.5px; }
 
 .fig-stack { display: grid; gap: 12px; }
 .fig-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -623,19 +684,6 @@ textarea.field { grid-column: 1 / -1; resize: none; }
     filter: saturate(0.85);
 }
 
-.specs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
-    gap: 1px; /* the gap shows the background through as hairline dividers */
-    overflow: hidden;
-    background: var(--hairline-strong);
-    border: 1px solid var(--hairline-strong);
-    border-radius: 16px;
-}
-.spec { padding: 20px 22px; background: var(--surface); }
-.spec-label { margin-bottom: 9px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-light); }
-.spec-value { font-size: 14.5px; line-height: 1.6; color: #dde3dc; }
-
 .block { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 40px; align-items: start; }
 .block--text { grid-template-columns: minmax(0, 1fr); }
 .block--text .block-text { max-width: 70ch; }
@@ -676,7 +724,9 @@ textarea.field { grid-column: 1 / -1; resize: none; }
 
 @media (max-width: 760px) {
     .slide { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+    .card-grid--select { grid-template-columns: minmax(0, 1fr); }
     .slide-media { height: 240px; }
+    .slide-media--phones { height: auto; }
     .slide-text { padding: 0 4px 6px; }
     .hero-title { font-size: 50px; }
     .page-title { font-size: 44px; }
@@ -686,6 +736,8 @@ textarea.field { grid-column: 1 / -1; resize: none; }
 
 @media (max-width: 600px) {
     .phones { grid-template-columns: minmax(0, 1fr); }
+    .slide-media--phones .phones { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .slide-media--phones .phone { --pw: 100px; }
     :root { --gx: 20px; --gl: 20px; }
 
     .site-header { padding-top: 14px; padding-bottom: 14px; }
@@ -695,6 +747,7 @@ textarea.field { grid-column: 1 / -1; resize: none; }
     .hero-inner { padding-top: 48px; padding-bottom: 56px; }
     .hero-title { font-size: 42px; }
     .hero-role { --role-scale: 0.77; font-size: 20px; }
+    .portrait { width: 260px; }
 
     .page-title { font-size: 38px; }
     .detail-title { font-size: 34px; }
@@ -702,6 +755,7 @@ textarea.field { grid-column: 1 / -1; resize: none; }
     .block-text h2 { font-size: 27px; }
 
     .band { padding-top: 44px; padding-bottom: 48px; }
+    .card-grid--select .card-media img, .card-grid--select .card-media video { height: 200px; }
     .shot-media { height: 190px; }
     .frame--hero img, .frame--hero video { height: 240px; }
     .fig-pair img { height: 200px; }
@@ -716,5 +770,5 @@ textarea.field { grid-column: 1 / -1; resize: none; }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .plant img { animation: none; }
-    .stem-leaf { transition: none; }
+    .stem-leaf, .portrait-dots, .nav-indicator.is-ready { transition: none; }
 }

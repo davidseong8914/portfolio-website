@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<style>
+html { scroll-behavior:smooth; }
+body { margin:0; background:#0d1110; }
+a { color:#e9ede8; text-decoration:none; }
+a:hover { color:oklch(0.78 0.14 152); }
+input, textarea { font-family:"Space Grotesk", sans-serif; }
+input::placeholder, textarea::placeholder { color:#7f8a7e; }
+@keyframes sway { 0%,100% { transform:rotate(-1.1deg); } 50% { transform:rotate(1.1deg); } }
+@keyframes breathe { 0%,100% { opacity:0.5; } 50% { opacity:1; } }
+@keyframes blink { 0%,45% { opacity:1; } 50%,95% { opacity:0; } }
+</style>
+</helmet>
+<div style="background:#0d1110; color:#e9ede8; font-family:'Space Grotesk',sans-serif; overflow-x:clip; position:relative">
+
+  <div style="position:fixed; left:26px; top:0; bottom:0; width:14px; z-index:6; pointer-events:none; display:{{ railDisplay }}">
+    <div style="position:absolute; left:6px; top:0; bottom:0; width:2px; background:rgba(233,237,232,0.09)"></div>
+    <div style="position:absolute; left:6px; top:0; width:2px; background:oklch(0.72 0.13 152); height:{{ railH }}; box-shadow:0 0 12px rgba(120,215,160,0.45)"></div>
+    <sc-for list="{{ railNodes }}" as="n" hint-placeholder-count="5">
+      <img src="{{ n.img }}" alt="" style="position:absolute; left:-11px; top:{{ n.top }}; width:38px; image-rendering:pixelated; transform-origin:50% 92%; transform:{{ n.tf }}; opacity:{{ n.op }}; transition:transform 700ms cubic-bezier(.2,.8,.3,1), opacity 700ms ease" />
+    </sc-for>
+  </div>
+
+  <header style="position:sticky; top:0; z-index:8; display:flex; justify-content:space-between; align-items:center; padding:18px 46px 18px 76px; background:rgba(13,17,16,0.86); backdrop-filter:blur(10px); border-bottom:1px solid rgba(233,237,232,0.1)">
+    <a href="#top" style="display:flex; align-items:center; gap:11px"><img src="assets/robodave_logo.png" alt="David Seong" style="height:28px" /></a>
+    <nav style="display:flex; gap:8px; align-items:center; font-size:14px">
+      <a href="#top" style="padding:8px 16px; border-radius:999px; background:rgba(120,215,160,0.14); color:oklch(0.74 0.13 152)">Home</a>
+      <a href="#current" style="padding:8px 16px; border-radius:999px" style-hover="background:rgba(233,237,232,0.07)">Current</a>
+      <a href="#robotics" style="padding:8px 16px; border-radius:999px" style-hover="background:rgba(233,237,232,0.07)">Projects</a>
+      <a href="#contact" style="padding:8px 16px; border-radius:999px" style-hover="background:rgba(233,237,232,0.07)">Contact</a>
+    </nav>
+  </header>
+
+  <section id="top" style="position:relative; overflow:hidden">
+    <canvas ref="{{ cloudRef }}" width="1180" height="560" style="position:absolute; inset:0; width:100%; height:100%; display:block"></canvas>
+    <div style="position:absolute; inset:0; background:radial-gradient(72% 88% at 26% 50%, rgba(13,17,16,0.94), rgba(13,17,16,0.28) 76%)"></div>
+    <div style="position:absolute; right:-90px; top:-60px; transform:rotate(15deg); transform-origin:top right; pointer-events:none">
+      <img src="assets/leafpix_monstera.png" alt="" style="height:520px; opacity:0.3; image-rendering:pixelated; animation:sway 15s ease-in-out infinite; transform-origin:top right" />
+    </div>
+    <div style="position:absolute; left:-40px; bottom:-60px; transform:rotate(-24deg); transform-origin:bottom left; pointer-events:none">
+      <img src="assets/leafpix_linden.png" alt="" style="height:260px; opacity:0.22; image-rendering:pixelated; animation:sway 19s ease-in-out 2s infinite; transform-origin:bottom left" />
+    </div>
+    <div style="position:absolute; right:210px; bottom:-70px; transform:rotate(9deg); transform-origin:bottom center; pointer-events:none">
+      <img src="assets/leafpix_cactus.png" alt="" style="height:230px; opacity:0.16; image-rendering:pixelated; animation:sway 23s ease-in-out 1s infinite; transform-origin:bottom center" />
+    </div>
+
+    <div style="position:relative; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:48px; align-items:center; padding:76px 46px 78px 76px; max-width:1320px; margin:0 auto">
+      <div>
+        <h1 style="font-family:'Newsreader',serif; font-weight:400; font-size:62px; line-height:1.04; margin:0 0 10px">Hi, I'm <span style="color:oklch(0.74 0.13 152)">David</span></h1>
+        <div style="font-size:26px; margin:0 0 24px; color:#b9c3b8">I'm a <span style="display:inline-flex; align-items:baseline; justify-content:flex-end; width:182px; color:oklch(0.74 0.13 152)"><span style="font-size:{{ roleSize }}; line-height:1; transition:font-size 350ms ease">{{ role }}</span><span style="animation:blink 1.1s steps(1) infinite">|</span></span> <span style="color:oklch(0.74 0.13 152)">Engineer</span></div>
+        <p style="font-size:15.5px; line-height:1.8; max-width:62ch; margin:0 0 16px; color:#c3ccc2">Currently building <a href="https://hermesvision.io/" style="color:oklch(0.74 0.13 152); font-weight:600; border-bottom:1px solid oklch(0.74 0.13 152)">Hermes Vision</a>, using AI and computer vision to make land management more efficient. In my free time, I love to explore the outdoors, build robots, and turn my daily problems into overcomplicated engineering projects.</p>
+        <p style="font-size:14.5px; line-height:1.8; margin:0; color:#c3ccc2"><span style="color:oklch(0.74 0.13 152)">Master's:</span> Carnegie Mellon University</p>
+        <p style="font-size:14.5px; line-height:1.8; margin:0 0 24px; color:#c3ccc2"><span style="color:oklch(0.74 0.13 152)">Bachelor's:</span> University of Wisconsin - Madison</p>
+        <div style="display:flex; gap:12px; margin-bottom:24px">
+          <a href="#contact" style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:21px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-linkedin"></i></a>
+          <a href="#contact" style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:21px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-github"></i></a>
+          <a href="#contact" style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:21px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-instagram"></i></a>
+          <a href="#contact" style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:21px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-youtube"></i></a>
+        </div>
+        <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap">
+          <a href="#top" onClick="{{ showFact }}" style="padding:12px 22px; background:oklch(0.72 0.13 152); color:#0d1110; font-size:14px; border-radius:999px; font-weight:500" style-hover="background:oklch(0.80 0.14 152); color:#0d1110">Fun fact about me!</a>
+          <a href="#contact" style="padding:12px 22px; border:1px solid rgba(233,237,232,0.3); font-size:14px; border-radius:999px" style-hover="border-color:oklch(0.72 0.13 152)">Contact</a>
+          <div style="font-size:14px; color:oklch(0.78 0.14 152); font-style:italic; min-height:20px">{{ fact }}</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; max-width:340px; justify-self:center">
+        <img src="assets/image_1_reduced.webp" alt="David Seong" style="width:100%; max-width:320px; aspect-ratio:1 / 1; height:auto; object-fit:cover; border-radius:50%; filter:saturate(0.85); -webkit-mask-image:radial-gradient(circle at 50% 50%, #000 58%, rgba(0,0,0,0.25) 82%, transparent 100%); mask-image:radial-gradient(circle at 50% 50%, #000 58%, rgba(0,0,0,0.25) 82%, transparent 100%)" />
+      </div>
+    </div>
+  </section>
+
+  <section id="current" style="padding:16px 46px 60px 76px; max-width:1320px; margin:0 auto">
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:24px">
+      <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:38px; margin:0">Current Projects</h2>
+      <div style="flex:1; height:1px; background:rgba(233,237,232,0.12)"></div>
+      <div style="display:flex; gap:8px">
+        <div onClick="{{ prev }}" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(233,237,232,0.25); display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:20px; color:#c3ccc2" style-hover="border-color:oklch(0.72 0.13 152); color:oklch(0.78 0.14 152)"><i class="bx bx-chevron-left"></i></div>
+        <div onClick="{{ next }}" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(233,237,232,0.25); display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:20px; color:#c3ccc2" style-hover="border-color:oklch(0.72 0.13 152); color:oklch(0.78 0.14 152)"><i class="bx bx-chevron-right"></i></div>
+      </div>
+    </div>
+    <div style="overflow:hidden; border-radius:18px">
+      <div style="display:flex; transition:transform 600ms cubic-bezier(.3,.8,.3,1); transform:{{ track }}">
+        <sc-for list="{{ current }}" as="c" hint-placeholder-count="4">
+          <div style="min-width:100%; box-sizing:border-box; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:30px; align-items:center; background:#141a16; border:1px solid rgba(233,237,232,0.1); border-radius:18px; padding:18px">
+            <div style="background:#0f1512; border-radius:14px; height:320px; display:flex; align-items:center; justify-content:center; overflow:hidden">
+              <img src="{{ c.img }}" alt="" style="max-width:100%; max-height:100%; object-fit:contain; border-radius:10px; filter:saturate(0.85)" />
+            </div>
+            <div style="padding-right:14px">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:oklch(0.74 0.13 152); margin-bottom:10px">{{ c.tag }}</div>
+              <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:33px; margin:0 0 6px">{{ c.title }}</h3>
+              <div style="font-size:18px; margin:0 0 12px; color:#b9c3b8">{{ c.sub }}</div>
+              <p style="font-size:14.5px; line-height:1.75; margin:0; color:#a9b3a7">{{ c.body }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center; gap:10px; margin-top:22px">
+      <sc-for list="{{ dots }}" as="d" hint-placeholder-count="4">
+        <div onClick="{{ d.go }}" style="width:9px; height:9px; border-radius:50%; background:{{ d.bg }}; cursor:pointer; transition:background 300ms ease"></div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="robotics" style="background:#101614; padding:56px 46px 64px 76px">
+    <div style="max-width:1320px; margin:0 auto">
+      <div style="display:flex; align-items:center; gap:16px; margin-bottom:26px">
+        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:34px; margin:0">Robotics Projects</h2>
+        <div style="flex:1; height:1px; background:rgba(233,237,232,0.12)"></div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; color:#8e988d">{{ roboticsCount }} PROJECTS</div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:20px">
+        <sc-for list="{{ robotics }}" as="p" hint-placeholder-count="11">
+          <div style="background:#141a16; border:1px solid rgba(233,237,232,0.1); border-radius:16px; overflow:hidden; cursor:pointer; transition:transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease" style-hover="transform:translateY(-6px); box-shadow:0 0 34px rgba(110,215,150,0.14); border-color:oklch(0.72 0.13 152)">
+            <div style="padding:10px 10px 0"><img src="{{ p.img }}" alt="" style="width:100%; height:172px; object-fit:cover; display:block; border-radius:11px; filter:saturate(0.75) brightness(0.92)" /></div>
+            <div style="padding:13px 16px 18px">
+              <h3 style="font-size:16px; margin:0 0 6px; font-weight:600">{{ p.title }}</h3>
+              <p style="font-size:13px; line-height:1.6; margin:0; color:#96a095">{{ p.body }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div id="software" style="display:flex; align-items:center; gap:16px; margin:58px 0 26px">
+        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:34px; margin:0">Software Projects</h2>
+        <div style="flex:1; height:1px; background:rgba(233,237,232,0.12)"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(400px, 1fr)); gap:20px">
+        <sc-for list="{{ software }}" as="p" hint-placeholder-count="4">
+          <div style="position:relative; border-radius:16px; overflow:hidden; cursor:pointer; border:1px solid rgba(233,237,232,0.1); background:#0f1512; transition:border-color 300ms ease" style-hover="border-color:oklch(0.72 0.13 152)">
+            <div style="height:230px; display:flex; align-items:center; justify-content:center; overflow:hidden">
+              <img src="{{ p.img }}" alt="" style="max-width:100%; max-height:100%; object-fit:contain; display:block; filter:saturate(0.8) brightness(0.9)" />
+            </div>
+            <div style="position:absolute; left:0; right:0; bottom:0; padding:16px 18px; background:linear-gradient(transparent, rgba(6,10,8,0.93)); font-size:16px; font-weight:500">{{ p.title }}</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div id="freebuild" style="display:flex; align-items:center; gap:16px; margin:58px 0 26px">
+        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:34px; margin:0">Free Build Projects</h2>
+        <div style="flex:1; height:1px; background:rgba(233,237,232,0.12)"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:20px">
+        <sc-for list="{{ freebuild }}" as="p" hint-placeholder-count="3">
+          <div style="background:#141a16; border:1px solid rgba(233,237,232,0.1); border-radius:16px; overflow:hidden; cursor:pointer; transition:transform 300ms ease, border-color 300ms ease" style-hover="transform:translateY(-6px); border-color:oklch(0.72 0.13 152)">
+            <div style="padding:10px 10px 0"><img src="{{ p.img }}" alt="" style="width:100%; height:180px; object-fit:cover; display:block; border-radius:11px; filter:saturate(0.8) brightness(0.92)" /></div>
+            <div style="padding:13px 16px 16px"><h3 style="font-size:16px; margin:0; font-weight:600">{{ p.title }}</h3></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding:60px 46px 64px 76px; max-width:1320px; margin:0 auto; position:relative; overflow:hidden">
+    <div style="position:absolute; right:-40px; bottom:-60px; transform:rotate(6deg); transform-origin:bottom right; pointer-events:none">
+      <img src="assets/leafpix_thistle.png" alt="" style="height:300px; opacity:0.16; image-rendering:pixelated; animation:sway 21s ease-in-out infinite; transform-origin:bottom right" />
+    </div>
+    <div style="position:absolute; left:-46px; top:-40px; transform:rotate(-12deg); transform-origin:top left; pointer-events:none">
+      <img src="assets/leafpix_cactus.png" alt="" style="height:250px; opacity:0.12; image-rendering:pixelated; animation:sway 26s ease-in-out 3s infinite; transform-origin:top left" />
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:12px; margin-bottom:34px">
+      <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:34px; margin:0; text-align:center">Contact <span style="color:oklch(0.74 0.13 152)">Me</span></h2>
+      <p style="margin:0; font-size:14.5px; color:#a9b3a7; text-align:center; max-width:46ch; line-height:1.7">Questions, collaborations, or a robot that needs building — send a note and I'll get back to you.</p>
+      <div style="width:56px; height:1px; background:rgba(233,237,232,0.2)"></div>
+    </div>
+    <div style="position:relative; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; max-width:720px; margin:0 auto">
+      <input type="text" placeholder="Full Name" style="padding:15px 18px; font-size:14px; background:#141a16; border:1px solid rgba(233,237,232,0.22); border-radius:14px; color:#e9ede8" />
+      <input type="email" placeholder="Email" style="padding:15px 18px; font-size:14px; background:#141a16; border:1px solid rgba(233,237,232,0.22); border-radius:14px; color:#e9ede8" />
+      <input type="text" placeholder="Subject" style="padding:15px 18px; font-size:14px; background:#141a16; border:1px solid rgba(233,237,232,0.22); border-radius:14px; color:#e9ede8" />
+      <input type="text" placeholder="Phone Number" style="padding:15px 18px; font-size:14px; background:#141a16; border:1px solid rgba(233,237,232,0.22); border-radius:14px; color:#e9ede8" />
+      <textarea rows="5" placeholder="Your Message" style="grid-column:1 / -1; padding:15px 18px; font-size:14px; background:#141a16; border:1px solid rgba(233,237,232,0.22); border-radius:14px; resize:none; color:#e9ede8"></textarea>
+      <div style="grid-column:1 / -1; display:flex; justify-content:center; margin-top:6px"><a href="#contact" style="display:inline-block; padding:14px 34px; background:oklch(0.72 0.13 152); color:#0d1110; font-size:14px; border-radius:999px; font-weight:500" style-hover="background:oklch(0.80 0.14 152); color:#0d1110">Send Message</a></div>
+    </div>
+  </section>
+
+  <footer style="background:#101614; padding:34px 46px 30px 76px; display:flex; flex-direction:column; align-items:center; gap:18px; border-top:1px solid rgba(233,237,232,0.1)">
+    <div style="display:flex; gap:12px">
+      <a href="#contact" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:20px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-linkedin"></i></a>
+      <a href="#contact" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:20px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-github"></i></a>
+      <a href="#contact" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:20px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-instagram"></i></a>
+      <a href="#contact" style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; border:1px solid rgba(120,215,160,0.5); color:oklch(0.74 0.13 152); font-size:20px" style-hover="background:oklch(0.72 0.13 152); color:#0d1110"><i class="bx bxl-youtube"></i></a>
+    </div>
+    <div style="display:flex; gap:26px; font-size:14px"><a href="#top">About Me</a><a href="#robotics">Projects</a><a href="#contact">Contact</a></div>
+    <div style="font-size:13px; color:#7f8a7e">© David Seong | All Rights Reserved</div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showScrollRail&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;autoAdvance&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  state = { idx: 0, fact: "", roleIdx: 0, scroll: 0 };
+  roles = ["Robotics", "Perception", "Mechatronics", "Product"];
+  facts = ["I have traveled to 19 countries.","Yo hablo español.","I once did a 90 hour Greyhound trip from California to Virginia","I'm a ceramics master.","Favorite Book: Norwegian Wood by Haruki Murakami","I saw the Great Pyramid of Giza","I am a father of 3 beautiful Goldfish: Kush, Dominic, Nguyen","Favorite Food: Hot Pot","I have 2 brothers","I love TRAVELING!","Recipe for Happiness = Friends, Purpose, Helping Others","Used to be in a Band! UNIKISTS!","I took German 101, Ich heiße David","I can gleek (spit like a snake)","I can split an apple in half with my bare hands","More to come..."];
+  current = [
+    { img: "assets/simon_still.jpg", tag: "Active · Robomechanics Lab", title: "Simon", sub: "Autonomous driving in the forest", body: "Autonomous navigation systems are suboptimal in vegetated environments due to their inability to distinguish between traversable and untraversable vegetation. Through fusion of 2D and 3D perception and proprioceptive sensors, wheeled robots will effectively and efficiently navigate through heavily vegetated environments." },
+    { img: "assets/Jediode.jpg", tag: "Embedded · Mechatronics", title: "Return of the Jediode", sub: "Built from scratch, no libraries", body: "An all-inclusive, immersive Star Wars project that takes users from building the lightsaber, choosing a crystal, to duel practice against Darth Vader. Focuses on embedded coding, mechatronic components, and sensor fusion implemented from scratch without any libraries." },
+    { img: "assets/pet_mobility.PNG", tag: "Concept · Energy", title: "Pestroleum / Petmobility", sub: "A Rodent-Powered Energy & Robotics Startup", body: "An innovative concept combining pest management with renewable energy generation." }
+  ];
+  robotics = [
+    { img: "assets/slam_image.png", title: "Proprioceptive Traversal", body: "Robotic navigation where instead of treating all obstacles as untraversable, their cost are estimated for an initial path. Upon collision, the cost of the obstacle is updated and the path is recomputed." },
+    { img: "assets/Patrick_ylw_reduced.png", title: "Patrick", body: "Autonomous environmental monitoring robot for forested areas using LiDAR, camera sensor fusion, and adaptive density drive." },
+    { img: "assets/mobot.png", title: "Mobot", body: "Traditional CMU line tracing robot competition entry with autonomous navigation and precision control systems." },
+    { img: "assets/hydrome.jpg", title: "Hydrone", body: "Underwater drone project built during CMU's Build 18 competition for recreational, environmental, and safety applications." },
+    { img: "assets/T_Bone.jpg", title: "T-Bone: Fish Tail Inspired Robot", body: "Biomimetic underwater robot inspired by fish tail propulsion, designed for efficient aquatic locomotion and maneuverability." },
+    { img: "assets/SPOT.png", title: "ComputerVision Solution for Automated Power Plant Inspection", body: "Autonomous inspection of power plant infrastructure using a legged platform and a computer vision pipeline for defect and anomaly detection." },
+    { img: "assets/Robomaster.png", title: "Wisconsin Robotics RoboMaster", body: "Competitive robotics team competing in RoboMaster, focusing on autonomous navigation and precision targeting systems." },
+    { img: "assets/proto_2_2.JPG", title: "E-Ducati-On: An Educational Robotics Platform", body: "E-Ducati-On is an educational robotics platform designed to teach students about robotics, programming, and controls. Most self-balancing bike systems are either open source and passive, or expensive and closed source. Our team built a Ducati based educational platform that is not only exciting and capable of performing stunts, but also features a visual interface and adjustable control parameters, enabling students to learn control theory through hands-on experience." },
+    { img: "assets/torsobot.jpg", title: "Torsobot", body: "Self-balancing rimless wheel robot investigating fundamental properties of human walk cycle with enhanced stability using PID control." },
+    { img: "assets/pbf.jpg", title: "Powder Spreader", body: "Powder bed fusion manufacturing system created for ML analysis on powder spread conditions and quality control." },
+    { img: "assets/CORD_real.jpg", title: "Cheap Opensource Robot Dog (CORD)", body: "Open-source quadruped robot platform designed for educational purposes and affordable robotics research." },
+    { img: "assets/robot_1.png", title: "WYBot", body: "Versatile robotic platform designed for multiple applications, featuring modular design and adaptive control systems." },
+    { img: "assets/HOWL.jpeg", title: "HOWL", body: "Advanced robotic system designed for autonomous exploration and navigation in challenging environments." }
+  ];
+  software = [
+    { img: "assets/moldex.png", title: "Learning with Moldex" },
+    { img: "assets/PBF_ML.png", title: "Learning for Powder Bed Fusion" },
+    { img: "assets/Unity.jpeg", title: "Unity Based Infantry Army Training Simulation" }
+  ];
+  freebuild = [
+    { img: "assets/ASZS2.jpeg", title: "Recycled Newspaper Mache Canoe" },
+    { img: "assets/AZSZ1.png", title: "Recycled Arizona \"Can\"oe" },
+    { img: "assets/A1_printer.webp", title: "3D Print Projects" }
+  ];
+  componentDidMount() {
+    if (this.props.autoAdvance !== false) {
+      this.timer = setInterval(() => this.setState(s => ({ idx: (s.idx + 1) % this.current.length })), 7000);
+    }
+    this.roleTimer = setInterval(() => this.setState(s => ({ roleIdx: (s.roleIdx + 1) % this.roles.length })), 2800);
+    this.onScroll = () => {
+      const el = document.scrollingElement || document.documentElement;
+      const max = Math.max(1, el.scrollHeight - el.clientHeight);
+      this.setState({ scroll: Math.min(1, el.scrollTop / max) });
+    };
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.onScroll();
+    this.initCloud();
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer); clearInterval(this.roleTimer);
+    cancelAnimationFrame(this.raf);
+    window.removeEventListener("scroll", this.onScroll);
+    if (this.obs) this.obs.disconnect();
+  }
+  initCloud() {
+    const c = this.canvas;
+    if (!c || c.dataset.clouded) return;
+    c.dataset.clouded = "1";
+    const ctx = c.getContext("2d");
+    const W = c.width, H = c.height;
+    const pts = [];
+    for (let i = 0; i < 620; i++) {
+      const x = Math.random() * W;
+      const base = H * 0.6 + Math.sin(x / 140) * 58 + Math.sin(x / 33) * 16;
+      const y = base + (Math.random() - 0.5) * H * 0.9;
+      pts.push({ ox: x, oy: y, r: Math.random() * 1.5 + 0.5, a: 0.14 + Math.random() * 0.46 });
+    }
+    let mx = -9999, my = -9999;
+    c.addEventListener("mousemove", (e) => {
+      const b = c.getBoundingClientRect();
+      mx = (e.clientX - b.left) * (W / b.width);
+      my = (e.clientY - b.top) * (H / b.height);
+    });
+    c.addEventListener("mouseleave", () => { mx = -9999; my = -9999; });
+    const t0 = performance.now();
+    const draw = (t) => {
+      ctx.clearRect(0, 0, W, H);
+      const drift = Math.sin((t - t0) / 3600) * 6;
+      for (const p of pts) {
+        const dx = p.ox - mx, dy = p.oy - my;
+        const d2 = dx * dx + dy * dy;
+        let x = p.ox + drift, y = p.oy;
+        if (d2 < 110 * 110) {
+          const d = Math.sqrt(d2) || 1;
+          const push = (110 - d) * 0.75;
+          x += (dx / d) * push; y += (dy / d) * push;
+        }
+        const hot = d2 < 190 * 190;
+        ctx.beginPath();
+        ctx.arc(x, y, p.r, 0, 6.283);
+        ctx.fillStyle = hot ? "rgba(150,240,180," + Math.min(1, p.a + 0.32) + ")" : "rgba(118,188,143," + p.a + ")";
+        ctx.fill();
+      }
+      this.raf = requestAnimationFrame(draw);
+    };
+    const start = () => { if (!this.raf) this.raf = requestAnimationFrame(draw); };
+    const stop = () => { cancelAnimationFrame(this.raf); this.raf = 0; };
+    if (typeof IntersectionObserver !== "undefined") {
+      this.obs = new IntersectionObserver(es => { es[0].isIntersecting ? start() : stop(); }, { rootMargin: "100px" });
+      this.obs.observe(c);
+    } else start();
+  }
+  renderVals() {
+    const s = this.state.scroll;
+    const marks = [
+      { img: "assets/leafpix_monstera.png", at: 0.16 },
+      { img: "assets/leafpix_linden.png", at: 0.34 },
+      { img: "assets/leafpix_ovate.png", at: 0.56 },
+      { img: "assets/leafpix_cactus.png", at: 0.74 },
+      { img: "assets/leafpix_thistle.png", at: 0.9 }
+    ];
+    return {
+      current: this.current,
+      robotics: this.robotics,
+      software: this.software,
+      freebuild: this.freebuild,
+      roboticsCount: this.robotics.length,
+      role: this.roles[this.state.roleIdx],
+      roleSize: ["40px", "33px", "26px", "44px"][this.state.roleIdx],
+
+      fact: this.state.fact,
+      showFact: (e) => { e.preventDefault(); this.setState({ fact: this.facts[Math.floor(Math.random() * this.facts.length)] }); },
+      track: "translateX(-" + this.state.idx * 100 + "%)",
+      next: () => { clearInterval(this.timer); this.setState(st => ({ idx: (st.idx + 1) % this.current.length })); },
+      prev: () => { clearInterval(this.timer); this.setState(st => ({ idx: (st.idx - 1 + this.current.length) % this.current.length })); },
+      dots: this.current.map((_, i) => ({
+        bg: i === this.state.idx ? "oklch(0.74 0.13 152)" : "rgba(233,237,232,0.22)",
+        go: () => { clearInterval(this.timer); this.setState({ idx: i }); }
+      })),
+      cloudRef: (el) => { this.canvas = el; if (el) this.initCloud(); },
+      railDisplay: this.props.showScrollRail === false ? "none" : "block",
+      railH: (s * 100).toFixed(1) + "%",
+      railNodes: marks.map(m => {
+        const on = s >= m.at - 0.02;
+        return { img: m.img, top: "calc(" + (m.at * 100).toFixed(1) + "% - 16px)", tf: on ? "rotate(0deg) scale(1)" : "rotate(-72deg) scale(0.45)", op: on ? "0.95" : "0.25" };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

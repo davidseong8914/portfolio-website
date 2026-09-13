@@ -3,7 +3,34 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 let sections = document.querySelectorAll('section[id]');
 let navLinks = document.querySelectorAll('.site-nav a');
 
-// Highlight the nav pill for the section in view (only sections that have a matching #anchor link).
+// One underline slides between nav items: to whatever you hover, back to the current one on leave.
+const nav = document.querySelector('.site-nav');
+let moveIndicator = () => {};
+if (nav) {
+    const indicator = nav.appendChild(document.createElement('span'));
+    indicator.className = 'nav-indicator';
+
+    const slideTo = link => {
+        if (!link) return;
+        const style = getComputedStyle(link);
+        const padLeft = parseFloat(style.paddingLeft);
+        indicator.style.width = (link.offsetWidth - padLeft - parseFloat(style.paddingRight)) + 'px';
+        indicator.style.transform = `translateX(${link.offsetLeft + padLeft}px)`;
+    };
+
+    moveIndicator = () => slideTo(nav.querySelector('a.active'));
+
+    navLinks.forEach(link => link.addEventListener('mouseenter', () => slideTo(link)));
+    nav.addEventListener('mouseleave', moveIndicator);
+    window.addEventListener('resize', moveIndicator);
+
+    moveIndicator();
+    requestAnimationFrame(() => indicator.classList.add('is-ready')); // place it first, animate after
+    // Widths shift when the webfont lands.
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveIndicator);
+}
+
+// Highlight the nav item for the section in view (only sections that have a matching #anchor link).
 window.addEventListener('scroll', () => {
     sections.forEach(sec => {
         let top = window.scrollY;
@@ -14,6 +41,7 @@ window.addEventListener('scroll', () => {
         if (link && top >= offset && top < offset + height) {
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
+            moveIndicator();
         }
     });
 }, { passive: true });
@@ -139,9 +167,68 @@ function initDotField(canvas) {
     requestAnimationFrame(loop);
 }
 
+// Ring icons for the portrait, keyed by each photo's data-icon (24x24 stroke paths).
+const PORTRAIT_ICONS = {
+    fish: '<path d="M7 12c2.5-4 5.5-6 8.5-6 3 0 5.5 2.5 6.5 6-1 3.5-3.5 6-6.5 6-3 0-6-2-8.5-6z"/><path d="M7 12 2 8v8z"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>',
+    business: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M3 13h18"/>',
+    robot: '<rect x="5" y="8" width="14" height="11" rx="2"/><path d="M12 8V5"/><circle cx="12" cy="3.5" r="1.5"/><path d="M9.5 12.5v2M14.5 12.5v2M2.5 12v3M21.5 12v3"/>',
+    tree: '<path d="M12 2 6 10h3l-4 6h14l-4-6h3z"/><path d="M12 16v6"/>',
+    mountain: '<path d="M2 20 9 7l4.5 7.5L16 11l6 9z"/>',
+    plane: '<path d="M12 2c1 0 1.5 1 1.5 2.5V9l8 5v2l-8-2.5V18l2.5 2v1.5L12 20.5l-4 1V20l2.5-2v-4.5l-8 2.5v-2l8-5V4.5C10.5 3 11 2 12 2z"/>',
+    monkey: '<path d="M6 8.6A2.5 2.5 0 1 0 6 13.4M18 8.6A2.5 2.5 0 1 1 18 13.4"/><path d="M12 4c-4 0-6.5 3-6.5 7.5S8 20 12 20s6.5-4 6.5-8.5S16 4 12 4z"/><ellipse cx="12" cy="15.5" rx="3" ry="2"/><circle cx="9.8" cy="10.5" r=".6" fill="currentColor"/><circle cx="14.2" cy="10.5" r=".6" fill="currentColor"/>',
+    pyramid: '<path d="M12 4 2 20h20z"/><path d="M12 4l3 16"/>',
+};
+
+// Rotating portrait: photos cross-fade and the icon ring turns so the current photo's icon sits at
+// the bottom. Icons are clickable; auto-advance pauses while the portrait is hovered.
+function initPortrait(root) {
+    const photos = root.querySelectorAll('.portrait-photo');
+    const ring = root.querySelector('.portrait-dots');
+    const count = photos.length;
+    if (count < 2) return;
+    const step = 360 / count;
+    let index = 0, turn = 0, timer = null, hovering = false;
+
+    const dots = Array.from(photos, (photo, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'portrait-dot';
+        dot.style.setProperty('--angle', `${i * step}deg`);
+        dot.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true">${PORTRAIT_ICONS[photo.dataset.icon] || ''}</svg>`;
+        dot.setAttribute('aria-label', `Show photo ${i + 1}`);
+        dot.addEventListener('click', () => { show(i); restart(); });
+        ring.appendChild(dot);
+        return dot;
+    });
+
+    function show(i) {
+        // Turn the short way round so the chosen icon lands at the bottom.
+        let delta = (i - index + count) % count;
+        if (delta > count / 2) delta -= count;
+        turn -= delta * step;
+        index = i;
+        ring.style.setProperty('--turn', `${turn}deg`);
+        photos.forEach((photo, j) => photo.classList.toggle('is-active', j === i));
+        dots.forEach((dot, j) => dot.classList.toggle('active', j === i));
+    }
+
+    function restart() {
+        clearInterval(timer);
+        if (!reducedMotion && !hovering) timer = setInterval(() => show((index + 1) % count), 5000);
+    }
+
+    root.addEventListener('mouseenter', () => { hovering = true; clearInterval(timer); });
+    root.addEventListener('mouseleave', () => { hovering = false; restart(); });
+    show(0);
+    restart();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const dotField = document.querySelector('.dot-field');
     if (dotField) initDotField(dotField);
+
+    const portrait = document.querySelector('.portrait');
+    if (portrait) initPortrait(portrait);
 
     // Thumbnail videos only download and play while they're near the viewport.
     const videoObserver = new IntersectionObserver(entries => {
@@ -152,17 +239,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { rootMargin: '200px 0px' });
     document.querySelectorAll('video[data-autoplay]').forEach(video => videoObserver.observe(video));
 
-    // Rotating role: each qualifier is sized to fill the fixed slot in front of "Engineer".
+    // Rotating role, typed out: each qualifier is sized to fill the fixed slot in front of "Engineer".
     const roleWord = document.querySelector('.role-word');
     if (roleWord) {
         const roles = [['Robotics', 40], ['Perception', 33], ['Mechatronics', 26], ['Product', 44]];
         let roleIndex = 0;
-        setInterval(() => {
-            roleIndex = (roleIndex + 1) % roles.length;
-            const [word, size] = roles[roleIndex];
-            roleWord.textContent = word;
-            roleWord.style.setProperty('--role-size', size);
-        }, 2800);
+        const setRole = (text, size) => {
+            roleWord.textContent = text;
+            if (size) roleWord.style.setProperty('--role-size', size);
+        };
+
+        if (reducedMotion) {
+            setInterval(() => {
+                roleIndex = (roleIndex + 1) % roles.length;
+                setRole(...roles[roleIndex]);
+            }, 2800);
+        } else {
+            const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+            (async () => {
+                for (;;) {
+                    const [word] = roles[roleIndex];
+                    await wait(1800); // hold the finished word
+                    for (let i = word.length - 1; i >= 0; i--) { setRole(word.slice(0, i)); await wait(45); }
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    const [next, size] = roles[roleIndex];
+                    setRole('', size); // resize while empty, so the next word types in at its own size
+                    await wait(300);
+                    for (let i = 1; i <= next.length; i++) { setRole(next.slice(0, i)); await wait(90); }
+                }
+            })();
+        }
     }
 
     // Fun fact functionality
@@ -226,6 +332,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const dotsContainer = container.querySelector('.carousel-dots');
         let currentIndex = 0;
         let autoplayInterval;
+
+        // A single slide needs no arrows, dots or auto-advance.
+        if (slideCount < 2) {
+            const nav = container.querySelector('.carousel-nav');
+            if (nav) nav.hidden = true;
+            if (dotsContainer) dotsContainer.hidden = true;
+            return;
+        }
 
         const dots = Array.from(track.children, (_, index) => {
             const dot = document.createElement('button');
