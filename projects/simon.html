@@ -38,7 +38,8 @@
             <div class="plant plant--tr plant--detail-linden"><img src="../Images/leaves/leafpix_linden.png" alt=""></div>
             <div class="detail-head-inner">
                 <a class="back-link" href="../projects.html"><i class='bx bx-chevron-left'></i>All projects</a>
-                <h1 class="detail-title">Simon: Autonomous Vegetation Traversal</h1>
+                <div class="eyebrow">IROS 2026 · SeMaNa Workshop</div>
+                <h1 class="detail-title">Autonomous Vegetation Navigation with Simon</h1>
             </div>
         </section>
 
@@ -48,30 +49,88 @@
             </figure>
         </section>
 
+        <!-- Paper -->
+        <section class="detail-section detail-block">
+            <div class="block">
+                <figure class="frame">
+                    <object data="Simon/SCOUT_IROS2026_SeMaNa.pdf" type="application/pdf">
+                        <div class="pdf-fallback">
+                            <i class='bx bxs-file-pdf'></i>
+                            <p>PDF Preview Not Available</p>
+                            <a href="Simon/SCOUT_IROS2026_SeMaNa.pdf" target="_blank" class="pdf-link">Click here to view the PDF</a>
+                        </div>
+                    </object>
+                </figure>
+                <div class="block-text">
+                    <h2>SCOUT: Semantic Class-Specific Online Update for Traversability in Densely Vegetated Environments</h2>
+                    <p>Accepted to the <a href="https://federicorollo.github.io/SeMaNa-Workshop/" target="_blank" rel="noopener">IROS 2026 Workshop on Semantic-Aware Mapping and Navigation (SeMaNa)</a>.</p>
+                    <p>Exteroceptive sensing alone can't separate traversable vegetation from rigid obstacles, and proprioception-fused methods need hours of environment-specific pretraining. SCOUT adapts in the field instead: every terrain and obstacle class is assigned a belief of its traversability, and interaction with the environment continuously refines the belief so the robot learns to drive efficiently in real time.</p>
+                    <p><b>Download Paper:</b> <a href="Simon/SCOUT_IROS2026_SeMaNa.pdf" target="_blank">PDF <i class='bx bx-download'></i></a></p>
+                    <p><b>Workshop:</b> <a href="https://federicorollo.github.io/SeMaNa-Workshop/" target="_blank" rel="noopener">SeMaNa @ IROS 2026 <i class='bx bx-link-external'></i></a></p>
+                </div>
+            </div>
+        </section>
+
         <section class="detail-section detail-block">
             <div class="block block--text">
                 <div class="block-text">
                     <h2>The problem</h2>
-                    <p>Autonomous navigation systems are suboptimal in vegetated environments due to their inability to distinguish between traversable and untraversable vegetation. This limitation has significant impact on applications like environmental monitoring, search and rescue, and agricultural automation where robots need to navigate through dense vegetation efficiently.</p>
-                    <p>Simon is a Unitree Go2-W that will be used for autonomous navigation for heavily vegetated environments. Unlike traditional perception-based methods that treat all vegetation as untraversable obstacles, Simon uses a novel approach that combines 2D and 3D perception with proprioceptive sensors to distinguish between traversable and untraversable vegetation.</p>
-                    <p>This fusion of perception and proprioception enables Simon to navigate through dense vegetation more efficiently, rather than taking suboptimal paths around obstacles. By understanding the true traversability of different vegetation types, Simon can find optimal paths that maximize efficiency while maintaining safety.</p>
+                    <p>Autonomous navigation has matured in structured urban environments, but urban land covers less than 1% of the Earth's surface. In unstructured, vegetated terrain, robots still can't tell traversable vegetation from rigid obstacles. A LiDAR point cloud of tall grass looks just like one of a boulder, so the planner goes around both.</p>
+                    <p>Simon is a Unitree Go2-W wheeled quadruped built to drive through that vegetation instead of around it. Its navigation stack, <b>SCOUT</b>, fuses 2D camera semantics and 3D LiDAR geometry with proprioceptive feedback, so it learns what each type of vegetation actually costs to drive through.</p>
                 </div>
+            </div>
+            <figure class="frame frame--contain">
+                <img src="../media/img/projects-simon-scout-costmap-comparison-1600.webp" alt="Field site and three traversability cost maps of the same drive: geometric height-only, static semantic priors, and SCOUT's learned costs" width="1600" height="314" loading="lazy" decoding="async">
+            </figure>
+            <div class="block block--text">
+                <div class="block-text">
+                    <p>The same drive under three cost maps, from green (easy) to red (difficult). (a) The field site: tall grass and brush. (b) A height-only baseline marks everything taller than the wheel radius as difficult, 82.8% of the map. (c) Static priors give all vegetation one predefined cost. (d) SCOUT learns a cost for each class from how the robot actually drove, and picks out the thinner passage as a lower-cost route.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section detail-block">
+            <div class="block">
+                <figure class="frame frame--contain">
+                    <img src="../media/img/projects-simon-scout-pipeline-1600.webp" alt="SCOUT perception pipeline: raw RGB image, semantic segmentation with class priors, geometric potential overlay, and final cost map" width="1600" height="936" loading="lazy" decoding="async">
+                </figure>
+                <div class="block-text">
+                    <h2>How it works</h2>
+                    <p>LiDAR scans, registered with FAST-LIO2, build a 3D voxel map. Each point is projected into a DDRNet segmentation mask and votes its semantic class into a voxel.</p>
+                    <p>A voxel's cost is its class's <b>traversability coefficient</b> multiplied by a <b>geometric potential</b> built from its point density and its height above the ground:</p>
+                    <p><b>TC(v) = θ<sub>c</sub> · f(d<sub>v</sub>, h<sub>v</sub>)</b></p>
+                    <p>Because every voxel of a class shares one coefficient, updating what the robot believes about grass instantly re-costs every grass voxel already in the map. Classes start optimistic (grass and dirt free, bush 0.2, rocks and trunks 0.5), so Simon tries ambiguous vegetation rather than avoiding it.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section detail-block">
+            <div class="block">
+                <div class="block-text">
+                    <h2>Learning from every interaction</h2>
+                    <p>While driving, Simon measures two signals every half second: <b>wheel slip</b> (wheel speed compared with the odometry's body speed) and <b>vibration</b> above normal driving on the IMU. Together they form a cost observation for whichever class the robot is driving through.</p>
+                    <p>A recursive Bayesian (Kalman-style) update folds each observation into that class's belief. The first rough encounter moves it a lot; as evidence accumulates, the belief settles and resists one-off spikes.</p>
+                    <p>Across four recorded drives, with no hand-tuning, tall grass rose to bush-level cost (0.37–0.53) while dirt stayed low (0.08–0.17). SCOUT rated 68.6% of the map as easily traversable, compared with 17.2% for the height-only baseline.</p>
+                </div>
+                <figure class="frame frame--contain">
+                    <img src="Simon/scout_belief_traces.png" alt="Learned class cost over time for bush, dirt, grass and gravel across four drives" width="1050" height="870" loading="lazy" decoding="async">
+                </figure>
             </div>
         </section>
 
         <!-- Carrying on Patrick's Mission -->
         <section class="detail-band">
             <div class="detail-section">
-                <div class="block">
-                    <div class="fig-pair">
+                <div class="block block--wide-media">
+                    <div class="fig-pair fig-pair--tall">
                         <img src="../media/img/projects-patrick-img-3391-1600.webp" alt="Patrick Robot" width="1600" height="2133" loading="lazy" decoding="async">
-                        <img src="../media/img/projects-simon-wildscened-shrub-bag-1402.webp" alt="Wild Scene Shrub Bag" width="1402" height="986" loading="lazy" decoding="async">
+                        <img src="../media/img/projects-simon-field-site-1600.webp" alt="Simon driving through tall grass at the field site" width="1600" height="1200" loading="lazy" decoding="async">
                     </div>
                     <div class="block-text">
                         <h2>Carrying on Patrick's Mission</h2>
-                        <p>Building upon the foundation laid by Patrick, Simon, a legged wheeled robot, will carry on Patrick's mission of autonomous environmental exploration.</p>
+                        <p>Building upon the foundation laid by Patrick, Simon, a legged wheeled robot, carries on Patrick's mission of autonomous environmental exploration.</p>
                         <p>Simon's added agility and capability from the legs will allow it to navigate through dense vegetation more effectively. The legged-wheeled hybrid design provides enhanced mobility compared to purely wheeled platforms, enabling traversal over obstacles and through dense vegetation while maintaining efficiency on clear terrain.</p>
-                        <p>The system is currently in active development, with the goal of enabling reliable autonomous operation in heavily vegetated environments. The project demonstrates the feasibility of using sensor fusion to improve navigation, and the combination of perception and proprioception provides a more accurate understanding of terrain traversability than either modality alone.</p>
+                        <p>The whole stack of perception, mapping, cost updates and planning runs onboard on a Jetson Orin with a Livox MID-360 LiDAR, an RGB camera, an IMU and wheel encoders. So far SCOUT has been validated on teleoperated drives. Next up are closed-loop trials, where SCOUT's own planner drives Simon through denser vegetation.</p>
                     </div>
                 </div>
             </div>
