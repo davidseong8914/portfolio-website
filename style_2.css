@@ -4,7 +4,8 @@
     --ink: #0d1110;
     --surface: #141a16;
     --sunken: #0f1512;
-    --band: #101614;
+    /* Translucent so the salmon layer shows through section tints. */
+    --band: rgba(233, 237, 232, 0.022);
 
     --text: #e9ede8;
     --text-2: #c3ccc2;
@@ -60,13 +61,25 @@ img, video { height: auto; }
 [hidden] { display: none !important; }
 
 /* overflow-x: clip, NOT hidden. hidden creates a scroll container and breaks the sticky header. */
-.page { position: relative; overflow-x: clip; }
+/* isolation + background give the salmon layer's z-index: -1 a floor, so content paints over the fish. */
+.page { position: relative; overflow-x: clip; isolation: isolate; background: var(--ink); }
 .page--home { --gl: 76px; }
 
 .accent { color: var(--accent-light); }
 
 @keyframes sway  { 0%, 100% { transform: rotate(-1.1deg); } 50% { transform: rotate(1.1deg); } }
 @keyframes blink { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } }
+
+/* ---------- Salmon layer ---------- */
+
+/* One fixed SVG behind every page's content; script.js builds and animates it. */
+.salmon-layer { position: fixed; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -1; }
+
+/* Fin cycles, referenced inline from the salmon artwork. The tail is driven from script.js. */
+@keyframes sal-gill   { 0%, 62%, 100% { transform: rotate(0deg); } 20% { transform: rotate(4deg); } 40% { transform: rotate(1deg); } }
+@keyframes sal-pec    { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(10deg); } }
+@keyframes sal-pelvic { 0%, 100% { transform: rotate(5deg); }  50% { transform: rotate(-6deg); } }
+@keyframes sal-flex   { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(4deg); } }
 
 /* ---------- Header ---------- */
 
